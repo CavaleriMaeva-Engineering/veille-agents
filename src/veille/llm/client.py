@@ -36,14 +36,3 @@ def appeler_avec_tentatives(appel, max_tentatives: int = 5, attendre=time.sleep)
             else:
                 attendre(calculer_delai(tentative))
 
-
-def appeler_avec_tentatives(appel, max_tentatives: int = 5, attendre=time.sleep):
-    for tentative in range(1, max_tentatives + 1):
-        try:
-            return appel()
-        except Exception as erreur:
-            if not erreur_est_passagere(erreur):
-                raise
-            if tentative == max_tentatives:
-                raise
-            attendre(calculer_delai(tentative))
