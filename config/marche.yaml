@@ -1,0 +1,16 @@
+marche: cosmetique-dtc-france
+
+modele: gemini-1.5-flash
+max_tentatives: 5
+
+marques:
+  - nom: Typology
+    site: https://www.typology.com
+  - nom: Respire
+    site: https://www.respire.co
+  - nom: Horace
+    site: https://horace.co
+  - nom: Merci Handy
+    site: https://www.mercihandy.com
+  - nom: The Ordinary
+    site: https://theordinary.com
