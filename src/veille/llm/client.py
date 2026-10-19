@@ -1,4 +1,6 @@
 import random
+import time
+
 import groq
 
 
@@ -9,12 +11,39 @@ def calculer_delai(
     delai_borne = min(delai_non_borne, plafond) + random.uniform(0, jitter)
     return delai_borne
 
+
 def code_est_passager(code: int) -> bool:
-    return code == 429 or 500 <= code <= 599 
+    return code == 429 or 500 <= code <= 599
+
 
 def erreur_est_passagere(erreur: Exception) -> bool:
-    if isinstance(erreur, groq.APIConnectionError) :
+    if isinstance(erreur, groq.APIConnectionError):
         return True
-    elif isinstance(erreur, groq.APIStatusError) :
+    elif isinstance(erreur, groq.APIStatusError):
         return code_est_passager(erreur.status_code)
     return False
+
+
+def appeler_avec_tentatives(appel, max_tentatives: int = 5, attendre=time.sleep):
+    for tentative in range(1, max_tentatives + 1):
+        try:
+            return appel()
+        except Exception as erreur:
+            if not erreur_est_passagere(erreur):
+                raise
+            elif tentative == max_tentatives:
+                raise
+            else:
+                attendre(calculer_delai(tentative))
+
+
+def appeler_avec_tentatives(appel, max_tentatives: int = 5, attendre=time.sleep):
+    for tentative in range(1, max_tentatives + 1):
+        try:
+            return appel()
+        except Exception as erreur:
+            if not erreur_est_passagere(erreur):
+                raise
+            if tentative == max_tentatives:
+                raise
+            attendre(calculer_delai(tentative))
