@@ -1,4 +1,4 @@
-from veille.llm.client import calculer_delai
+from veille.llm.client import calculer_delai, code_est_passager
 
 
 def test_delai_double():
@@ -12,3 +12,12 @@ def test_delai_plafonne():
     assert 30 <= calculer_delai(7, plafond=30, jitter=1) <= 30 + 1
 
     assert calculer_delai(5, plafond=10, jitter=0) == 10
+
+def test_code_est_passager():
+    assert code_est_passager(429)
+    assert code_est_passager(500)
+    assert code_est_passager(503)
+
+    assert not code_est_passager(400)
+    assert not code_est_passager(401)
+    assert not code_est_passager(404)
