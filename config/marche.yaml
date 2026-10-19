@@ -1,6 +1,6 @@
 marche: cosmetique-dtc-france
 
-modele: gemini-1.5-flash
+modele: openai/gpt-oss-20b
 max_tentatives: 5
 
 marques:
