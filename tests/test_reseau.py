@@ -4,7 +4,7 @@ import groq
 import httpx
 import pytest
 
-from veille.llm.client import appeler_avec_tentatives, calculer_delai, code_est_passager
+from veille.reseau import appeler_avec_tentatives, calculer_delai, code_est_passager
 
 
 def fausse_erreur(code: int) -> groq.APIStatusError:
