@@ -4,7 +4,12 @@ import groq
 import httpx
 import pytest
 
-from veille.reseau import appeler_avec_tentatives, calculer_delai, code_est_passager
+from veille.reseau import (
+    appeler_avec_tentatives,
+    calculer_delai,
+    code_est_passager,
+    erreur_est_passagere,
+)
 
 
 def fausse_erreur(code: int) -> groq.APIStatusError:
@@ -77,3 +82,8 @@ def test_abandonne_apres_max_tentatives():
 
     assert appel.call_count == 3
     assert len(attentes) == 2
+
+
+def test_erreurs_httpx():
+    assert erreur_est_passagere(httpx.ConnectTimeout("délai dépassé"))
+    assert not erreur_est_passagere(httpx.UnsupportedProtocol("adresse invalide"))

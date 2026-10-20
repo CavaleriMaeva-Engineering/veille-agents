@@ -2,6 +2,7 @@ import random
 import time
 
 import groq
+import httpx
 
 
 def calculer_delai(
@@ -21,6 +22,10 @@ def erreur_est_passagere(erreur: Exception) -> bool:
         return True
     elif isinstance(erreur, groq.APIStatusError):
         return code_est_passager(erreur.status_code)
+    elif isinstance(erreur, (httpx.TimeoutException, httpx.NetworkError)):
+        return True
+    elif isinstance(erreur, httpx.HTTPStatusError):
+        return code_est_passager(erreur.response.status_code)
     return False
 
 
