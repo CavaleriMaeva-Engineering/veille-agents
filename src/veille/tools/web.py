@@ -1,7 +1,27 @@
 import httpx
 from bs4 import BeautifulSoup
+from pydantic import BaseModel, Field
 
 from veille.reseau import appeler_avec_tentatives
+from veille.tools.base import decrire_outil
+
+
+class ArgsLirePageWeb(BaseModel):
+    url: str = Field(description="Adresse complète de la page, commençant par https://")
+
+
+OUTIL_LIRE_PAGE_WEB = decrire_outil(
+    nom="lire_page_web",
+    description=(
+        "Lit le texte d'une page web publique d'une marque concurrente : page d'accueil, "
+        "page produit, page de prix ou de promotion. À utiliser pour vérifier un prix, une offre "
+        "ou un nouveau produit repéré dans une publicité. Renvoie le texte visible de la page, "
+        "nettoyé et limité à quelques milliers de caractères. Ne fonctionne pas sur les pages "
+        "qui demandent une connexion ni sur les réseaux sociaux : pour les publicités, "
+        "utilise plutôt chercher_pubs_meta ou chercher_pubs_tiktok."
+    ),
+    args=ArgsLirePageWeb,
+)
 
 
 def lire_page_web(url: str, max_caracteres: int = 5000) -> dict:

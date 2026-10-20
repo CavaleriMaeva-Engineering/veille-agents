@@ -1,6 +1,6 @@
 import httpx
 
-from veille.tools.web import lire_page_web
+from veille.tools.web import OUTIL_LIRE_PAGE_WEB, lire_page_web
 
 
 def test_page_introuvable(monkeypatch):
@@ -32,7 +32,9 @@ def test_adresse_mal_formee():
 def test_page_nettoyee_et_coupee(monkeypatch):
     # Préparer : un faux Internet qui renvoie une page avec un script de pub
     def faux_get(url, **kwargs):
-        html = "<html><script>alert('pub')</script><p>Bonjour les concurrents</p></html>"
+        html = (
+            "<html><script>alert('pub')</script><p>Bonjour les concurrents</p></html>"
+        )
         return httpx.Response(200, text=html, request=httpx.Request("GET", url))
 
     monkeypatch.setattr(httpx, "get", faux_get)
@@ -41,5 +43,12 @@ def test_page_nettoyee_et_coupee(monkeypatch):
     resultat = lire_page_web("https://exemple.test", max_caracteres=7)
 
     # Vérifier
-    assert "alert" not in resultat["texte"]      # le script a bien été supprimé
-    assert len(resultat["texte"]) <= 7           # le texte a bien été coupé
+    assert "alert" not in resultat["texte"]  # le script a bien été supprimé
+    assert len(resultat["texte"]) <= 7  # le texte a bien été coupé
+
+
+def test_description_outil():
+    fonction = OUTIL_LIRE_PAGE_WEB["function"]
+
+    assert fonction["name"] == "lire_page_web"
+    assert "url" in fonction["parameters"]["required"]
