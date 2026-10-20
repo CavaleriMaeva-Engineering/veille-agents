@@ -5,6 +5,7 @@ description = "Veille concurrentielle multi-agents"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "apify-client>=3.3.0",
     "beautifulsoup4>=4.15.0",
     "groq>=1.7.0",
     "httpx>=0.28.1",

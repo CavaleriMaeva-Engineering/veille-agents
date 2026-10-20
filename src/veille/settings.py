@@ -8,6 +8,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Secrets(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env")
     groq_api_key: SecretStr
+    apify_token: SecretStr
 
 
 class Marque(BaseModel):

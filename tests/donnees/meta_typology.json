@@ -1,0 +1,728 @@
+[
+  {
+    "inputUrl": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&search_type=keyword_unordered&q=Typology",
+    "pageInfo": {
+      "adLibrarySystemStatus": {
+        "systemStatus": {
+          "status": "NO_KNOWN_ISSUES",
+          "activeIssues": [
+            {
+              "product": "Ad Library",
+              "status": "NO_KNOWN_ISSUES"
+            },
+            {
+              "product": "Ad Library Report",
+              "status": "NO_KNOWN_ISSUES"
+            },
+            {
+              "product": "Ad Library API",
+              "status": "NO_KNOWN_ISSUES"
+            },
+            {
+              "product": "Branded Content",
+              "status": "NO_KNOWN_ISSUES"
+            }
+          ]
+        }
+      },
+      "xfbAdLibraryIsCaptchaRequired": false,
+      "page": null,
+      "adLibraryUser": null
+    },
+    "pageID": "1200593000116487",
+    "adArchiveID": "912459014552505",
+    "startDateFormatted": "2026-01-13T08:00:00.000Z",
+    "endDateFormatted": "2026-10-20T07:00:00.000Z",
+    "adArchiveId": "912459014552505",
+    "collationCount": 1,
+    "collationId": "712869331702895",
+    "pageId": "1200593000116487",
+    "snapshot": {
+      "brandedContent": null,
+      "pageId": "1200593000116487",
+      "pageIsDeleted": false,
+      "pageProfileUri": "https://www.facebook.com/typologyparis/",
+      "rootResharedPost": null,
+      "byline": null,
+      "disclaimerLabel": null,
+      "pageName": "Typology",
+      "pageProfilePictureUrl": "https://scontent-lga3-2.xx.fbcdn.net/v/t39.35426-6/616383233_1168192668808470_8256208705332173529_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=EBq55YlBJlIQ7kNvwGnBUWW&_nc_oc=AdoUTBjbg9VcZo2NEL6H11uukkCbfgE92u7gybOPSru_RonmIJYyCxxcpjynvWQYF6k&_nc_zt=14&_nc_ht=scontent-lga3-2.xx&_nc_gid=QqHlAEO46U9JsnJ1iXfljg&_nc_ss=70289&oh=00_AQNc1MLzBl2p5wo5wLulvoTio04XjoWPNnXSzzSIhIMqyw&oe=6ADD5693",
+      "event": null,
+      "caption": "typology.com",
+      "ctaText": "Learn more",
+      "cards": [
+        {
+          "body": "Nouveau! Découvrez la crème visage premières rides : \n+ Hydrate, lisse les premières rides et préserve l’élasticité de la peau.",
+          "ctaType": "LEARN_MORE",
+          "caption": "",
+          "linkDescription": null,
+          "linkUrl": "https://www.typology.com/products/creme-visage-premieres-rides-complexe-biomimetique-collagene-elastine-b12/",
+          "title": "98% d’origine naturelle.",
+          "ctaText": "Learn More",
+          "videoHdUrl": null,
+          "videoPreviewImageUrl": null,
+          "videoSdUrl": null,
+          "watermarkedVideoHdUrl": null,
+          "watermarkedVideoSdUrl": null,
+          "imageCrops": [],
+          "originalImageUrl": "https://scontent-lga3-3.xx.fbcdn.net/v/t39.35426-6/615773390_2666333307077604_4556562909357314401_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=ZGDuasXBqCoQ7kNvwHgTPcd&_nc_oc=Adq7ZQtKDw9zucyQtNptZJbSsbSPBjVfpRpH7mOH-BXH_A0EajfafCIclhWq-BAvTi8&_nc_zt=14&_nc_ht=scontent-lga3-3.xx&_nc_gid=QqHlAEO46U9JsnJ1iXfljg&_nc_ss=70289&oh=00_AQMb_-AywfSouZKv_WxeEzmnzgmpPFqs7PL-hWVDRDXcdw&oe=6ADD680C",
+          "resizedImageUrl": "https://scontent-lga3-2.xx.fbcdn.net/v/t39.35426-6/615317536_747651258380375_3960526968221027988_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=107&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=CHY3y61fQ5kQ7kNvwF_ytbi&_nc_oc=Adri24VpiRI7oj_Sl62q_p8qbs-NYdbDP3dbLv3JfOX1J0pZGMxTCt3iHvUdo-4MWvw&_nc_zt=14&_nc_ht=scontent-lga3-2.xx&_nc_gid=QqHlAEO46U9JsnJ1iXfljg&_nc_ss=70289&oh=00_AQPA5mG-9koy7Ee7jWQXZoOeQcWMKhN-Uq9dRrkgQ5kvhw&oe=6ADD818B",
+          "watermarkedResizedImageUrl": ""
+        },
+        {
+          "body": "Nouveau! Découvrez la crème visage premières rides : \n+ Hydrate, lisse les premières rides et préserve l’élasticité de la peau.",
+          "ctaType": "LEARN_MORE",
+          "caption": "",
+          "linkDescription": null,
+          "linkUrl": "https://www.typology.com/products/creme-visage-premieres-rides-complexe-biomimetique-collagene-elastine-b12/",
+          "title": "98% d’origine naturelle.",
+          "ctaText": "Learn More",
+          "videoHdUrl": null,
+          "videoPreviewImageUrl": null,
+          "videoSdUrl": null,
+          "watermarkedVideoHdUrl": null,
+          "watermarkedVideoSdUrl": null,
+          "imageCrops": [],
+          "originalImageUrl": "https://scontent-lga3-1.xx.fbcdn.net/v/t39.35426-6/615807300_875547085439208_6898011707641320132_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=tyVX3UBlQP0Q7kNvwFL3NaV&_nc_oc=AdpGZ-4DmoXUYOKzUem2Mnpi3nx5zNqL_UNfDoOb2CRvbXPqRJPZpG7_ZS4Pl9B03P0&_nc_zt=14&_nc_ht=scontent-lga3-1.xx&_nc_gid=QqHlAEO46U9JsnJ1iXfljg&_nc_ss=70289&oh=00_AQMxjbwJNS1swYAwmvQGotZTcEze95VV53CXv6qqYRAZOQ&oe=6ADD5F65",
+          "resizedImageUrl": "https://scontent-lga3-2.xx.fbcdn.net/v/t39.35426-6/615712525_1508789746852843_2492411340590331456_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=GBYG9sKw0LsQ7kNvwHWp1n3&_nc_oc=AdqEQyoSfXtw1Rj-lzHqB9xJltADahiIipDeIRA8EH6MMfk538uG9bFEVey34NhVMdI&_nc_zt=14&_nc_ht=scontent-lga3-2.xx&_nc_gid=QqHlAEO46U9JsnJ1iXfljg&_nc_ss=70289&oh=00_AQNMjef98tahn_il7X-1_tNjZqF0qJOEqL71uCejWE9p9w&oe=6ADD5F41",
+          "watermarkedResizedImageUrl": ""
+        },
+        {
+          "body": "Nouveau! Découvrez la crème visage premières rides : \n+ Hydrate, lisse les premières rides et préserve l’élasticité de la peau.",
+          "ctaType": "LEARN_MORE",
+          "caption": "",
+          "linkDescription": null,
+          "linkUrl": "https://www.typology.com/products/creme-visage-premieres-rides-complexe-biomimetique-collagene-elastine-b12/",
+          "title": "98% d’origine naturelle.",
+          "ctaText": "Learn More",
+          "videoHdUrl": null,
+          "videoPreviewImageUrl": null,
+          "videoSdUrl": null,
+          "watermarkedVideoHdUrl": null,
+          "watermarkedVideoSdUrl": null,
+          "imageCrops": [],
+          "originalImageUrl": "https://scontent-lga3-2.xx.fbcdn.net/v/t39.35426-6/615819253_855978257180816_6281183923806420986_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=4B9uw6TfQm8Q7kNvwFvXXet&_nc_oc=Adpi5a4RPBqv6so_W3Cri_1SYDmHIY-NsU00oqvqv334QotxH-1SVvS_gi2urcdeQ9I&_nc_zt=14&_nc_ht=scontent-lga3-2.xx&_nc_gid=QqHlAEO46U9JsnJ1iXfljg&_nc_ss=70289&oh=00_AQPgkDrbh-iERvuWnB8xaGWruHwe9nXaZplJ3bFIecUxRA&oe=6ADD705E",
+          "resizedImageUrl": "https://scontent-lga3-3.xx.fbcdn.net/v/t39.35426-6/615830923_1416050269859475_5141529599399866003_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=104&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=uq-22xPXmUQQ7kNvwFTMZia&_nc_oc=Adpe1lIbQiwhQxdZIfgghsz0lL_Dk5pLNzm1BqIGpQclBVZtyKx9vB0tmzjauyUxuNM&_nc_zt=14&_nc_ht=scontent-lga3-3.xx&_nc_gid=QqHlAEO46U9JsnJ1iXfljg&_nc_ss=70289&oh=00_AQP1oLuXbOYlXE8s5aJSo-tzuoSS31JSHZXByjG1QKsa3Q&oe=6ADD6EDB",
+          "watermarkedResizedImageUrl": ""
+        }
+      ],
+      "body": {
+        "text": "{{product.brand}}"
+      },
+      "ctaType": "LEARN_MORE",
+      "displayFormat": "DCO",
+      "linkDescription": "{{product.description}}",
+      "linkUrl": "https://www.typology.com/products/creme-visage-premieres-rides-complexe-biomimetique-collagene-elastine-b12/",
+      "images": [],
+      "pageCategories": [
+        "Health & Beauty"
+      ],
+      "pageLikeCount": 91502,
+      "title": "{{product.name}}",
+      "videos": [],
+      "isReshared": false,
+      "extraLinks": [],
+      "extraTexts": [],
+      "extraImages": [],
+      "extraVideos": [],
+      "countryIsoCode": null,
+      "brazilTaxId": null,
+      "additionalInfo": null,
+      "ecCertificates": []
+    },
+    "isActive": true,
+    "hasUserReported": false,
+    "reportCount": null,
+    "menuItems": [],
+    "stateMediaRunLabel": null,
+    "pageIsDeleted": false,
+    "pageName": "Typology",
+    "impressionsWithIndex": {
+      "impressionsText": null,
+      "impressionsIndex": -1
+    },
+    "gatedType": "ELIGIBLE",
+    "categories": [
+      "UNKNOWN"
+    ],
+    "isAaaEligible": true,
+    "containsDigitalCreatedMedia": false,
+    "reachEstimate": null,
+    "currency": "",
+    "spend": null,
+    "endDate": 1792479600,
+    "publisherPlatform": [
+      "FACEBOOK",
+      "INSTAGRAM",
+      "AUDIENCE_NETWORK",
+      "MESSENGER",
+      "THREADS"
+    ],
+    "startDate": 1768291200,
+    "containsSensitiveContent": false,
+    "totalActiveTime": null,
+    "regionalRegulationData": {
+      "finserv": {
+        "isDeemedFinserv": false,
+        "isLimitedDelivery": false
+      },
+      "twAntiScam": {
+        "isLimitedDelivery": false
+      }
+    },
+    "hideDataStatus": "NONE",
+    "fevInfo": null,
+    "adId": null,
+    "targetedOrReachedCountries": []
+  },
+  {
+    "inputUrl": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&search_type=keyword_unordered&q=Typology",
+    "pageInfo": {
+      "adLibrarySystemStatus": {
+        "systemStatus": {
+          "status": "NO_KNOWN_ISSUES",
+          "activeIssues": [
+            {
+              "product": "Ad Library",
+              "status": "NO_KNOWN_ISSUES"
+            },
+            {
+              "product": "Ad Library Report",
+              "status": "NO_KNOWN_ISSUES"
+            },
+            {
+              "product": "Ad Library API",
+              "status": "NO_KNOWN_ISSUES"
+            },
+            {
+              "product": "Branded Content",
+              "status": "NO_KNOWN_ISSUES"
+            }
+          ]
+        }
+      },
+      "xfbAdLibraryIsCaptchaRequired": false,
+      "page": null,
+      "adLibraryUser": null
+    },
+    "pageID": "1200593000116487",
+    "adArchiveID": "861279906531222",
+    "startDateFormatted": "2026-01-14T08:00:00.000Z",
+    "endDateFormatted": "2026-10-20T07:00:00.000Z",
+    "adArchiveId": "861279906531222",
+    "collationCount": 1,
+    "collationId": "1898866817416020",
+    "pageId": "1200593000116487",
+    "snapshot": {
+      "brandedContent": null,
+      "pageId": "1200593000116487",
+      "pageIsDeleted": false,
+      "pageProfileUri": "https://www.facebook.com/typologyparis/",
+      "rootResharedPost": null,
+      "byline": null,
+      "disclaimerLabel": null,
+      "pageName": "Typology",
+      "pageProfilePictureUrl": "https://scontent-lga3-1.xx.fbcdn.net/v/t39.35426-6/615773930_1423229569321821_4368810562929684699_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=110&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=woN1jNI4emUQ7kNvwGAq2ef&_nc_oc=Adq43n52c6DIhPYTky2ec8lvXIpmumrb_IH-C83bTpUQ58RyWoZ95FRVLYoHhqbn18g&_nc_zt=14&_nc_ht=scontent-lga3-1.xx&_nc_gid=QqHlAEO46U9JsnJ1iXfljg&_nc_ss=70289&oh=00_AQNxo4G4gXR7qX2G6635SuiXxRQ6XbmyS27ipQO9uWbneA&oe=6ADD6424",
+      "event": null,
+      "caption": "typology.com",
+      "ctaText": "Learn more",
+      "cards": [
+        {
+          "body": "Nouveau! Découvrez la crème visage premières rides : \n+ Hydrate, lisse les premières rides et préserve l’élasticité de la peau.",
+          "ctaType": "LEARN_MORE",
+          "caption": "",
+          "linkDescription": null,
+          "linkUrl": "https://www.typology.com/products/creme-visage-premieres-rides-complexe-biomimetique-collagene-elastine-b12/",
+          "title": "Nouveau.",
+          "ctaText": "Learn More",
+          "videoHdUrl": "https://video-lga3-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQPyFBLANLNnDM-2RP_EPmUtwQ9hwrutdxpE3kgyiFH4U1Xs5M0XKv6OkMwjUmlyFxIbZ7aBlzB2Gx4EoWHtwPOHcCNWZE253EEj61b9-FBUjg.mp4?_nc_cat=109&_nc_sid=b66105&_nc_ht=video-lga3-1.xx.fbcdn.net&_nc_ohc=Hmi2mtJiOQEQ7kNvwGJAXxU&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjE2MjcxMTA3MDg3Mjk1OTAsImFzc2V0X2FnZV9kYXlzIjoyNzgsInZpX3VzZWNhc2VfaWQiOjEwNzk5LCJkdXJhdGlvbl9zIjoxOCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=36dc0d4d730c9e86&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC8yRDQ4M0JGNDlFNDc0MjQxRTVFNzk2MERDN0Y3NzM4Rl9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzZDNDUwNkU3MDYxQ0FFRDlEMTExMkM1Qzk4QjdDNUExX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbs2-68p_bjBRUCKAJDMywXQDJMzMzMzM0YGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=QqHlAEO46U9JsnJ1iXfljg&_nc_ss=70289&_nc_zt=28&oh=00_AQOdxUXcUFthZdSlVYcRGwSy14lqWPKLSCq6w6W5nFJmqw&oe=6ADD84A3",
+          "videoPreviewImageUrl": "https://scontent-lga3-1.xx.fbcdn.net/v/t39.35426-6/615158574_2611232432603451_9215462546948182773_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=TkqkXDcSLIgQ7kNvwFBtuyE&_nc_oc=AdpiG-ZFPywsNenkbbDa3iggkNNO0w0rP947LwOUf-JN70EjkKsTdYBOgkBUcwZGjE0&_nc_zt=14&_nc_ht=scontent-lga3-1.xx&_nc_gid=QqHlAEO46U9JsnJ1iXfljg&_nc_ss=70289&oh=00_AQPR431NF0ihvGxKLUJZynV9S6su6GmkC7CTrxqCxgNXfg&oe=6ADD5F28",
+          "videoSdUrl": "https://video-lga3-2.xx.fbcdn.net/o1/v/t2/f2/m412/AQOwuOHSZUG1LFSEd35lO7vgemgiq3C5e9GSFPwbgRSys5rL6CFgPcmG99fXkWfwmgao2VVNj8ujlHabXqJdhftOBCCjLEIAk8lxbMrX3A.mp4?_nc_cat=100&_nc_sid=ef5aa3&_nc_ht=video-lga3-2.xx.fbcdn.net&_nc_ohc=AZTbGhFVoaEQ7kNvwG2uGHt&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTYyNzExMDcwODcyOTU5MCwiYXNzZXRfYWdlX2RheXMiOjI3OCwidmlfdXNlY2FzZV9pZCI6MTA3OTksImR1cmF0aW9uX3MiOjE4LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=QqHlAEO46U9JsnJ1iXfljg&_nc_ss=70289&_nc_zt=28&oh=00_AQO2MsUH1FfsD7Kp8Di7T041bCRtQ8asCPjSNTEerQB0LA&oe=6ADD696E",
+          "watermarkedVideoHdUrl": null,
+          "watermarkedVideoSdUrl": null,
+          "imageCrops": [],
+          "originalImageUrl": null,
+          "resizedImageUrl": null,
+          "watermarkedResizedImageUrl": null
+        },
+        {
+          "body": "Nouveau! Découvrez la crème visage premières rides : \n+ Hydrate, lisse les premières rides et préserve l’élasticité de la peau.",
+          "ctaType": "LEARN_MORE",
+          "caption": "",
+          "linkDescription": null,
+          "linkUrl": "https://www.typology.com/products/creme-visage-premieres-rides-complexe-biomimetique-collagene-elastine-b12/",
+          "title": "Nouveau.",
+          "ctaText": "Learn More",
+          "videoHdUrl": "https://video-lga3-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQPyFBLANLNnDM-2RP_EPmUtwQ9hwrutdxpE3kgyiFH4U1Xs5M0XKv6OkMwjUmlyFxIbZ7aBlzB2Gx4EoWHtwPOHcCNWZE253EEj61b9-FBUjg.mp4?_nc_cat=109&_nc_sid=b66105&_nc_ht=video-lga3-1.xx.fbcdn.net&_nc_ohc=Hmi2mtJiOQEQ7kNvwGJAXxU&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjE2MjcxMTA3MDg3Mjk1OTAsImFzc2V0X2FnZV9kYXlzIjoyNzgsInZpX3VzZWNhc2VfaWQiOjEwNzk5LCJkdXJhdGlvbl9zIjoxOCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=36dc0d4d730c9e86&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC8yRDQ4M0JGNDlFNDc0MjQxRTVFNzk2MERDN0Y3NzM4Rl9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzZDNDUwNkU3MDYxQ0FFRDlEMTExMkM1Qzk4QjdDNUExX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbs2-68p_bjBRUCKAJDMywXQDJMzMzMzM0YGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=QqHlAEO46U9JsnJ1iXfljg&_nc_ss=70289&_nc_zt=28&oh=00_AQOdxUXcUFthZdSlVYcRGwSy14lqWPKLSCq6w6W5nFJmqw&oe=6ADD84A3",
+          "videoPreviewImageUrl": "https://scontent-lga3-1.xx.fbcdn.net/v/t39.35426-6/615158574_2611232432603451_9215462546948182773_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=TkqkXDcSLIgQ7kNvwFBtuyE&_nc_oc=AdpiG-ZFPywsNenkbbDa3iggkNNO0w0rP947LwOUf-JN70EjkKsTdYBOgkBUcwZGjE0&_nc_zt=14&_nc_ht=scontent-lga3-1.xx&_nc_gid=QqHlAEO46U9JsnJ1iXfljg&_nc_ss=70289&oh=00_AQPR431NF0ihvGxKLUJZynV9S6su6GmkC7CTrxqCxgNXfg&oe=6ADD5F28",
+          "videoSdUrl": "https://video-lga3-2.xx.fbcdn.net/o1/v/t2/f2/m412/AQOwuOHSZUG1LFSEd35lO7vgemgiq3C5e9GSFPwbgRSys5rL6CFgPcmG99fXkWfwmgao2VVNj8ujlHabXqJdhftOBCCjLEIAk8lxbMrX3A.mp4?_nc_cat=100&_nc_sid=ef5aa3&_nc_ht=video-lga3-2.xx.fbcdn.net&_nc_ohc=AZTbGhFVoaEQ7kNvwG2uGHt&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTYyNzExMDcwODcyOTU5MCwiYXNzZXRfYWdlX2RheXMiOjI3OCwidmlfdXNlY2FzZV9pZCI6MTA3OTksImR1cmF0aW9uX3MiOjE4LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=QqHlAEO46U9JsnJ1iXfljg&_nc_ss=70289&_nc_zt=28&oh=00_AQO2MsUH1FfsD7Kp8Di7T041bCRtQ8asCPjSNTEerQB0LA&oe=6ADD696E",
+          "watermarkedVideoHdUrl": null,
+          "watermarkedVideoSdUrl": null,
+          "imageCrops": [],
+          "originalImageUrl": null,
+          "resizedImageUrl": null,
+          "watermarkedResizedImageUrl": null
+        }
+      ],
+      "body": {
+        "text": "{{product.brand}}"
+      },
+      "ctaType": "LEARN_MORE",
+      "displayFormat": "DCO",
+      "linkDescription": "{{product.description}}",
+      "linkUrl": "https://www.typology.com/products/creme-visage-premieres-rides-complexe-biomimetique-collagene-elastine-b12/",
+      "images": [],
+      "pageCategories": [
+        "Health & Beauty"
+      ],
+      "pageLikeCount": 91502,
+      "title": "{{product.name}}",
+      "videos": [],
+      "isReshared": false,
+      "extraLinks": [],
+      "extraTexts": [],
+      "extraImages": [],
+      "extraVideos": [],
+      "countryIsoCode": null,
+      "brazilTaxId": null,
+      "additionalInfo": null,
+      "ecCertificates": []
+    },
+    "isActive": true,
+    "hasUserReported": false,
+    "reportCount": null,
+    "menuItems": [],
+    "stateMediaRunLabel": null,
+    "pageIsDeleted": false,
+    "pageName": "Typology",
+    "impressionsWithIndex": {
+      "impressionsText": null,
+      "impressionsIndex": -1
+    },
+    "gatedType": "ELIGIBLE",
+    "categories": [
+      "UNKNOWN"
+    ],
+    "isAaaEligible": true,
+    "containsDigitalCreatedMedia": false,
+    "reachEstimate": null,
+    "currency": "",
+    "spend": null,
+    "endDate": 1792479600,
+    "publisherPlatform": [
+      "FACEBOOK",
+      "INSTAGRAM",
+      "AUDIENCE_NETWORK",
+      "MESSENGER",
+      "THREADS"
+    ],
+    "startDate": 1768377600,
+    "containsSensitiveContent": false,
+    "totalActiveTime": null,
+    "regionalRegulationData": {
+      "finserv": {
+        "isDeemedFinserv": false,
+        "isLimitedDelivery": false
+      },
+      "twAntiScam": {
+        "isLimitedDelivery": false
+      }
+    },
+    "hideDataStatus": "NONE",
+    "fevInfo": null,
+    "adId": null,
+    "targetedOrReachedCountries": []
+  },
+  {
+    "inputUrl": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&search_type=keyword_unordered&q=Typology",
+    "pageInfo": {
+      "adLibrarySystemStatus": {
+        "systemStatus": {
+          "status": "NO_KNOWN_ISSUES",
+          "activeIssues": [
+            {
+              "product": "Ad Library",
+              "status": "NO_KNOWN_ISSUES"
+            },
+            {
+              "product": "Ad Library Report",
+              "status": "NO_KNOWN_ISSUES"
+            },
+            {
+              "product": "Ad Library API",
+              "status": "NO_KNOWN_ISSUES"
+            },
+            {
+              "product": "Branded Content",
+              "status": "NO_KNOWN_ISSUES"
+            }
+          ]
+        }
+      },
+      "xfbAdLibraryIsCaptchaRequired": false,
+      "page": null,
+      "adLibraryUser": null
+    },
+    "pageID": "1200593000116487",
+    "adArchiveID": "1195355416079253",
+    "startDateFormatted": "2026-07-20T07:00:00.000Z",
+    "endDateFormatted": "2026-10-20T07:00:00.000Z",
+    "adArchiveId": "1195355416079253",
+    "collationCount": 1,
+    "collationId": "1705808650630575",
+    "pageId": "1200593000116487",
+    "snapshot": {
+      "brandedContent": null,
+      "pageId": "1200593000116487",
+      "pageIsDeleted": false,
+      "pageProfileUri": "https://www.facebook.com/typologyparis/",
+      "rootResharedPost": null,
+      "byline": null,
+      "disclaimerLabel": null,
+      "pageName": "Typology",
+      "pageProfilePictureUrl": "https://scontent-lga3-2.xx.fbcdn.net/v/t39.35426-6/752509202_1351019553839629_7762880275788683122_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=oWOHWp4KZ2UQ7kNvwE5FNdc&_nc_oc=Ado3yhOXjWhWqdkg2YhcIT9hU2VQVPfHClzbJKd8H69biazyKahjvf069KhDj341Bvo&_nc_zt=14&_nc_ht=scontent-lga3-2.xx&_nc_gid=QqHlAEO46U9JsnJ1iXfljg&_nc_ss=70289&oh=00_AQOpvrLEkeTNpkt1UfsUIZiDsxctQKVsQTqAR2vsqFlwwQ&oe=6ADD5E2F",
+      "event": null,
+      "caption": "www.typology.com",
+      "ctaText": "Shop now",
+      "cards": [],
+      "body": {
+        "text": "Concentré Local Tenseur A43 : \nConcentré en peptides inhibiteurs et acide hyaluronique pour cibler les micro-contractions à l’origine des rides d’expression."
+      },
+      "ctaType": "SHOP_NOW",
+      "displayFormat": "VIDEO",
+      "linkDescription": null,
+      "linkUrl": "https://www.typology.com/products/concentre-local-tenseur-complexe-peptides-inhibiteurs-acide-hyaluronique/",
+      "images": [],
+      "pageCategories": [
+        "Santé et beauté"
+      ],
+      "pageLikeCount": 91502,
+      "title": "Concentré Local Tenseur A43\nComplexe de peptides inhibiteurs 10% + Acide hyaluronique",
+      "videos": [
+        {
+          "videoHdUrl": "https://video-lga3-2.xx.fbcdn.net/o1/v/t2/f2/m366/AQM-axDmXuISXHFJlh4NF5QeOGBWuxTzSe-sx3O5z3o5bQdOPz2tf1Jl5CF8awCXppDOR7S5i5ksmnj8PxmL4GR5y941IAx8VKeM6hOawDsQ7Q.mp4?_nc_cat=107&_nc_sid=b66105&_nc_ht=video-lga3-2.xx.fbcdn.net&_nc_ohc=ZnHbzYCtjksQ7kNvwFue69x&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjEzNTc3MTYzNTMyMjU0NjIsImFzc2V0X2FnZV9kYXlzIjo5MiwidmlfdXNlY2FzZV9pZCI6MTA3OTksImR1cmF0aW9uX3MiOjIwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&vs=e0d3101dd1fb41ff&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC81MzQ0M0VCOENEMjRBNjQ0NkQ5OUZFRUM0MjNBRTI4RV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzQ4NENBRjM1ODUwRUZCODY5MkIwMDAxQjdBMTUzREJFX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbsy4SPv7XpBBUCKAJDMywXQDSZmZmZmZoYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=QqHlAEO46U9JsnJ1iXfljg&_nc_ss=70289&_nc_zt=28&oh=00_AQOMQ8Y543EsC7Mc9rNwmCHeoX2E5Z97vvL6QF_MwdqxnA&oe=6ADD5A9D",
+          "videoPreviewImageUrl": "https://scontent-lga3-3.xx.fbcdn.net/v/t39.35426-6/750085145_1700971477833264_8494850481704685152_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=roC-QwnOt5QQ7kNvwFaRcW-&_nc_oc=AdrN36ZMD_0nV6bQrYNRewk-k_-KiZNMxkUGtm7pTP5rFD2tgUMIkr-l8TuQMVxR7qE&_nc_zt=14&_nc_ht=scontent-lga3-3.xx&_nc_gid=QqHlAEO46U9JsnJ1iXfljg&_nc_ss=70289&oh=00_AQMFS-EdcRcWySuG2Q6fY6BzUq7MOAA0i3AUI0rgXB8YmQ&oe=6ADD624F",
+          "videoSdUrl": "https://video-lga3-1.xx.fbcdn.net/o1/v/t2/f2/m412/AQMEWDrMdfuXnXWZAz7dRY0JdA4cwBOZnKsJHNjfgtkflklkgvbjrLhp4VXUX2aMM3Z8VbIkpPkumE7XKfo1mqn9py-Y9LcToZzVlcej7A.mp4?_nc_cat=111&_nc_sid=ef5aa3&_nc_ht=video-lga3-1.xx.fbcdn.net&_nc_ohc=R1qTqpAW69UQ7kNvwGn6Ga9&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTM1NzcxNjM1MzIyNTQ2MiwiYXNzZXRfYWdlX2RheXMiOjkyLCJ2aV91c2VjYXNlX2lkIjoxMDc5OSwiZHVyYXRpb25fcyI6MjAsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&_nc_gid=QqHlAEO46U9JsnJ1iXfljg&_nc_ss=70289&_nc_zt=28&oh=00_AQMrfvHpdyaf7QNsNSg4N0kwxo2cijmQvEJl--R7mLvJ9A&oe=6ADD7B9F",
+          "watermarkedVideoHdUrl": null,
+          "watermarkedVideoSdUrl": null
+        }
+      ],
+      "isReshared": false,
+      "extraLinks": [],
+      "extraTexts": [],
+      "extraImages": [],
+      "extraVideos": [],
+      "countryIsoCode": null,
+      "brazilTaxId": null,
+      "additionalInfo": null,
+      "ecCertificates": []
+    },
+    "isActive": true,
+    "hasUserReported": false,
+    "reportCount": null,
+    "menuItems": [],
+    "stateMediaRunLabel": null,
+    "pageIsDeleted": false,
+    "pageName": "Typology",
+    "impressionsWithIndex": {
+      "impressionsText": null,
+      "impressionsIndex": -1
+    },
+    "gatedType": "ELIGIBLE",
+    "categories": [
+      "UNKNOWN"
+    ],
+    "isAaaEligible": true,
+    "containsDigitalCreatedMedia": false,
+    "reachEstimate": null,
+    "currency": "",
+    "spend": null,
+    "endDate": 1792479600,
+    "publisherPlatform": [
+      "FACEBOOK",
+      "INSTAGRAM",
+      "AUDIENCE_NETWORK",
+      "MESSENGER",
+      "THREADS"
+    ],
+    "startDate": 1784530800,
+    "containsSensitiveContent": false,
+    "totalActiveTime": null,
+    "regionalRegulationData": {
+      "finserv": {
+        "isDeemedFinserv": false,
+        "isLimitedDelivery": false
+      },
+      "twAntiScam": {
+        "isLimitedDelivery": false
+      }
+    },
+    "hideDataStatus": "NONE",
+    "fevInfo": null,
+    "adId": null,
+    "targetedOrReachedCountries": []
+  },
+  {
+    "inputUrl": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&search_type=keyword_unordered&q=Typology",
+    "pageInfo": {
+      "adLibrarySystemStatus": {
+        "systemStatus": {
+          "status": "NO_KNOWN_ISSUES",
+          "activeIssues": [
+            {
+              "product": "Ad Library",
+              "status": "NO_KNOWN_ISSUES"
+            },
+            {
+              "product": "Ad Library Report",
+              "status": "NO_KNOWN_ISSUES"
+            },
+            {
+              "product": "Ad Library API",
+              "status": "NO_KNOWN_ISSUES"
+            },
+            {
+              "product": "Branded Content",
+              "status": "NO_KNOWN_ISSUES"
+            }
+          ]
+        }
+      },
+      "xfbAdLibraryIsCaptchaRequired": false,
+      "page": null,
+      "adLibraryUser": null
+    },
+    "pageID": "1200593000116487",
+    "adArchiveID": "1748807906423553",
+    "startDateFormatted": "2026-10-07T07:00:00.000Z",
+    "endDateFormatted": "2026-10-20T07:00:00.000Z",
+    "adArchiveId": "1748807906423553",
+    "collationCount": 1,
+    "collationId": "1411191357795799",
+    "pageId": "1200593000116487",
+    "snapshot": {
+      "brandedContent": {
+        "pageId": "481295208406140",
+        "pageIsDeleted": false,
+        "pageProfileUri": "https://www.facebook.com/61570412097732/",
+        "pageName": "Twentysixpline"
+      },
+      "pageId": "1200593000116487",
+      "pageIsDeleted": false,
+      "pageProfileUri": "https://www.facebook.com/typologyparis/",
+      "rootResharedPost": null,
+      "byline": null,
+      "disclaimerLabel": null,
+      "pageName": "Typology",
+      "pageProfilePictureUrl": "https://scontent-lga3-1.xx.fbcdn.net/v/t39.35426-6/841084339_4171543199810590_3438639772483120816_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=111&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=nNVm4rtTdlMQ7kNvwGcNnLC&_nc_oc=AdrPlWkpglzCHDUQJk9anLW3jjrvnwGaVVTSRgOHm-t8-7snQsvSTPBBF-LLA6uw-Yc&_nc_zt=14&_nc_ht=scontent-lga3-1.xx&_nc_gid=QqHlAEO46U9JsnJ1iXfljg&_nc_ss=70289&oh=00_AQNbM0cJzqt1k3Ohnx9tKiaUXYy9XIq6HyC82pl42NNAqQ&oe=6ADD567A",
+      "event": null,
+      "caption": "www.typology.com",
+      "ctaText": "Shop now",
+      "cards": [],
+      "body": {
+        "text": "Calendrier de l'Avent Typology 2026 - édition limitée. 24 soins pour le visage, les yeux, les lèvres, les cheveux et le corps, dont 14 en format vente."
+      },
+      "ctaType": "SHOP_NOW",
+      "displayFormat": "VIDEO",
+      "linkDescription": null,
+      "linkUrl": "https://www.typology.com/products/calendrier-de-l-avent/",
+      "images": [],
+      "pageCategories": [
+        "Health & Beauty"
+      ],
+      "pageLikeCount": 91502,
+      "title": "Édition limitée",
+      "videos": [
+        {
+          "videoHdUrl": "https://video-lga3-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQNZOmXb2GQ0z-xONPjLn5ABLI2r72fvlYiKM4PC4aP8aIe_VEuj3fNnKMc0zAFB9rB1wroBdwDgkaYKDNrZYPYnDxS75B-XWbVWJGGjUIm4VQ.mp4?_nc_cat=103&_nc_sid=b66105&_nc_ht=video-lga3-1.xx.fbcdn.net&_nc_ohc=WHPn1Un8CTsQ7kNvwG5-Txe&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjE0MDI4MzYxMzgwOTgzNjksImFzc2V0X2FnZV9kYXlzIjoxMywidmlfdXNlY2FzZV9pZCI6MTA3OTksImR1cmF0aW9uX3MiOjQ4LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&vs=7a432875081a8edd&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC8zOUFBNjIxRDk1N0Q0QUI3ODYwRDJERDIwNUZFQjVDMV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0RCQkUxQkE3QjM5NDQ5MjNBNjMyMjEyQTA0NzZBNkQ0X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACaC-4Pb5_f9BBUCKAJDMywXQEhAAAAAAAAYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=QqHlAEO46U9JsnJ1iXfljg&_nc_ss=70289&_nc_zt=28&oh=00_AQNQ3auWTFa7fpQXqpguvWJWvQJGn7StYBqa07SG35mVBg&oe=6ADD5F1D",
+          "videoPreviewImageUrl": "https://scontent-lga3-2.xx.fbcdn.net/v/t39.35426-6/838596214_1425744708890132_5458553753982610432_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=6ktyyWr_V-sQ7kNvwG007lv&_nc_oc=AdoOP_v7jSaIZVmMWZO2PTAGaBNCChGlKw65SXu_v9N9qZXJwOtcBgpsniwfWyXSZCA&_nc_zt=14&_nc_ht=scontent-lga3-2.xx&_nc_gid=QqHlAEO46U9JsnJ1iXfljg&_nc_ss=70289&oh=00_AQOdUkNwvKW-Lf9hCSCiWyodu2QvDRViqj1F0oTXA3AbJQ&oe=6ADD7AA0",
+          "videoSdUrl": "https://video-lga3-2.xx.fbcdn.net/o1/v/t2/f2/m412/AQO5e34Y1ZYOzpT2jg7snRZEXZ6-sXHwTWQttg-fAkTx5rzTQhY4q85k9p_fcVAd9-xE5-mH0JiOxygOQcV_zfI6HDfhGPIL31bb7zaSWQ.mp4?_nc_cat=105&_nc_sid=ef5aa3&_nc_ht=video-lga3-2.xx.fbcdn.net&_nc_ohc=q-7zAiPU_BwQ7kNvwF2i95P&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTQwMjgzNjEzODA5ODM2OSwiYXNzZXRfYWdlX2RheXMiOjEzLCJ2aV91c2VjYXNlX2lkIjoxMDc5OSwiZHVyYXRpb25fcyI6NDgsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&_nc_gid=QqHlAEO46U9JsnJ1iXfljg&_nc_ss=70289&_nc_zt=28&oh=00_AQOTPzOOYy94b-uE3xx10otpXdnc0gGwRJFzwNvE-Br6Zg&oe=6ADD7F49",
+          "watermarkedVideoHdUrl": null,
+          "watermarkedVideoSdUrl": null
+        }
+      ],
+      "isReshared": false,
+      "extraLinks": [],
+      "extraTexts": [],
+      "extraImages": [],
+      "extraVideos": [],
+      "countryIsoCode": null,
+      "brazilTaxId": null,
+      "additionalInfo": null,
+      "ecCertificates": []
+    },
+    "isActive": true,
+    "hasUserReported": false,
+    "reportCount": null,
+    "menuItems": [],
+    "stateMediaRunLabel": null,
+    "pageIsDeleted": false,
+    "pageName": "Typology",
+    "impressionsWithIndex": {
+      "impressionsText": null,
+      "impressionsIndex": -1
+    },
+    "gatedType": "ELIGIBLE",
+    "categories": [
+      "UNKNOWN"
+    ],
+    "isAaaEligible": true,
+    "containsDigitalCreatedMedia": false,
+    "reachEstimate": null,
+    "currency": "",
+    "spend": null,
+    "endDate": 1792479600,
+    "publisherPlatform": [
+      "FACEBOOK",
+      "INSTAGRAM",
+      "AUDIENCE_NETWORK",
+      "MESSENGER",
+      "THREADS"
+    ],
+    "startDate": 1791356400,
+    "containsSensitiveContent": false,
+    "totalActiveTime": null,
+    "regionalRegulationData": {
+      "finserv": {
+        "isDeemedFinserv": false,
+        "isLimitedDelivery": false
+      },
+      "twAntiScam": {
+        "isLimitedDelivery": false
+      }
+    },
+    "hideDataStatus": "NONE",
+    "fevInfo": null,
+    "adId": null,
+    "targetedOrReachedCountries": []
+  },
+  {
+    "inputUrl": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&search_type=keyword_unordered&q=Typology",
+    "pageInfo": {
+      "adLibrarySystemStatus": {
+        "systemStatus": {
+          "status": "NO_KNOWN_ISSUES",
+          "activeIssues": [
+            {
+              "product": "Ad Library",
+              "status": "NO_KNOWN_ISSUES"
+            },
+            {
+              "product": "Ad Library Report",
+              "status": "NO_KNOWN_ISSUES"
+            },
+            {
+              "product": "Ad Library API",
+              "status": "NO_KNOWN_ISSUES"
+            },
+            {
+              "product": "Branded Content",
+              "status": "NO_KNOWN_ISSUES"
+            }
+          ]
+        }
+      },
+      "xfbAdLibraryIsCaptchaRequired": false,
+      "page": null,
+      "adLibraryUser": null
+    },
+    "pageID": "1200593000116487",
+    "adArchiveID": "1561666288450696",
+    "startDateFormatted": "2026-01-26T08:00:00.000Z",
+    "endDateFormatted": "2026-10-20T07:00:00.000Z",
+    "adArchiveId": "1561666288450696",
+    "collationCount": 1,
+    "collationId": "1180617330640273",
+    "pageId": "1200593000116487",
+    "snapshot": {
+      "brandedContent": null,
+      "pageId": "1200593000116487",
+      "pageIsDeleted": false,
+      "pageProfileUri": "https://www.facebook.com/typologyparis/",
+      "rootResharedPost": null,
+      "byline": null,
+      "disclaimerLabel": null,
+      "pageName": "Typology",
+      "pageProfilePictureUrl": "https://scontent-lga3-1.xx.fbcdn.net/v/t39.35426-6/566200428_664027366777813_5352226623122682760_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=110&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=AvEzYfu4jsMQ7kNvwELv_nY&_nc_oc=Adoo2y3Xv8L0jPQJDFBdZR1cFRJg2kzp9S8xgwJiqc9X2Ijwi7pzQvOAAfyXTzB-ilo&_nc_zt=14&_nc_ht=scontent-lga3-1.xx&_nc_gid=QqHlAEO46U9JsnJ1iXfljg&_nc_ss=70289&oh=00_AQOjd_l9Dr4kTA4UMplc3SQICDTEuy3wKcoRR57uZ6xoow&oe=6ADD5FBC",
+      "event": null,
+      "caption": "www.typology.com",
+      "ctaText": "Learn more",
+      "cards": [],
+      "body": {
+        "text": "Découvrez l'anti-cernes teinté : \n+ Réduit l’apparence des cernes.\n+ Convient également pour corriger les imperfections.\n+ Enrichi en caféine et en niacinamide."
+      },
+      "ctaType": "LEARN_MORE",
+      "displayFormat": "VIDEO",
+      "linkDescription": null,
+      "linkUrl": "https://www.typology.com/products/anti-cernes",
+      "images": [],
+      "pageCategories": [
+        "Health & Beauty"
+      ],
+      "pageLikeCount": 91502,
+      "title": "97% d'origine naturelle.",
+      "videos": [
+        {
+          "videoHdUrl": "https://video-lga3-3.xx.fbcdn.net/o1/v/t2/f2/m366/AQOmgCoHWx5p7hwbDQCS_7fcVpyLWB-B3AX46xKTg18ib3fiUE8yaL1PWTp7SYgMKF0IKYD14GjidPHmKiBQMKur5dIQLAJF3Nkz30V6i6BmKQ.mp4?_nc_cat=106&_nc_sid=b66105&_nc_ht=video-lga3-3.xx.fbcdn.net&_nc_ohc=vMdHD0INVLUQ7kNvwFU-qaN&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjExODAwNzgyNjczMDg1MjcsImFzc2V0X2FnZV9kYXlzIjozNjUsInZpX3VzZWNhc2VfaWQiOjEwNzk5LCJkdXJhdGlvbl9zIjoyNSwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=6efd4c5463784dc4&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC8zNDQ3N0QzMEVERUY0RTY4QTE5NjVFOTQyQkJFQjBBOV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0RCNDhDQTFDMTM4QUM4NzhCMTZFRjA4NUVEODlFQzlFX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbe5_CezNGYBBUCKAJDMywXQDkGZmZmZmYYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=QqHlAEO46U9JsnJ1iXfljg&_nc_ss=70289&_nc_zt=28&oh=00_AQPvwMeTcv7UgLwDaBiaKcWI23XFMFMMLJlyQLG9d-902w&oe=6ADD80B6",
+          "videoPreviewImageUrl": "https://scontent-lga3-2.xx.fbcdn.net/v/t39.35426-6/566229102_715953824115035_2410298770556898818_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=ofXat5KM1gkQ7kNvwHJisYe&_nc_oc=AdqvjsjKlTYiBTDrZe_jLru5hSq1Xr_QzNmCBX-A1CphwqSQ3My__RUYGCygKxnVLdA&_nc_zt=14&_nc_ht=scontent-lga3-2.xx&_nc_gid=QqHlAEO46U9JsnJ1iXfljg&_nc_ss=70289&oh=00_AQO7l_oWeDvDDBM7OfIM3q3YSadJbOHo2xc5hfMSUR0PaA&oe=6ADD7FCA",
+          "videoSdUrl": "https://video-lga3-3.xx.fbcdn.net/o1/v/t2/f2/m412/AQORXE-Q6ddqmJovSmAGw9hhFFAzSJMqI0dsDNUzc7HamfnrOfoy41d-Nrknn6kpYVLJcW0TT7BBwkRvT5Fo2kqOyUjuqxkSdOon1YxsLQ.mp4?_nc_cat=104&_nc_sid=ef5aa3&_nc_ht=video-lga3-3.xx.fbcdn.net&_nc_ohc=mtcOXTNHCkQQ7kNvwFhUgJP&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTE4MDA3ODI2NzMwODUyNywiYXNzZXRfYWdlX2RheXMiOjM2NSwidmlfdXNlY2FzZV9pZCI6MTA3OTksImR1cmF0aW9uX3MiOjI1LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=QqHlAEO46U9JsnJ1iXfljg&_nc_ss=70289&_nc_zt=28&oh=00_AQNi3DStMA9giUHZSTidwBn99TiwySSjh4FzCh7Nbj-fjQ&oe=6ADD84CA",
+          "watermarkedVideoHdUrl": null,
+          "watermarkedVideoSdUrl": null
+        }
+      ],
+      "isReshared": false,
+      "extraLinks": [],
+      "extraTexts": [],
+      "extraImages": [],
+      "extraVideos": [],
+      "countryIsoCode": null,
+      "brazilTaxId": null,
+      "additionalInfo": null,
+      "ecCertificates": []
+    },
+    "isActive": true,
+    "hasUserReported": false,
+    "reportCount": null,
+    "menuItems": [],
+    "stateMediaRunLabel": null,
+    "pageIsDeleted": false,
+    "pageName": "Typology",
+    "impressionsWithIndex": {
+      "impressionsText": null,
+      "impressionsIndex": -1
+    },
+    "gatedType": "ELIGIBLE",
+    "categories": [
+      "UNKNOWN"
+    ],
+    "isAaaEligible": true,
+    "containsDigitalCreatedMedia": false,
+    "reachEstimate": null,
+    "currency": "",
+    "spend": null,
+    "endDate": 1792479600,
+    "publisherPlatform": [
+      "FACEBOOK",
+      "INSTAGRAM",
+      "AUDIENCE_NETWORK",
+      "MESSENGER",
+      "THREADS"
+    ],
+    "startDate": 1769414400,
+    "containsSensitiveContent": false,
+    "totalActiveTime": null,
+    "regionalRegulationData": {
+      "finserv": {
+        "isDeemedFinserv": false,
+        "isLimitedDelivery": false
+      },
+      "twAntiScam": {
+        "isLimitedDelivery": false
+      }
+    },
+    "hideDataStatus": "NONE",
+    "fevInfo": null,
+    "adId": null,
+    "targetedOrReachedCountries": []
+  }
+]
