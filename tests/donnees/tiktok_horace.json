@@ -1,0 +1,365 @@
+[
+  {
+    "rowType": "ad",
+    "id": "1877971905664193",
+    "query": "Horace",
+    "searchTerm": "Horace",
+    "advertiserSearchTerm": "",
+    "country": "FR",
+    "contentType": "ads",
+    "dataSource": "ads_library_live",
+    "scrapedAt": "2026-10-21T16:26:06.865307+00:00",
+    "adId": "1877971905664193",
+    "adTitle": "Grosses cernes ? Horace gère. Contour des Yeux Horace.",
+    "status": "active",
+    "adType": "VIDEO",
+    "adSubject": "Beauty & Personal Care",
+    "adVideoUrl": "https://library.tiktok.com/api/v1/cdn/1792599976/video/aHR0cHM6Ly92NzcudGlrdG9rY2RuLmNvbS85OTJmOTIzOTFjNTVjMGI1ZjM2ZjQ5MTAxZTQwNDJjOS82YWQ5M2MxNS92aWRlby90b3MvdXNlYXN0MmEvdG9zLXVzZWFzdDJhLXZlLTAwNTFjNzk5LWV1dHRwL29JOEI5YXFJZWJURGRCMVJndVFya2ZFU0ZEQU5TWlhpNmlRZHdRLw==/76f48eae-9cbc-4f19-83e2-853bb526ede3?a=475769&bt=476&btag=e000b0000&bti=PDU2NmYwMy86&ft=.NpOcInz7ThGQBFGXq8Zmo&l=20261022002616D9DCF30748B7B1E45C30&mime_type=video_mp4&rc=ZTU0ODw8OmZnZjo1NDg1ZEBpamd3OHM5cnk3PDMzODYzNEAtMjZiNjQwNi0xYjQvYDE2YSM1cW9rMmQ0YWNhLS1kMDFzcw%3D%3D&signature=Hi75Jrj8rf5dnfZwmDNwcYNxF%2F7pAdNR280pMQ%2F8ppo%3D&vvpl=1",
+    "adVideoCover": "https://p16-common-sign.tiktokcdn.com/tos-alisg-p-0051c001-sg/ok1euTgXfAIELaCqCDNqbrBiREBQFDbQdkhQwi~tplv-tiktokx-origin.jpeg?dr=14582&refresh_token=f2f838c3&x-expires=1792620000&x-signature=4uNIK4I%2BT254pxNMPKsNEFXL4Eo%3D&t=4d5b0474&ps=13740610&shp=0c75dd76&shcp=9b759fb9&idc=sg1",
+    "adImageUrls": [
+      "https://p16-common-sign.tiktokcdn.com/tos-alisg-p-0051c001-sg/ok1euTgXfAIELaCqCDNqbrBiREBQFDbQdkhQwi~tplv-tiktokx-origin.jpeg?dr=14582&refresh_token=f2f838c3&x-expires=1792620000&x-signature=4uNIK4I%2BT254pxNMPKsNEFXL4Eo%3D&t=4d5b0474&ps=13740610&shp=0c75dd76&shcp=9b759fb9&idc=sg1"
+    ],
+    "adStartDate": "2026-10-03",
+    "adEndDate": "2026-10-04",
+    "adImpressions": "0-1K",
+    "advertiserName": "OLBO",
+    "auditStatus": "1",
+    "sorAuditStatus": "1",
+    "rejectionInfo": null,
+    "advertiserId": "6876491311227077377",
+    "advertiserLocation": "France",
+    "advertiserPaidForBy": "OLBO",
+    "advertiserTtUserId": null,
+    "landingPageUrl": "https://horace.com/fr/product/hydratant-contour-des-yeux?utm_source=tiktok&utm_medium=social&utm_campaign=__CAMPAIGN_NAME__&utm_term=__AID_NAME__&utm_content=__CID_NAME__",
+    "callToAction": "Shop now",
+    "advertisingObjective": "Sales",
+    "adTotalRegions": 1,
+    "adEstimatedAudience": "6.9M-8.5M",
+    "targetingByLocation": [
+      "FR"
+    ],
+    "targetingByAge": [
+      "18-24",
+      "25-34",
+      "35-44",
+      "45-54"
+    ],
+    "targetingByGender": [
+      "MALE"
+    ],
+    "targetingLanguages": [],
+    "impressionsByRegion": [
+      {
+        "region": "FR",
+        "impressions": "0-1K",
+        "breakdowns": [
+          {
+            "age": "18-24",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "45-54",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          }
+        ]
+      }
+    ],
+    "targetingDetails": {
+      "audience": "Yes",
+      "audienceExclude": "Yes",
+      "operatingSystems": [
+        "ALL"
+      ],
+      "highSpendingPower": "No"
+    },
+    "detailFetched": true,
+    "phones": [],
+    "emails": [],
+    "address": {
+      "street": null,
+      "unit": null,
+      "locality": null,
+      "region": null,
+      "postalCode": null,
+      "country": "France",
+      "full": null
+    },
+    "geo": null,
+    "person": null,
+    "org": {
+      "name": "OLBO",
+      "id": "6876491311227077377"
+    },
+    "web": {
+      "website": null,
+      "socials": []
+    },
+    "leadSource": "detail",
+    "leadReveal": "visible",
+    "leadAbsences": {
+      "phones": "本站无（当前 CCL Search/Detail 样本）",
+      "emails": "本站无（当前 CCL Search/Detail 样本）",
+      "geo": "未验证",
+      "person": "未验证",
+      "web.socials": "本站无（当前 CCL Detail 样本）",
+      "web.website": "本站无（当前 CCL Detail 样本）",
+      "address.street": "本站无（当前 CCL Detail 样本）",
+      "address.unit": "本站无（当前 CCL Detail 样本）",
+      "address.full": "本站无（当前 CCL Detail 样本）"
+    }
+  },
+  {
+    "rowType": "ad",
+    "id": "1879480807697025",
+    "query": "Horace",
+    "searchTerm": "Horace",
+    "advertiserSearchTerm": "",
+    "country": "FR",
+    "contentType": "ads",
+    "dataSource": "ads_library_live",
+    "scrapedAt": "2026-10-21T16:26:06.865307+00:00",
+    "adId": "1879480807697025",
+    "adTitle": "Grosses cernes ? Horace gère. Contour des Yeux Horace.",
+    "status": "active",
+    "adType": "VIDEO",
+    "adSubject": null,
+    "adVideoUrl": "https://library.tiktok.com/api/v1/cdn/1792599976/video/aHR0cHM6Ly92NzcudGlrdG9rY2RuLmNvbS85OTJmOTIzOTFjNTVjMGI1ZjM2ZjQ5MTAxZTQwNDJjOS82YWQ5M2MxNS92aWRlby90b3MvdXNlYXN0MmEvdG9zLXVzZWFzdDJhLXZlLTAwNTFjNzk5LWV1dHRwL29JOEI5YXFJZWJURGRCMVJndVFya2ZFU0ZEQU5TWlhpNmlRZHdRLw==/1cf7ba58-c2dc-4767-b00c-835172d5de08?a=475769&bt=476&btag=e000b0000&bti=PDU2NmYwMy86&ft=.NpOcInz7ThGQBFGXq8Zmo&l=20261022002616EF3F7749ED74EBD454CC&mime_type=video_mp4&rc=ZTU0ODw8OmZnZjo1NDg1ZEBpamd3OHM5cnk3PDMzODYzNEAtMjZiNjQwNi0xYjQvYDE2YSM1cW9rMmQ0YWNhLS1kMDFzcw%3D%3D&signature=l1sv6L5903iX4owOBMUDBaGDbMUZBV85jQQd3Xl36bI%3D&vvpl=1",
+    "adVideoCover": "https://p16-common-sign.tiktokcdn.com/tos-alisg-p-0051c001-sg/ok1euTgXfAIELaCqCDNqbrBiREBQFDbQdkhQwi~tplv-tiktokx-origin.jpeg?dr=14582&refresh_token=f2f838c3&x-expires=1792620000&x-signature=4uNIK4I%2BT254pxNMPKsNEFXL4Eo%3D&t=4d5b0474&ps=13740610&shp=0c75dd76&shcp=9b759fb9&idc=sg1",
+    "adImageUrls": [
+      "https://p16-common-sign.tiktokcdn.com/tos-alisg-p-0051c001-sg/ok1euTgXfAIELaCqCDNqbrBiREBQFDbQdkhQwi~tplv-tiktokx-origin.jpeg?dr=14582&refresh_token=f2f838c3&x-expires=1792620000&x-signature=4uNIK4I%2BT254pxNMPKsNEFXL4Eo%3D&t=4d5b0474&ps=13740610&shp=0c75dd76&shcp=9b759fb9&idc=sg1"
+    ],
+    "adStartDate": "2026-10-19",
+    "adEndDate": "2026-10-19",
+    "adImpressions": "0-1K",
+    "advertiserName": "OLBO",
+    "auditStatus": "1",
+    "sorAuditStatus": "1",
+    "rejectionInfo": null,
+    "advertiserId": "6876491311227077377",
+    "advertiserLocation": "France",
+    "advertiserPaidForBy": "OLBO",
+    "advertiserTtUserId": null,
+    "landingPageUrl": "https://horace.com/fr/product/hydratant-contour-des-yeux?utm_source=tiktok&utm_medium=social&utm_campaign=__CAMPAIGN_NAME__&utm_term=__AID_NAME__&utm_content=__CID_NAME__",
+    "callToAction": "Shop now",
+    "advertisingObjective": "Sales",
+    "adTotalRegions": 1,
+    "adEstimatedAudience": "6.4M-7.8M",
+    "targetingByLocation": [
+      "FR"
+    ],
+    "targetingByAge": [
+      "18-24",
+      "25-34",
+      "35-44",
+      "45-54"
+    ],
+    "targetingByGender": [
+      "MALE"
+    ],
+    "targetingLanguages": [],
+    "impressionsByRegion": [
+      {
+        "region": "FR",
+        "impressions": "0-1K",
+        "breakdowns": [
+          {
+            "age": "18-24",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "45-54",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          }
+        ]
+      }
+    ],
+    "targetingDetails": {
+      "audience": "Yes",
+      "audienceExclude": "Yes",
+      "operatingSystems": [
+        "ALL"
+      ],
+      "highSpendingPower": "No"
+    },
+    "detailFetched": true,
+    "phones": [],
+    "emails": [],
+    "address": {
+      "street": null,
+      "unit": null,
+      "locality": null,
+      "region": null,
+      "postalCode": null,
+      "country": "France",
+      "full": null
+    },
+    "geo": null,
+    "person": null,
+    "org": {
+      "name": "OLBO",
+      "id": "6876491311227077377"
+    },
+    "web": {
+      "website": null,
+      "socials": []
+    },
+    "leadSource": "detail",
+    "leadReveal": "visible",
+    "leadAbsences": {
+      "phones": "本站无（当前 CCL Search/Detail 样本）",
+      "emails": "本站无（当前 CCL Search/Detail 样本）",
+      "geo": "未验证",
+      "person": "未验证",
+      "web.socials": "本站无（当前 CCL Detail 样本）",
+      "web.website": "本站无（当前 CCL Detail 样本）",
+      "address.street": "本站无（当前 CCL Detail 样本）",
+      "address.unit": "本站无（当前 CCL Detail 样本）",
+      "address.full": "本站无（当前 CCL Detail 样本）"
+    }
+  },
+  {
+    "rowType": "ad",
+    "id": "1877613114605634",
+    "query": "Horace",
+    "searchTerm": "Horace",
+    "advertiserSearchTerm": "",
+    "country": "FR",
+    "contentType": "ads",
+    "dataSource": "ads_library_live",
+    "scrapedAt": "2026-10-21T16:26:06.865307+00:00",
+    "adId": "1877613114605634",
+    "adTitle": "Grosses cernes ? Horace gère. Contour des Yeux Horace.",
+    "status": "active",
+    "adType": "VIDEO",
+    "adSubject": "Beauty & Personal Care",
+    "adVideoUrl": "https://library.tiktok.com/api/v1/cdn/1792599976/video/aHR0cHM6Ly92NTgudGlrdG9rY2RuLmNvbS92aWRlby90b3MvdXNlYXN0MmEvdG9zLXVzZWFzdDJhLXZlLTAwNTFjNzk5LWV1dHRwL29JOEI5YXFJZWJURGRCMVJndVFya2ZFU0ZEQU5TWlhpNmlRZHdRLw==/298f78f3-12df-42e6-b946-7c2a85853d1b?VExpiration=1792621589&VSignature=od421VRxcrGGGi2KU5JmtQ&a=475769&bt=476&btag=e000b0000&bti=PDU2NmYwMy86&ft=.NpOcInz7ThGQBFGXq8Zmo&l=2026102200261653791CF0F7D389DD8806&mime_type=video_mp4&rc=ZTU0ODw8OmZnZjo1NDg1ZEBpamd3OHM5cnk3PDMzODYzNEAtMjZiNjQwNi0xYjQvYDE2YSM1cW9rMmQ0YWNhLS1kMDFzcw%3D%3D&signature=n6UI8spVXJZJ%2FWASN2mBAaSlOve4gVGNIxRDl%2FWJ4eA%3D&vvpl=1",
+    "adVideoCover": "https://p16-common-sign.tiktokcdn.com/tos-alisg-p-0051c001-sg/ok1euTgXfAIELaCqCDNqbrBiREBQFDbQdkhQwi~tplv-tiktokx-origin.jpeg?dr=14582&refresh_token=f2f838c3&x-expires=1792620000&x-signature=4uNIK4I%2BT254pxNMPKsNEFXL4Eo%3D&t=4d5b0474&ps=13740610&shp=0c75dd76&shcp=9b759fb9&idc=sg1",
+    "adImageUrls": [
+      "https://p16-common-sign.tiktokcdn.com/tos-alisg-p-0051c001-sg/ok1euTgXfAIELaCqCDNqbrBiREBQFDbQdkhQwi~tplv-tiktokx-origin.jpeg?dr=14582&refresh_token=f2f838c3&x-expires=1792620000&x-signature=4uNIK4I%2BT254pxNMPKsNEFXL4Eo%3D&t=4d5b0474&ps=13740610&shp=0c75dd76&shcp=9b759fb9&idc=sg1"
+    ],
+    "adStartDate": "2026-09-28",
+    "adEndDate": "2026-10-04",
+    "adImpressions": "1K-10K",
+    "advertiserName": "OLBO",
+    "auditStatus": "1",
+    "sorAuditStatus": "1",
+    "rejectionInfo": null,
+    "advertiserId": "6876491311227077377",
+    "advertiserLocation": "France",
+    "advertiserPaidForBy": "OLBO",
+    "advertiserTtUserId": null,
+    "landingPageUrl": "https://horace.com/fr/product/hydratant-contour-des-yeux?utm_source=tiktok&utm_medium=social&utm_campaign=__CAMPAIGN_NAME__&utm_term=__AID_NAME__&utm_content=__CID_NAME__",
+    "callToAction": "Shop now",
+    "advertisingObjective": "Sales",
+    "adTotalRegions": 1,
+    "adEstimatedAudience": "6.9M-8.5M",
+    "targetingByLocation": [
+      "FR"
+    ],
+    "targetingByAge": [
+      "18-24",
+      "25-34",
+      "35-44",
+      "45-54"
+    ],
+    "targetingByGender": [
+      "MALE"
+    ],
+    "targetingLanguages": [],
+    "impressionsByRegion": [
+      {
+        "region": "FR",
+        "impressions": "3K",
+        "breakdowns": [
+          {
+            "age": "18-24",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "MALE",
+            "impressions": "2K"
+          },
+          {
+            "age": "35-44",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "45-54",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          }
+        ]
+      }
+    ],
+    "targetingDetails": {
+      "audience": "Yes",
+      "audienceExclude": "Yes",
+      "operatingSystems": [
+        "ALL"
+      ],
+      "highSpendingPower": "No"
+    },
+    "detailFetched": true,
+    "phones": [],
+    "emails": [],
+    "address": {
+      "street": null,
+      "unit": null,
+      "locality": null,
+      "region": null,
+      "postalCode": null,
+      "country": "France",
+      "full": null
+    },
+    "geo": null,
+    "person": null,
+    "org": {
+      "name": "OLBO",
+      "id": "6876491311227077377"
+    },
+    "web": {
+      "website": null,
+      "socials": []
+    },
+    "leadSource": "detail",
+    "leadReveal": "visible",
+    "leadAbsences": {
+      "phones": "本站无（当前 CCL Search/Detail 样本）",
+      "emails": "本站无（当前 CCL Search/Detail 样本）",
+      "geo": "未验证",
+      "person": "未验证",
+      "web.socials": "本站无（当前 CCL Detail 样本）",
+      "web.website": "本站无（当前 CCL Detail 样本）",
+      "address.street": "本站无（当前 CCL Detail 样本）",
+      "address.unit": "本站无（当前 CCL Detail 样本）",
+      "address.full": "本站无（当前 CCL Detail 样本）"
+    }
+  }
+]

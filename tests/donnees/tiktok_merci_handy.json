@@ -1,0 +1,485 @@
+[
+  {
+    "rowType": "ad",
+    "id": "1876823563639841",
+    "query": "Merci Handy",
+    "searchTerm": "Merci Handy",
+    "advertiserSearchTerm": "",
+    "country": "FR",
+    "contentType": "ads",
+    "dataSource": "ads_library_live",
+    "scrapedAt": "2026-10-21T16:26:30.175394+00:00",
+    "adId": "1876823563639841",
+    "adTitle": "merci merci merci",
+    "status": "active",
+    "adType": "VIDEO",
+    "adSubject": "Health",
+    "adVideoUrl": "https://library.tiktok.com/api/v1/cdn/1792599996/video/aHR0cHM6Ly92NzcudGlrdG9rY2RuLmNvbS9iMmViZWFlMDIyNzAwZDRlNmE3Nzk5ODBiOTUyMGMzNi82YWQ5M2MyNC92aWRlby90b3MvdXNlYXN0MmEvdG9zLXVzZWFzdDJhLXZlLTAwNTFjNzk5LWV1dHRwL29ZOE80TTVETkl6QWdRSmZyUlFhdjNEcTFma0ZFQnRoQmdzek9QLw==/1963a1a9-11f6-41fe-a01c-b7c38e006adf?a=475769&bt=773&btag=e000b0000&bti=PDU2NmYwMy86&ft=.NpOcInz7ThiQBFGXq8Zmo&l=20261022002636D9F0F6CCF965D9824973&mime_type=video_mp4&rc=Z2U0OWZoOzk5ZjxlZGk8OEBpajtlO3E5cjdtZDMzODYzNEAtMDEtNjNgNTAxM2M0M15gYSNmZmVjMmRjMGRhLS1kMDFzcw%3D%3D&signature=Pye48dAODLF4xXXglohNumEJp1mQQLuzAnaSL1JMFUc%3D&vvpl=1",
+    "adVideoCover": "https://p16-common-sign.tiktokcdn.com/tos-alisg-p-0051c001-sg/oU8u4KbAGNFQ6dAOveMxAogffQ1nqc2ZDWIMTf~tplv-tiktokx-origin.jpeg?dr=14582&refresh_token=61ea5311&x-expires=1792620000&x-signature=pljrRecaQykKyGVvYNsS4TlhtmM%3D&t=4d5b0474&ps=13740610&shp=0c75dd76&shcp=9b759fb9&idc=sg1",
+    "adImageUrls": [
+      "https://p16-common-sign.tiktokcdn.com/tos-alisg-p-0051c001-sg/oU8u4KbAGNFQ6dAOveMxAogffQ1nqc2ZDWIMTf~tplv-tiktokx-origin.jpeg?dr=14582&refresh_token=61ea5311&x-expires=1792620000&x-signature=pljrRecaQykKyGVvYNsS4TlhtmM%3D&t=4d5b0474&ps=13740610&shp=0c75dd76&shcp=9b759fb9&idc=sg1"
+    ],
+    "adStartDate": "2026-09-20",
+    "adEndDate": "2026-09-22",
+    "adImpressions": "0-1K",
+    "advertiserName": "Sova",
+    "auditStatus": "1",
+    "sorAuditStatus": "1",
+    "rejectionInfo": null,
+    "advertiserId": "7291963267566731266",
+    "advertiserLocation": "France",
+    "advertiserPaidForBy": "Sleep",
+    "advertiserTtUserId": null,
+    "landingPageUrl": null,
+    "callToAction": null,
+    "advertisingObjective": "Video views",
+    "adTotalRegions": 3,
+    "adEstimatedAudience": "12.4M-15.1M",
+    "targetingByLocation": [
+      "BE",
+      "FR",
+      "CH"
+    ],
+    "targetingByAge": [
+      "18-24",
+      "25-34",
+      "35-44"
+    ],
+    "targetingByGender": [
+      "FEMALE"
+    ],
+    "targetingLanguages": [
+      "French"
+    ],
+    "impressionsByRegion": [
+      {
+        "region": "BE",
+        "impressions": "0-1K",
+        "breakdowns": [
+          {
+            "age": "18-24",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          }
+        ]
+      },
+      {
+        "region": "FR",
+        "impressions": "0-1K",
+        "breakdowns": [
+          {
+            "age": "18-24",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          }
+        ]
+      },
+      {
+        "region": "CH",
+        "impressions": "0-1K",
+        "breakdowns": [
+          {
+            "age": "18-24",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          }
+        ]
+      }
+    ],
+    "targetingDetails": {
+      "audience": "No",
+      "audienceExclude": "Yes",
+      "operatingSystems": [
+        "ALL"
+      ],
+      "highSpendingPower": "No"
+    },
+    "detailFetched": true,
+    "phones": [],
+    "emails": [],
+    "address": {
+      "street": null,
+      "unit": null,
+      "locality": null,
+      "region": null,
+      "postalCode": null,
+      "country": "France",
+      "full": null
+    },
+    "geo": null,
+    "person": null,
+    "org": {
+      "name": "Sova",
+      "id": "7291963267566731266"
+    },
+    "web": {
+      "website": null,
+      "socials": []
+    },
+    "leadSource": "detail",
+    "leadReveal": "visible",
+    "leadAbsences": {
+      "phones": "本站无（当前 CCL Search/Detail 样本）",
+      "emails": "本站无（当前 CCL Search/Detail 样本）",
+      "geo": "未验证",
+      "person": "未验证",
+      "web.socials": "本站无（当前 CCL Detail 样本）",
+      "web.website": "本站无（当前 CCL Detail 样本）",
+      "address.street": "本站无（当前 CCL Detail 样本）",
+      "address.unit": "本站无（当前 CCL Detail 样本）",
+      "address.full": "本站无（当前 CCL Detail 样本）"
+    }
+  },
+  {
+    "rowType": "ad",
+    "id": "1877263979061777",
+    "query": "Merci Handy",
+    "searchTerm": "Merci Handy",
+    "advertiserSearchTerm": "",
+    "country": "FR",
+    "contentType": "ads",
+    "dataSource": "ads_library_live",
+    "scrapedAt": "2026-10-21T16:26:30.175394+00:00",
+    "adId": "1877263979061777",
+    "adTitle": "merci merci merci",
+    "status": "active",
+    "adType": "VIDEO",
+    "adSubject": "Health",
+    "adVideoUrl": "https://library.tiktok.com/api/v1/cdn/1792599996/video/aHR0cHM6Ly92NzcudGlrdG9rY2RuLmNvbS9iMmViZWFlMDIyNzAwZDRlNmE3Nzk5ODBiOTUyMGMzNi82YWQ5M2MyNC92aWRlby90b3MvdXNlYXN0MmEvdG9zLXVzZWFzdDJhLXZlLTAwNTFjNzk5LWV1dHRwL29ZOE80TTVETkl6QWdRSmZyUlFhdjNEcTFma0ZFQnRoQmdzek9QLw==/6bb26b2d-902f-4bda-9fdd-38b9684aa2f5?a=475769&bt=773&btag=e000b0000&bti=PDU2NmYwMy86&ft=.NpOcInz7ThiQBFGXq8Zmo&l=2026102200263647B6B7B892AF07902EC2&mime_type=video_mp4&rc=Z2U0OWZoOzk5ZjxlZGk8OEBpajtlO3E5cjdtZDMzODYzNEAtMDEtNjNgNTAxM2M0M15gYSNmZmVjMmRjMGRhLS1kMDFzcw%3D%3D&signature=u9RR73IxiyfsYPQBB9%2BgKREiqiw%2F43Xu64UJwsfTA6Y%3D&vvpl=1",
+    "adVideoCover": "https://p16-common-sign.tiktokcdn.com/tos-alisg-p-0051c001-sg/oU8u4KbAGNFQ6dAOveMxAogffQ1nqc2ZDWIMTf~tplv-tiktokx-origin.jpeg?dr=14582&refresh_token=61ea5311&x-expires=1792620000&x-signature=pljrRecaQykKyGVvYNsS4TlhtmM%3D&t=4d5b0474&ps=13740610&shp=0c75dd76&shcp=9b759fb9&idc=sg1",
+    "adImageUrls": [
+      "https://p16-common-sign.tiktokcdn.com/tos-alisg-p-0051c001-sg/oU8u4KbAGNFQ6dAOveMxAogffQ1nqc2ZDWIMTf~tplv-tiktokx-origin.jpeg?dr=14582&refresh_token=61ea5311&x-expires=1792620000&x-signature=pljrRecaQykKyGVvYNsS4TlhtmM%3D&t=4d5b0474&ps=13740610&shp=0c75dd76&shcp=9b759fb9&idc=sg1"
+    ],
+    "adStartDate": "2026-09-25",
+    "adEndDate": "2026-09-25",
+    "adImpressions": "0-1K",
+    "advertiserName": "Sova",
+    "auditStatus": "1",
+    "sorAuditStatus": "1",
+    "rejectionInfo": null,
+    "advertiserId": "7291963267566731266",
+    "advertiserLocation": "France",
+    "advertiserPaidForBy": "Sleep",
+    "advertiserTtUserId": null,
+    "landingPageUrl": null,
+    "callToAction": null,
+    "advertisingObjective": "Video views",
+    "adTotalRegions": 3,
+    "adEstimatedAudience": "12.4M-15.2M",
+    "targetingByLocation": [
+      "FR",
+      "CH",
+      "BE"
+    ],
+    "targetingByAge": [
+      "18-24",
+      "25-34",
+      "35-44"
+    ],
+    "targetingByGender": [
+      "FEMALE"
+    ],
+    "targetingLanguages": [
+      "French"
+    ],
+    "impressionsByRegion": [
+      {
+        "region": "FR",
+        "impressions": "0-1K",
+        "breakdowns": [
+          {
+            "age": "18-24",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          }
+        ]
+      },
+      {
+        "region": "CH",
+        "impressions": "0-1K",
+        "breakdowns": [
+          {
+            "age": "18-24",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          }
+        ]
+      },
+      {
+        "region": "BE",
+        "impressions": "0-1K",
+        "breakdowns": [
+          {
+            "age": "18-24",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          }
+        ]
+      }
+    ],
+    "targetingDetails": {
+      "audience": "No",
+      "audienceExclude": "Yes",
+      "operatingSystems": [
+        "ALL"
+      ],
+      "highSpendingPower": "No"
+    },
+    "detailFetched": true,
+    "phones": [],
+    "emails": [],
+    "address": {
+      "street": null,
+      "unit": null,
+      "locality": null,
+      "region": null,
+      "postalCode": null,
+      "country": "France",
+      "full": null
+    },
+    "geo": null,
+    "person": null,
+    "org": {
+      "name": "Sova",
+      "id": "7291963267566731266"
+    },
+    "web": {
+      "website": null,
+      "socials": []
+    },
+    "leadSource": "detail",
+    "leadReveal": "visible",
+    "leadAbsences": {
+      "phones": "本站无（当前 CCL Search/Detail 样本）",
+      "emails": "本站无（当前 CCL Search/Detail 样本）",
+      "geo": "未验证",
+      "person": "未验证",
+      "web.socials": "本站无（当前 CCL Detail 样本）",
+      "web.website": "本站无（当前 CCL Detail 样本）",
+      "address.street": "本站无（当前 CCL Detail 样本）",
+      "address.unit": "本站无（当前 CCL Detail 样本）",
+      "address.full": "本站无（当前 CCL Detail 样本）"
+    }
+  },
+  {
+    "rowType": "ad",
+    "id": "1878897341787810",
+    "query": "Merci Handy",
+    "searchTerm": "Merci Handy",
+    "advertiserSearchTerm": "",
+    "country": "FR",
+    "contentType": "ads",
+    "dataSource": "ads_library_live",
+    "scrapedAt": "2026-10-21T16:26:30.175394+00:00",
+    "adId": "1878897341787810",
+    "adTitle": "merci merci merci",
+    "status": "active",
+    "adType": "VIDEO",
+    "adSubject": "Health",
+    "adVideoUrl": "https://library.tiktok.com/api/v1/cdn/1792599997/video/aHR0cHM6Ly92NzcudGlrdG9rY2RuLmNvbS9iMmViZWFlMDIyNzAwZDRlNmE3Nzk5ODBiOTUyMGMzNi82YWQ5M2MyNC92aWRlby90b3MvdXNlYXN0MmEvdG9zLXVzZWFzdDJhLXZlLTAwNTFjNzk5LWV1dHRwL29ZOE80TTVETkl6QWdRSmZyUlFhdjNEcTFma0ZFQnRoQmdzek9QLw==/74a75483-d0b2-4685-bf59-37301493c35d?a=475769&bt=773&btag=e000b0000&bti=PDU2NmYwMy86&ft=.NpOcInz7ThiQBFGXq8Zmo&l=20261022002636D7228577A191FB8B2670&mime_type=video_mp4&rc=Z2U0OWZoOzk5ZjxlZGk8OEBpajtlO3E5cjdtZDMzODYzNEAtMDEtNjNgNTAxM2M0M15gYSNmZmVjMmRjMGRhLS1kMDFzcw%3D%3D&signature=NlahZBgI4XErqSdJsAgfUpJ51qCBpGeMVfQ200Haea0%3D&vvpl=1",
+    "adVideoCover": "https://p16-common-sign.tiktokcdn.com/tos-alisg-p-0051c001-sg/oU8u4KbAGNFQ6dAOveMxAogffQ1nqc2ZDWIMTf~tplv-tiktokx-origin.jpeg?dr=14582&refresh_token=61ea5311&x-expires=1792620000&x-signature=pljrRecaQykKyGVvYNsS4TlhtmM%3D&t=4d5b0474&ps=13740610&shp=0c75dd76&shcp=9b759fb9&idc=sg1",
+    "adImageUrls": [
+      "https://p16-common-sign.tiktokcdn.com/tos-alisg-p-0051c001-sg/oU8u4KbAGNFQ6dAOveMxAogffQ1nqc2ZDWIMTf~tplv-tiktokx-origin.jpeg?dr=14582&refresh_token=61ea5311&x-expires=1792620000&x-signature=pljrRecaQykKyGVvYNsS4TlhtmM%3D&t=4d5b0474&ps=13740610&shp=0c75dd76&shcp=9b759fb9&idc=sg1"
+    ],
+    "adStartDate": "2026-10-13",
+    "adEndDate": "2026-10-13",
+    "adImpressions": "0-1K",
+    "advertiserName": "Sova",
+    "auditStatus": "1",
+    "sorAuditStatus": "1",
+    "rejectionInfo": null,
+    "advertiserId": "7291963267566731266",
+    "advertiserLocation": "France",
+    "advertiserPaidForBy": "Sleep",
+    "advertiserTtUserId": null,
+    "landingPageUrl": null,
+    "callToAction": null,
+    "advertisingObjective": "Video views",
+    "adTotalRegions": 3,
+    "adEstimatedAudience": "12.9M-15.7M",
+    "targetingByLocation": [
+      "CH",
+      "BE",
+      "FR"
+    ],
+    "targetingByAge": [
+      "18-24",
+      "25-34",
+      "35-44"
+    ],
+    "targetingByGender": [
+      "FEMALE"
+    ],
+    "targetingLanguages": [
+      "French"
+    ],
+    "impressionsByRegion": [
+      {
+        "region": "CH",
+        "impressions": "0-1K",
+        "breakdowns": [
+          {
+            "age": "18-24",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          }
+        ]
+      },
+      {
+        "region": "BE",
+        "impressions": "0-1K",
+        "breakdowns": [
+          {
+            "age": "18-24",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          }
+        ]
+      },
+      {
+        "region": "FR",
+        "impressions": "0-1K",
+        "breakdowns": [
+          {
+            "age": "18-24",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          }
+        ]
+      }
+    ],
+    "targetingDetails": {
+      "audience": "No",
+      "audienceExclude": "Yes",
+      "operatingSystems": [
+        "ALL"
+      ],
+      "highSpendingPower": "No"
+    },
+    "detailFetched": true,
+    "phones": [],
+    "emails": [],
+    "address": {
+      "street": null,
+      "unit": null,
+      "locality": null,
+      "region": null,
+      "postalCode": null,
+      "country": "France",
+      "full": null
+    },
+    "geo": null,
+    "person": null,
+    "org": {
+      "name": "Sova",
+      "id": "7291963267566731266"
+    },
+    "web": {
+      "website": null,
+      "socials": []
+    },
+    "leadSource": "detail",
+    "leadReveal": "visible",
+    "leadAbsences": {
+      "phones": "本站无（当前 CCL Search/Detail 样本）",
+      "emails": "本站无（当前 CCL Search/Detail 样本）",
+      "geo": "未验证",
+      "person": "未验证",
+      "web.socials": "本站无（当前 CCL Detail 样本）",
+      "web.website": "本站无（当前 CCL Detail 样本）",
+      "address.street": "本站无（当前 CCL Detail 样本）",
+      "address.unit": "本站无（当前 CCL Detail 样本）",
+      "address.full": "本站无（当前 CCL Detail 样本）"
+    }
+  }
+]

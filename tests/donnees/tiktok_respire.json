@@ -1,0 +1,840 @@
+[
+  {
+    "rowType": "ad",
+    "id": "1876551591926209",
+    "query": "Respire",
+    "searchTerm": "Respire",
+    "advertiserSearchTerm": "",
+    "country": "FR",
+    "contentType": "ads",
+    "dataSource": "ads_library_live",
+    "scrapedAt": "2026-10-21T16:25:38.668912+00:00",
+    "adId": "1876551591926209",
+    "adTitle": "Prends une boisson, regarde le ciel, respire profondément.",
+    "status": "unavailable",
+    "adType": "IMAGE",
+    "adSubject": "Life Services",
+    "adVideoUrl": null,
+    "adVideoCover": null,
+    "adImageUrls": [],
+    "adStartDate": "2026-09-17",
+    "adEndDate": "2026-09-22",
+    "adImpressions": "0-1K",
+    "advertiserName": null,
+    "auditStatus": "2",
+    "sorAuditStatus": "2",
+    "rejectionInfo": {
+      "reasons": [
+        "This content was uploaded by an account that has been suspended due to suspicious or unusual activity or a violation of the TikTok Advertising Guidelines or other standards."
+      ],
+      "affected_regions": null,
+      "reporting_source": "",
+      "automated_notice": "",
+      "hit_illegal_content_reason": 0
+    },
+    "advertiserId": null,
+    "advertiserLocation": null,
+    "advertiserPaidForBy": null,
+    "advertiserTtUserId": null,
+    "landingPageUrl": "https://p1.autumnpetal.win/?utm_source=tiktok&utm_id=__CAMPAIGN_ID__&utm_campaign=__CAMPAIGN_NAME__&utm_medium=paid",
+    "callToAction": "感兴趣",
+    "advertisingObjective": "Traffic",
+    "adTotalRegions": 3,
+    "adEstimatedAudience": "28.0M-34.3M",
+    "targetingByLocation": [
+      "CH",
+      "BE",
+      "FR"
+    ],
+    "targetingByAge": [
+      "18-24",
+      "25-34",
+      "35-44",
+      "45-54",
+      "55+"
+    ],
+    "targetingByGender": [
+      "FEMALE",
+      "MALE",
+      "UNKNOWN"
+    ],
+    "targetingLanguages": [
+      "French"
+    ],
+    "impressionsByRegion": [
+      {
+        "region": "CH",
+        "impressions": "0-1K",
+        "breakdowns": [
+          {
+            "age": "18-24",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "18-24",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "18-24",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "45-54",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "45-54",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "45-54",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "55+",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "55+",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "55+",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          }
+        ]
+      },
+      {
+        "region": "BE",
+        "impressions": "0-1K",
+        "breakdowns": [
+          {
+            "age": "18-24",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "18-24",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "18-24",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "45-54",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "45-54",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "45-54",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "55+",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "55+",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "55+",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          }
+        ]
+      },
+      {
+        "region": "FR",
+        "impressions": "0-1K",
+        "breakdowns": [
+          {
+            "age": "18-24",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "18-24",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "18-24",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "45-54",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "45-54",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "45-54",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "55+",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "55+",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "55+",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          }
+        ]
+      }
+    ],
+    "targetingDetails": {
+      "audience": "No",
+      "audienceExclude": "No",
+      "deviceModels": [
+        "IPHONE 6S PLUS",
+        "IPHONE 7",
+        "IPHONE 8 PLUS",
+        "IPHONE XR",
+        "IPHONE 11 PRO",
+        "IPHONE 6",
+        "IPHONE 6S",
+        "IPHONE XS",
+        "IPHONE 8",
+        "IPHONE 11",
+        "IPHONE 6 PLUS",
+        "IPHONE XS MAX",
+        "IPHONE 11 PRO MAX",
+        "IPHONE SE",
+        "IPHONE X",
+        "IPHONE SE 2",
+        "IPHONE 7 PLUS"
+      ],
+      "operatingSystems": [
+        "IPHONE"
+      ],
+      "highSpendingPower": "No"
+    },
+    "detailFetched": true,
+    "phones": [],
+    "emails": [],
+    "address": {
+      "street": null,
+      "unit": null,
+      "locality": null,
+      "region": null,
+      "postalCode": null,
+      "country": null,
+      "full": null
+    },
+    "geo": null,
+    "person": null,
+    "org": null,
+    "web": {
+      "website": null,
+      "socials": []
+    },
+    "leadSource": "detail",
+    "leadReveal": "absent",
+    "leadAbsences": {
+      "phones": "本站无（当前 CCL Search/Detail 样本）",
+      "emails": "本站无（当前 CCL Search/Detail 样本）",
+      "geo": "未验证",
+      "person": "未验证",
+      "org": "未验证",
+      "web.socials": "本站无（当前 CCL Detail 样本）",
+      "web.website": "本站无（当前 CCL Detail 样本）",
+      "address.street": "本站无（当前 CCL Detail 样本）",
+      "address.unit": "本站无（当前 CCL Detail 样本）",
+      "address.full": "本站无（当前 CCL Detail 样本）",
+      "address.country": "未验证"
+    }
+  },
+  {
+    "rowType": "ad",
+    "id": "1877203780674993",
+    "query": "Respire",
+    "searchTerm": "Respire",
+    "advertiserSearchTerm": "",
+    "country": "FR",
+    "contentType": "ads",
+    "dataSource": "ads_library_live",
+    "scrapedAt": "2026-10-21T16:25:38.668912+00:00",
+    "adId": "1877203780674993",
+    "adTitle": "Prends une boisson, regarde le ciel, respire profondément.",
+    "status": "unavailable",
+    "adType": "IMAGE",
+    "adSubject": "Life Services",
+    "adVideoUrl": null,
+    "adVideoCover": null,
+    "adImageUrls": [],
+    "adStartDate": "2026-09-25",
+    "adEndDate": "2026-09-25",
+    "adImpressions": "0-1K",
+    "advertiserName": null,
+    "auditStatus": "2",
+    "sorAuditStatus": "2",
+    "rejectionInfo": {
+      "reasons": [
+        "This content was uploaded by an account that has been suspended due to suspicious or unusual activity or a violation of the TikTok Advertising Guidelines or other standards."
+      ],
+      "affected_regions": null,
+      "reporting_source": "",
+      "automated_notice": "",
+      "hit_illegal_content_reason": 0
+    },
+    "advertiserId": null,
+    "advertiserLocation": null,
+    "advertiserPaidForBy": null,
+    "advertiserTtUserId": null,
+    "landingPageUrl": "https://p1.autumnpetal.win/?utm_source=tiktok&utm_id=__CAMPAIGN_ID__&utm_campaign=__CAMPAIGN_NAME__&utm_medium=paid",
+    "callToAction": "感兴趣",
+    "advertisingObjective": "Traffic",
+    "adTotalRegions": 2,
+    "adEstimatedAudience": "25.9M-31.6M",
+    "targetingByLocation": [
+      "BE",
+      "FR"
+    ],
+    "targetingByAge": [
+      "18-24",
+      "25-34",
+      "35-44",
+      "45-54",
+      "55+"
+    ],
+    "targetingByGender": [
+      "FEMALE",
+      "MALE",
+      "UNKNOWN"
+    ],
+    "targetingLanguages": [
+      "French"
+    ],
+    "impressionsByRegion": [
+      {
+        "region": "BE",
+        "impressions": "0-1K",
+        "breakdowns": [
+          {
+            "age": "18-24",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "18-24",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "18-24",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "45-54",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "45-54",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "45-54",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "55+",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "55+",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "55+",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          }
+        ]
+      },
+      {
+        "region": "FR",
+        "impressions": "0-1K",
+        "breakdowns": [
+          {
+            "age": "18-24",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "18-24",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "18-24",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "45-54",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "45-54",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "45-54",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "55+",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "55+",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "55+",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          }
+        ]
+      }
+    ],
+    "targetingDetails": {
+      "audience": "No",
+      "audienceExclude": "No",
+      "deviceModels": [
+        "IPHONE 6S PLUS",
+        "IPHONE 7",
+        "IPHONE 8 PLUS",
+        "IPHONE XR",
+        "IPHONE 11 PRO",
+        "IPHONE 6",
+        "IPHONE 6S",
+        "IPHONE XS",
+        "IPHONE 8",
+        "IPHONE 11",
+        "IPHONE 6 PLUS",
+        "IPHONE XS MAX",
+        "IPHONE 11 PRO MAX",
+        "IPHONE SE",
+        "IPHONE X",
+        "IPHONE SE 2",
+        "IPHONE 7 PLUS"
+      ],
+      "operatingSystems": [
+        "IPHONE"
+      ],
+      "highSpendingPower": "No"
+    },
+    "detailFetched": true,
+    "phones": [],
+    "emails": [],
+    "address": {
+      "street": null,
+      "unit": null,
+      "locality": null,
+      "region": null,
+      "postalCode": null,
+      "country": null,
+      "full": null
+    },
+    "geo": null,
+    "person": null,
+    "org": null,
+    "web": {
+      "website": null,
+      "socials": []
+    },
+    "leadSource": "detail",
+    "leadReveal": "absent",
+    "leadAbsences": {
+      "phones": "本站无（当前 CCL Search/Detail 样本）",
+      "emails": "本站无（当前 CCL Search/Detail 样本）",
+      "geo": "未验证",
+      "person": "未验证",
+      "org": "未验证",
+      "web.socials": "本站无（当前 CCL Detail 样本）",
+      "web.website": "本站无（当前 CCL Detail 样本）",
+      "address.street": "本站无（当前 CCL Detail 样本）",
+      "address.unit": "本站无（当前 CCL Detail 样本）",
+      "address.full": "本站无（当前 CCL Detail 样本）",
+      "address.country": "未验证"
+    }
+  },
+  {
+    "rowType": "ad",
+    "id": "1879336460933378",
+    "query": "Respire",
+    "searchTerm": "Respire",
+    "advertiserSearchTerm": "",
+    "country": "FR",
+    "contentType": "ads",
+    "dataSource": "ads_library_live",
+    "scrapedAt": "2026-10-21T16:25:38.668912+00:00",
+    "adId": "1879336460933378",
+    "adTitle": "Respire… Maman veille sur toi. MALFAISANTE, actuellement au cinéma.",
+    "status": "active",
+    "adType": "VIDEO",
+    "adSubject": null,
+    "adVideoUrl": "https://library.tiktok.com/api/v1/cdn/1792599951/video/aHR0cHM6Ly92NzcudGlrdG9rY2RuLmNvbS9iMzNlMTJjYjQxZDFmZjdkM2E1MGVmOThhYTJkNzdhNy82YWQ5M2JmNC92aWRlby90b3MvdXNlYXN0MmEvdG9zLXVzZWFzdDJhLXZlLTAwNTFjNzk5LWV1dHRwL29RSVlxckFVaUFYamo3OHNCWUd1YWwxaUlFQkE3UEFkUFVFOHov/b6615a0b-1be7-41a2-af07-25a328f48647?a=475769&bt=372&btag=e000b0000&bti=PDU2NmYwMy86&ft=.NpOcInz7ThHQBFGXq8Zmo&l=20261022002550C40981C61F84D8E1643D&mime_type=video_mp4&rc=NWhnNmhlZDhmZThlaWlpZkBpMzdzeGs5cnh4ZTMzODYzNEAwYWEwX15fNi0xLy1fLS0tYSMvMV9gMmRzMDNhLS1kMDFzcw%3D%3D&signature=1BSGfb49Qb5QnW66YGbIcDYyjOTWf8f6m6cMubM6zVs%3D&vvpl=1",
+    "adVideoCover": "https://p16-common-sign.tiktokcdn.com/tos-alisg-p-0051c001-sg/ocaIPAMl6EYsABUd43iUXiPBIz17ArWAjd8qL~tplv-tiktokx-origin.jpeg?dr=14582&refresh_token=4571062d&x-expires=1792620000&x-signature=2kkml1Bg9f%2BLFhhus7rZzc2b7Wk%3D&t=4d5b0474&ps=13740610&shp=0c75dd76&shcp=9b759fb9&idc=sg1",
+    "adImageUrls": [
+      "https://p16-common-sign.tiktokcdn.com/tos-alisg-p-0051c001-sg/ocaIPAMl6EYsABUd43iUXiPBIz17ArWAjd8qL~tplv-tiktokx-origin.jpeg?dr=14582&refresh_token=4571062d&x-expires=1792620000&x-signature=2kkml1Bg9f%2BLFhhus7rZzc2b7Wk%3D&t=4d5b0474&ps=13740610&shp=0c75dd76&shcp=9b759fb9&idc=sg1"
+    ],
+    "adStartDate": "2026-10-19",
+    "adEndDate": "2026-10-20",
+    "adImpressions": "300K-400K",
+    "advertiserName": "UNIVERSAL PICTURES INTERNATIONAL FRANCE SAS",
+    "auditStatus": "1",
+    "sorAuditStatus": "1",
+    "rejectionInfo": null,
+    "advertiserId": "6876504169574826754",
+    "advertiserLocation": "France",
+    "advertiserPaidForBy": "UNIVERSAL PICTURES INTERNATIONAL FRANCE SAS",
+    "advertiserTtUserId": null,
+    "landingPageUrl": "https://app.powster.com/universalstudios/other-mommy-intl/fr/?utm_source=tiktok&utm_id=__CAMPAIGN_ID__&utm_campaign=__CAMPAIGN_NAME__&utm_medium=paid",
+    "callToAction": "Book now",
+    "advertisingObjective": "Video views",
+    "adTotalRegions": 1,
+    "adEstimatedAudience": "21.8M-26.6M",
+    "targetingByLocation": [
+      "FR"
+    ],
+    "targetingByAge": [
+      "18-24",
+      "25-34",
+      "35-44",
+      "45-54",
+      "55+"
+    ],
+    "targetingByGender": [
+      "FEMALE",
+      "MALE",
+      "UNKNOWN"
+    ],
+    "targetingLanguages": [
+      "English",
+      "French"
+    ],
+    "impressionsByRegion": [
+      {
+        "region": "FR",
+        "impressions": "306K",
+        "breakdowns": [
+          {
+            "age": "18-24",
+            "gender": "MALE",
+            "impressions": "36K"
+          },
+          {
+            "age": "18-24",
+            "gender": "FEMALE",
+            "impressions": "86K"
+          },
+          {
+            "age": "18-24",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "MALE",
+            "impressions": "40K"
+          },
+          {
+            "age": "25-34",
+            "gender": "FEMALE",
+            "impressions": "67K"
+          },
+          {
+            "age": "25-34",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "MALE",
+            "impressions": "11K"
+          },
+          {
+            "age": "35-44",
+            "gender": "FEMALE",
+            "impressions": "23K"
+          },
+          {
+            "age": "35-44",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "45-54",
+            "gender": "MALE",
+            "impressions": "11K"
+          },
+          {
+            "age": "45-54",
+            "gender": "FEMALE",
+            "impressions": "26K"
+          },
+          {
+            "age": "45-54",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "55+",
+            "gender": "MALE",
+            "impressions": "4K"
+          },
+          {
+            "age": "55+",
+            "gender": "FEMALE",
+            "impressions": "9K"
+          },
+          {
+            "age": "55+",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          }
+        ]
+      }
+    ],
+    "targetingDetails": {
+      "audience": "Yes",
+      "audienceExclude": "No",
+      "operatingSystems": [
+        "ALL"
+      ],
+      "highSpendingPower": "No"
+    },
+    "detailFetched": true,
+    "phones": [],
+    "emails": [],
+    "address": {
+      "street": null,
+      "unit": null,
+      "locality": null,
+      "region": null,
+      "postalCode": null,
+      "country": "France",
+      "full": null
+    },
+    "geo": null,
+    "person": null,
+    "org": {
+      "name": "UNIVERSAL PICTURES INTERNATIONAL FRANCE SAS",
+      "id": "6876504169574826754"
+    },
+    "web": {
+      "website": null,
+      "socials": []
+    },
+    "leadSource": "detail",
+    "leadReveal": "visible",
+    "leadAbsences": {
+      "phones": "本站无（当前 CCL Search/Detail 样本）",
+      "emails": "本站无（当前 CCL Search/Detail 样本）",
+      "geo": "未验证",
+      "person": "未验证",
+      "web.socials": "本站无（当前 CCL Detail 样本）",
+      "web.website": "本站无（当前 CCL Detail 样本）",
+      "address.street": "本站无（当前 CCL Detail 样本）",
+      "address.unit": "本站无（当前 CCL Detail 样本）",
+      "address.full": "本站无（当前 CCL Detail 样本）"
+    }
+  }
+]

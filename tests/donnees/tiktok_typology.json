@@ -1,0 +1,535 @@
+[
+  {
+    "rowType": "ad",
+    "id": "1879593549759873",
+    "query": "Typology",
+    "searchTerm": "Typology",
+    "advertiserSearchTerm": "",
+    "country": "FR",
+    "contentType": "ads",
+    "dataSource": "ads_library_live",
+    "scrapedAt": "2026-10-21T16:25:10.026533+00:00",
+    "adId": "1879593549759873",
+    "adTitle": "Calendrier de l'Avent Typology 2026 - édition limitée.",
+    "status": "active",
+    "adType": "IMAGE",
+    "adSubject": null,
+    "adVideoUrl": null,
+    "adVideoCover": null,
+    "adImageUrls": [],
+    "adStartDate": "2026-10-20",
+    "adEndDate": "2026-10-20",
+    "adImpressions": "0-1K",
+    "advertiserName": "GOOD BRANDS",
+    "auditStatus": "1",
+    "sorAuditStatus": "1",
+    "rejectionInfo": null,
+    "advertiserId": "7011116172993102593",
+    "advertiserLocation": "France",
+    "advertiserPaidForBy": "GOOD BRANDS",
+    "advertiserTtUserId": null,
+    "landingPageUrl": "https://www.typology.com/products/calendrier-de-l-avent?utm_source=tiktok&utm_id=__CAMPAIGN_ID__&utm_campaign=tkfrp0044&utm_medium=paidsocial&utm_content=KIT5021",
+    "callToAction": "Shop now",
+    "advertisingObjective": "Sales",
+    "adTotalRegions": 1,
+    "adEstimatedAudience": "21.8M-26.6M",
+    "targetingByLocation": [
+      "FR"
+    ],
+    "targetingByAge": [
+      "18-24",
+      "25-34",
+      "35-44",
+      "45-54",
+      "55+"
+    ],
+    "targetingByGender": [
+      "FEMALE",
+      "MALE",
+      "UNKNOWN"
+    ],
+    "targetingLanguages": [],
+    "impressionsByRegion": [
+      {
+        "region": "FR",
+        "impressions": "0-1K",
+        "breakdowns": [
+          {
+            "age": "18-24",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "18-24",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "18-24",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "45-54",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "45-54",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "45-54",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "55+",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "55+",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "55+",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          }
+        ]
+      }
+    ],
+    "targetingDetails": {
+      "audience": "No",
+      "audienceExclude": "Yes",
+      "operatingSystems": [
+        "ALL"
+      ],
+      "highSpendingPower": "No"
+    },
+    "detailFetched": true,
+    "phones": [],
+    "emails": [],
+    "address": {
+      "street": null,
+      "unit": null,
+      "locality": null,
+      "region": null,
+      "postalCode": null,
+      "country": "France",
+      "full": null
+    },
+    "geo": null,
+    "person": null,
+    "org": {
+      "name": "GOOD BRANDS",
+      "id": "7011116172993102593"
+    },
+    "web": {
+      "website": null,
+      "socials": []
+    },
+    "leadSource": "detail",
+    "leadReveal": "visible",
+    "leadAbsences": {
+      "phones": "本站无（当前 CCL Search/Detail 样本）",
+      "emails": "本站无（当前 CCL Search/Detail 样本）",
+      "geo": "未验证",
+      "person": "未验证",
+      "web.socials": "本站无（当前 CCL Detail 样本）",
+      "web.website": "本站无（当前 CCL Detail 样本）",
+      "address.street": "本站无（当前 CCL Detail 样本）",
+      "address.unit": "本站无（当前 CCL Detail 样本）",
+      "address.full": "本站无（当前 CCL Detail 样本）"
+    }
+  },
+  {
+    "rowType": "ad",
+    "id": "1878383617973298",
+    "query": "Typology",
+    "searchTerm": "Typology",
+    "advertiserSearchTerm": "",
+    "country": "FR",
+    "contentType": "ads",
+    "dataSource": "ads_library_live",
+    "scrapedAt": "2026-10-21T16:25:10.026533+00:00",
+    "adId": "1878383617973298",
+    "adTitle": "Calendrier de l'Avent Typology 2026 - édition limitée.",
+    "status": "active",
+    "adType": "VIDEO",
+    "adSubject": "Beauty & Personal Care",
+    "adVideoUrl": "https://library.tiktok.com/api/v1/cdn/1792599923/video/aHR0cHM6Ly92NTgudGlrdG9rY2RuLmNvbS92aWRlby90b3MvdXNlYXN0MmEvdG9zLXVzZWFzdDJhLXZlLTAwNTFjNzk5LWV1dHRwL29jdExDVktmZUFDQ2ZSRzNHRW1HQnlRQU1MYlRCallyeWdJZ0RzLw==/6f4c5db0-07f8-4755-b2b0-f95fe5d85ec5?VExpiration=1792621542&VSignature=vXmpEatbGsZwP454IQHiOg&a=475769&bt=390&btag=e000b8000&bti=PDU2NmYwMy86&ft=.NpOcInz7ThATBFGXq8Zmo&l=20261022002522C5C6A9F9555E8FEA3EE4&mime_type=video_mp4&rc=ZDhnPDtnO2ZoNWk8NmUzaUBpMzx5Z3Q5cnEzZTMzODYzNEA2MDZfNS81Xi4xMTE2NmE0YSNyYGhiMmQ0ZjBhLS1kMDFzcw%3D%3D&signature=nRd%2BQC7IKqQVfcCAkvcBAjBRq4QGkHEu2VjGxERiIs4%3D&vvpl=1",
+    "adVideoCover": "https://p16-common-sign.tiktokcdn.com/tos-alisg-p-0051c001-sg/oIg5ZEgmqBczEW7lADBfmJGxFAgIQQfNHDI5M2~tplv-tiktokx-origin.jpeg?dr=14582&refresh_token=362c4c5b&x-expires=1792620000&x-signature=6wnWhtCyK0UiNah9Jgr106vV4U0%3D&t=4d5b0474&ps=13740610&shp=0c75dd76&shcp=9b759fb9&idc=sg1",
+    "adImageUrls": [
+      "https://p16-common-sign.tiktokcdn.com/tos-alisg-p-0051c001-sg/oIg5ZEgmqBczEW7lADBfmJGxFAgIQQfNHDI5M2~tplv-tiktokx-origin.jpeg?dr=14582&refresh_token=362c4c5b&x-expires=1792620000&x-signature=6wnWhtCyK0UiNah9Jgr106vV4U0%3D&t=4d5b0474&ps=13740610&shp=0c75dd76&shcp=9b759fb9&idc=sg1"
+    ],
+    "adStartDate": "2026-10-07",
+    "adEndDate": "2026-10-20",
+    "adImpressions": "1K-10K",
+    "advertiserName": "GOOD BRANDS",
+    "auditStatus": "1",
+    "sorAuditStatus": "1",
+    "rejectionInfo": null,
+    "advertiserId": "7011116172993102593",
+    "advertiserLocation": "France",
+    "advertiserPaidForBy": "GOOD BRANDS",
+    "advertiserTtUserId": null,
+    "landingPageUrl": "https://www.typology.com/products/calendrier-de-l-avent?utm_source=tiktok&utm_id=__CAMPAIGN_ID__&utm_campaign=tkfrp0044&utm_medium=paidsocial&utm_content=KIT5021",
+    "callToAction": "Shop now",
+    "advertisingObjective": "Sales",
+    "adTotalRegions": 1,
+    "adEstimatedAudience": "21.8M-26.6M",
+    "targetingByLocation": [
+      "FR"
+    ],
+    "targetingByAge": [
+      "18-24",
+      "25-34",
+      "35-44",
+      "45-54",
+      "55+"
+    ],
+    "targetingByGender": [
+      "FEMALE",
+      "MALE",
+      "UNKNOWN"
+    ],
+    "targetingLanguages": [],
+    "impressionsByRegion": [
+      {
+        "region": "FR",
+        "impressions": "2K",
+        "breakdowns": [
+          {
+            "age": "18-24",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "18-24",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "18-24",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "45-54",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "45-54",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "45-54",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "55+",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "55+",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "55+",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          }
+        ]
+      }
+    ],
+    "targetingDetails": {
+      "audience": "No",
+      "audienceExclude": "Yes",
+      "operatingSystems": [
+        "ALL"
+      ],
+      "highSpendingPower": "No"
+    },
+    "detailFetched": true,
+    "phones": [],
+    "emails": [],
+    "address": {
+      "street": null,
+      "unit": null,
+      "locality": null,
+      "region": null,
+      "postalCode": null,
+      "country": "France",
+      "full": null
+    },
+    "geo": null,
+    "person": null,
+    "org": {
+      "name": "GOOD BRANDS",
+      "id": "7011116172993102593"
+    },
+    "web": {
+      "website": null,
+      "socials": []
+    },
+    "leadSource": "detail",
+    "leadReveal": "visible",
+    "leadAbsences": {
+      "phones": "本站无（当前 CCL Search/Detail 样本）",
+      "emails": "本站无（当前 CCL Search/Detail 样本）",
+      "geo": "未验证",
+      "person": "未验证",
+      "web.socials": "本站无（当前 CCL Detail 样本）",
+      "web.website": "本站无（当前 CCL Detail 样本）",
+      "address.street": "本站无（当前 CCL Detail 样本）",
+      "address.unit": "本站无（当前 CCL Detail 样本）",
+      "address.full": "本站无（当前 CCL Detail 样本）"
+    }
+  },
+  {
+    "rowType": "ad",
+    "id": "1879198018175089",
+    "query": "Typology",
+    "searchTerm": "Typology",
+    "advertiserSearchTerm": "",
+    "country": "FR",
+    "contentType": "ads",
+    "dataSource": "ads_library_live",
+    "scrapedAt": "2026-10-21T16:25:10.026533+00:00",
+    "adId": "1879198018175089",
+    "adTitle": "Calendrier de l'Avent Typology 2026 - édition limitée.",
+    "status": "active",
+    "adType": "IMAGE",
+    "adSubject": null,
+    "adVideoUrl": null,
+    "adVideoCover": null,
+    "adImageUrls": [],
+    "adStartDate": "2026-10-16",
+    "adEndDate": "2026-10-19",
+    "adImpressions": "0-1K",
+    "advertiserName": "GOOD BRANDS",
+    "auditStatus": "1",
+    "sorAuditStatus": "1",
+    "rejectionInfo": null,
+    "advertiserId": "7011116172993102593",
+    "advertiserLocation": "France",
+    "advertiserPaidForBy": "GOOD BRANDS",
+    "advertiserTtUserId": null,
+    "landingPageUrl": "https://www.typology.com/products/calendrier-de-l-avent?utm_source=tiktok&utm_id=__CAMPAIGN_ID__&utm_campaign=tkfrp0044&utm_medium=paidsocial&utm_content=KIT5021",
+    "callToAction": "Shop now",
+    "advertisingObjective": "Sales",
+    "adTotalRegions": 1,
+    "adEstimatedAudience": "21.8M-26.6M",
+    "targetingByLocation": [
+      "FR"
+    ],
+    "targetingByAge": [
+      "18-24",
+      "25-34",
+      "35-44",
+      "45-54",
+      "55+"
+    ],
+    "targetingByGender": [
+      "FEMALE",
+      "MALE",
+      "UNKNOWN"
+    ],
+    "targetingLanguages": [],
+    "impressionsByRegion": [
+      {
+        "region": "FR",
+        "impressions": "0-1K",
+        "breakdowns": [
+          {
+            "age": "18-24",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "18-24",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "18-24",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "25-34",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "35-44",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "45-54",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "45-54",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "45-54",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "55+",
+            "gender": "MALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "55+",
+            "gender": "FEMALE",
+            "impressions": "0-1K"
+          },
+          {
+            "age": "55+",
+            "gender": "UNKNOWN",
+            "impressions": "0-1K"
+          }
+        ]
+      }
+    ],
+    "targetingDetails": {
+      "audience": "No",
+      "audienceExclude": "Yes",
+      "operatingSystems": [
+        "ALL"
+      ],
+      "highSpendingPower": "No"
+    },
+    "detailFetched": true,
+    "phones": [],
+    "emails": [],
+    "address": {
+      "street": null,
+      "unit": null,
+      "locality": null,
+      "region": null,
+      "postalCode": null,
+      "country": "France",
+      "full": null
+    },
+    "geo": null,
+    "person": null,
+    "org": {
+      "name": "GOOD BRANDS",
+      "id": "7011116172993102593"
+    },
+    "web": {
+      "website": null,
+      "socials": []
+    },
+    "leadSource": "detail",
+    "leadReveal": "visible",
+    "leadAbsences": {
+      "phones": "本站无（当前 CCL Search/Detail 样本）",
+      "emails": "本站无（当前 CCL Search/Detail 样本）",
+      "geo": "未验证",
+      "person": "未验证",
+      "web.socials": "本站无（当前 CCL Detail 样本）",
+      "web.website": "本站无（当前 CCL Detail 样本）",
+      "address.street": "本站无（当前 CCL Detail 样本）",
+      "address.unit": "本站无（当前 CCL Detail 样本）",
+      "address.full": "本站无（当前 CCL Detail 样本）"
+    }
+  }
+]
