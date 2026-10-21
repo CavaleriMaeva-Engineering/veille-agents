@@ -1,9 +1,14 @@
-from datetime import date
+from datetime import date, timedelta
+from urllib.parse import urlparse
 
-from pydantic import BaseModel
+from apify_client import ApifyClient
+from apify_client.errors import ApifyApiError
+from pydantic import BaseModel, Field
 
+from veille.tools.base import decrire_outil
 from veille.tools.meta import est_un_vrai_texte
 
+ACTEUR_TIKTOK = "lentic_clockss/tiktok-ads-top-ads-actor"
 
 class PubTiktok(BaseModel):
     id: str
@@ -21,6 +26,28 @@ class PubTiktok(BaseModel):
     objectif: str | None
     ciblage_age: list[str]
     ciblage_genre: list[str]
+
+
+class ArgsChercherPubsTiktok(BaseModel):
+    marque: str = Field(description="Nom de la marque tel qu'il apparaît dans ses publicités (ex. : Typology).")
+    domaine: str = Field(description="Site officiel de la marque, sans https ni www (ex. : typology.com).")
+    max_pubs: int = Field(3, ge=1, le=3, description="Nombre maximum de publicités à récupérer (3 au plus).")
+
+
+OUTIL_CHERCHER_PUBS_TIKTOK = decrire_outil(
+    nom="chercher_pubs_tiktok",
+    description=(
+        "Cherche les publicités récentes d'une marque concurrente en France dans la bibliothèque "
+        "publicitaire de TikTok. À utiliser pour savoir ce qu'une marque pousse sur TikTok : "
+        "produits, messages, offres, cible. Renvoie pour chaque pub : son texte, ses dates de "
+        "diffusion, sa durée en jours (plus elle est longue, plus la pub est probablement rentable), "
+        "ses impressions, son lien, son objectif et son ciblage par âge et par genre. Sur TikTok, "
+        "l'annonceur est souvent la société et non la marque : seules les pubs qui renvoient vers "
+        "le site de la marque sont gardées. Si aucune pub n'est trouvée, ce n'est pas une erreur : "
+        "ne relance pas l'outil."
+    ),
+    args=ArgsChercherPubsTiktok,
+)
 
 
 def normaliser_pub_tiktok(brute: dict, marque: str) -> PubTiktok:
@@ -52,3 +79,50 @@ def normaliser_pub_tiktok(brute: dict, marque: str) -> PubTiktok:
         ciblage_age=brute.get("targetingByAge") or [],
         ciblage_genre=brute.get("targetingByGender") or [],
     )
+
+
+def est_du_domaine(url: str | None, domaine: str) -> bool:
+    if not url:
+        return False
+    hote = (urlparse(url).hostname or "").removeprefix("www.")
+    return hote == domaine or hote.endswith("." + domaine)
+
+
+def chercher_pubs_tiktok(marque: str, domaine: str, client: ApifyClient, max_pubs: int = 3) -> dict:
+    try:
+        execution = client.actor(ACTEUR_TIKTOK).call(
+            run_input={
+                "query": marque,
+                "country": "FR",
+                "contentType": "ads",
+                "includeDetails": True,
+                "maxItems": max_pubs,
+            },
+            max_items=max_pubs,
+            wait_duration=timedelta(minutes=3),
+        )
+    except ApifyApiError:
+        return {"erreur": "La bibliothèque publicitaire TikTok est indisponible pour le moment. Utilise une autre source."}
+
+    if execution is None or execution.status != "SUCCEEDED":
+        return {"erreur": "La collecte des pubs TikTok n'a pas abouti à temps. Réessaie plus tard ou utilise une autre source."}
+
+    brutes = client.dataset(execution.default_dataset_id).list_items().items
+    pubs = [
+        normaliser_pub_tiktok(brute, marque)
+        for brute in brutes
+        if est_du_domaine(brute.get("landingPageUrl"), domaine)
+    ]
+
+    resultat = {
+        "marque": marque,
+        "nb_pubs": len(pubs),
+        "pubs": [pub.model_dump(mode="json") for pub in pubs],
+    }
+    if not pubs:
+        resultat["remarque"] = (
+            f"Aucune pub TikTok active renvoyant vers {domaine} trouvée en France "
+            f"({len(brutes)} pubs trouvées au total, d'autres annonceurs). "
+            "Ce n'est pas une erreur : ne relance pas l'outil."
+        )
+    return resultat

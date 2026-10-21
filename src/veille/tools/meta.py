@@ -56,9 +56,7 @@ def est_un_vrai_texte(texte: str | None) -> bool:
     if texte.strip() == "":
         return False
     # Cas 3 : c'est un modèle, comme « {{product.brand}} »
-    if "{{" in texte:
-        return False
-    return True
+    return "{{" not in texte
 
 
 def normaliser_pub_meta(brute: dict) -> PubMeta:
