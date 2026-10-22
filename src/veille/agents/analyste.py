@@ -37,6 +37,7 @@ def analyser_marque(
     modele: str,
     marque: Marque,
     execution_id: str,
+    observations: list[str],   # données brutes de la collecte, pour pouvoir rejouer la rédaction
     max_tours: int = 5,
 ) -> AnalyseMarque:
     collecte = executer_agent(
@@ -49,10 +50,10 @@ def analyser_marque(
         execution_id=execution_id,
         max_tours=max_tours,
     )
+    observations = extraire_observations(collecte.messages)
     signaux = calculer_signaux(extraire_resultats(collecte.messages))
-    rapport = rediger_rapport(
-        client_groq, modele, marque.nom, extraire_observations(collecte.messages), signaux, execution_id
-    )
+    rapport = rediger_rapport(client_groq, modele, marque.nom, observations, signaux, execution_id)
     return AnalyseMarque(
-        marque=marque.nom, date=date.today(), execution_id=execution_id, signaux=signaux, rapport=rapport
+        marque=marque.nom, date=date.today(), execution_id=execution_id,
+        observations=observations, signaux=signaux, rapport=rapport,
     )
