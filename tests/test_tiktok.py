@@ -123,3 +123,13 @@ def test_description_outil_tiktok():
     assert sorted(schema["required"]) == ["domaine", "marque"]
     assert schema["properties"]["max_pubs"]["maximum"] == 3
     assert "client" not in schema["properties"]
+
+
+def test_plafond_de_cout_explicite():
+    client = faux_client_apify(charger("tiktok_typology.json"))
+
+    chercher_pubs_tiktok("Typology", "typology.com", client)
+
+    kwargs = client.actor.return_value.call.call_args.kwargs
+    assert "max_items" not in kwargs
+    assert kwargs["max_total_charge_usd"] > 0

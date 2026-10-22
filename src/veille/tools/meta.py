@@ -1,3 +1,5 @@
+import json
+import logging
 from datetime import datetime, timedelta
 from urllib.parse import urlencode
 
@@ -6,6 +8,8 @@ from apify_client.errors import ApifyApiError
 from pydantic import BaseModel, Field
 
 from veille.tools.base import decrire_outil
+
+logger = logging.getLogger(__name__)
 
 
 class PubMeta(BaseModel):
@@ -98,9 +102,16 @@ def chercher_pubs_meta(marque: str, client: ApifyClient, max_pubs: int = 10) -> 
             max_items=max_pubs,
             wait_duration=timedelta(minutes=3),
         )
-    except ApifyApiError:
+    except ApifyApiError as erreur:
+        logger.warning(json.dumps({
+            "evenement": "erreur_outil",
+            "outil": "chercher_pubs_tiktok",
+            "code": erreur.status_code,
+            "type": erreur.type,
+            "message": erreur.message,
+        }, ensure_ascii=False))
         return {"erreur": "La bibliothèque publicitaire de Meta est indisponible pour le moment. Utilise une autre source."}
-
+    
     if execution is None or execution.status != "SUCCEEDED":
         return {"erreur": "La collecte des pubs Meta n'a pas abouti à temps. Réessaie plus tard ou utilise une autre source."}
 

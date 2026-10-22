@@ -1,4 +1,7 @@
+import json
+import logging
 from datetime import date, timedelta
+from decimal import Decimal
 from urllib.parse import urlparse
 
 from apify_client import ApifyClient
@@ -7,6 +10,8 @@ from pydantic import BaseModel, Field
 
 from veille.tools.base import decrire_outil
 from veille.tools.meta import est_un_vrai_texte
+
+logger = logging.getLogger(__name__)
 
 ACTEUR_TIKTOK = "lentic_clockss/tiktok-ads-top-ads-actor"
 
@@ -98,12 +103,19 @@ def chercher_pubs_tiktok(marque: str, domaine: str, client: ApifyClient, max_pub
                 "includeDetails": True,
                 "maxItems": max_pubs,
             },
-            max_items=max_pubs,
+            max_total_charge_usd=Decimal("0.05"),   # plafond de coût par run, au-dessus du minimum d'Apify
             wait_duration=timedelta(minutes=3),
         )
-    except ApifyApiError:
+    except ApifyApiError as erreur:
+        logger.warning(json.dumps({
+            "evenement": "erreur_outil",
+            "outil": "chercher_pubs_tiktok",
+            "code": erreur.status_code,
+            "type": erreur.type,
+            "message": erreur.message,
+        }, ensure_ascii=False))
         return {"erreur": "La bibliothèque publicitaire TikTok est indisponible pour le moment. Utilise une autre source."}
-
+    
     if execution is None or execution.status != "SUCCEEDED":
         return {"erreur": "La collecte des pubs TikTok n'a pas abouti à temps. Réessaie plus tard ou utilise une autre source."}
 
