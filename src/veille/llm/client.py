@@ -3,7 +3,7 @@ import logging
 import time
 
 import groq
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 from veille.reseau import appeler_avec_tentatives
 from veille.settings import Secrets
@@ -11,8 +11,15 @@ from veille.settings import Secrets
 logger = logging.getLogger(__name__)
 
 
+class AppelOutil(BaseModel):
+    id: str
+    nom: str
+    arguments: str # JSON brut écrit par le LLM, validé plus tard avec le modèle Args de l'outil
+
+
 class ReponseLLM(BaseModel):
-    texte: str
+    texte: str | None  # None quand le LLM ne fait que demander des outils
+    appels_outils: list[AppelOutil] = Field(default_factory=list)
     tokens_entree: int
     tokens_sortie: int
 
@@ -31,6 +38,7 @@ def appeler_llm(
     messages: list[dict],
     agent: str,
     execution_id: str,
+    outils: list[dict] | None = None,
 ) -> ReponseLLM:
     tentative = 0
 
@@ -38,8 +46,11 @@ def appeler_llm(
         nonlocal tentative
         tentative += 1
         debut = time.perf_counter()  # avant le try : existe toujours
+        parametres = {"model": modele, "messages": messages}
+        if outils:
+            parametres["tools"] = outils
         try:
-            reponse = client.chat.completions.create(model=modele, messages=messages)
+            reponse = client.chat.completions.create(**parametres)
         except Exception as erreur:
             logger.warning(
                 json.dumps(
@@ -79,8 +90,13 @@ def appeler_llm(
         return reponse
 
     reponse = appeler_avec_tentatives(appel)
+    message = reponse.choices[0].message
     return ReponseLLM(
-        texte=reponse.choices[0].message.content,
+        texte=message.content,
+        appels_outils=[
+            AppelOutil(id=a.id, nom=a.function.name, arguments=a.function.arguments)
+            for a in (message.tool_calls or [])
+        ],
         tokens_entree=reponse.usage.prompt_tokens,
         tokens_sortie=reponse.usage.completion_tokens,
     )
