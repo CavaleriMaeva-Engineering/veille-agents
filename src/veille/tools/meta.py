@@ -1,6 +1,6 @@
 import json
 import logging
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 from urllib.parse import urlencode
 
 from apify_client import ApifyClient
@@ -16,6 +16,7 @@ class PubMeta(BaseModel):
     id: str
     marque: str
     date_debut: datetime | None  # Le champ est obligatoire mais peut valoir None
+    duree_jours: int | None   # jours de diffusion jusqu'à aujourd'hui, calculés par le code
     active: bool
     plateformes: list[str]
     format: str | None
@@ -62,8 +63,10 @@ def est_un_vrai_texte(texte: str | None) -> bool:
     # Cas 3 : c'est un modèle, comme « {{product.brand}} »
     return "{{" not in texte
 
-
-def normaliser_pub_meta(brute: dict) -> PubMeta:
+def normaliser_pub_meta(brute: dict, aujourd_hui: date | None = None) -> PubMeta:
+    aujourd_hui = aujourd_hui or date.today()
+    debut = brute.get("startDateFormatted")
+    duree = (aujourd_hui - datetime.fromisoformat(debut).date()).days + 1 if debut else None
     snapshot = brute.get("snapshot") or {}
     corps = snapshot.get("body") or {}
     cartes = snapshot.get("cards") or []
@@ -82,7 +85,8 @@ def normaliser_pub_meta(brute: dict) -> PubMeta:
         id=brute.get("adArchiveID"),
         marque=brute.get("pageName"),
         date_debut=brute.get("startDateFormatted"),
-        active=brute.get("isActive"),
+        duree_jours=duree,
+        active=bool(brute.get("isActive")),
         plateformes=brute.get("publisherPlatform") or [],
         format=snapshot.get("displayFormat"),
         lien=snapshot.get("linkUrl"),

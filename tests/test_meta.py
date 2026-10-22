@@ -1,4 +1,5 @@
 import json
+from datetime import date
 from pathlib import Path
 from unittest.mock import Mock
 
@@ -121,3 +122,18 @@ def test_description_outil_meta():
        assert schema["required"] == ["marque"]
        assert schema["properties"]["max_pubs"]["maximum"] == 20
        assert "client" not in schema["properties"]
+
+
+
+def test_duree_jours_meta():
+    brute = {"adArchiveID": "1", "pageName": "Typology", "startDateFormatted": "2026-01-14T08:00:00Z"}
+
+    pub = normaliser_pub_meta(brute, aujourd_hui=date(2026, 10, 22))
+
+    assert pub.duree_jours == 282   # du 14 janvier au 22 octobre inclus
+
+
+def test_duree_jours_meta_sans_date():
+    pub = normaliser_pub_meta({"adArchiveID": "1", "pageName": "Typology"}, aujourd_hui=date(2026, 10, 22))
+
+    assert pub.duree_jours is None
