@@ -39,6 +39,7 @@ def appeler_llm(
     agent: str,
     execution_id: str,
     outils: list[dict] | None = None,
+    choix_outil: str | None = None,
 ) -> ReponseLLM:
     tentative = 0
 
@@ -47,8 +48,9 @@ def appeler_llm(
         tentative += 1
         debut = time.perf_counter()  # avant le try : existe toujours
         parametres = {"model": modele, "messages": messages}
-        if outils:
-            parametres["tools"] = outils
+        if outils and choix_outil:
+            parametres["tool_choice"] = choix_outil
+            
         try:
             reponse = client.chat.completions.create(**parametres)
         except Exception as erreur:
