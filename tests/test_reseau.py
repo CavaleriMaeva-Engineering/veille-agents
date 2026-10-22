@@ -12,9 +12,9 @@ from veille.reseau import (
 )
 
 
-def fausse_erreur(code: int) -> groq.APIStatusError:
+def fausse_erreur(code: int, entetes: dict | None = None) -> groq.APIStatusError:
     requete = httpx.Request("POST", "https://exemple.test")
-    reponse = httpx.Response(code, request=requete)
+    reponse = httpx.Response(code, request=requete, headers=entetes)
     return groq.APIStatusError("erreur simulée", response=reponse, body=None)
 
 
@@ -87,3 +87,24 @@ def test_abandonne_apres_max_tentatives():
 def test_erreurs_httpx():
     assert erreur_est_passagere(httpx.ConnectTimeout("délai dépassé"))
     assert not erreur_est_passagere(httpx.UnsupportedProtocol("adresse invalide"))
+
+
+def test_respecte_retry_after():
+    appel = Mock(side_effect=[fausse_erreur(429, {"retry-after": "31"}), "réponse"])
+    attentes = []
+
+    resultat = appeler_avec_tentatives(appel, attendre=attentes.append)
+
+    assert resultat == "réponse"
+    assert attentes == [31.0]          # le délai du serveur, pas notre backoff
+
+
+def test_retry_after_trop_long_abandonne():
+    appel = Mock(side_effect=fausse_erreur(429, {"retry-after": "3600"}))
+    attentes = []
+
+    with pytest.raises(groq.APIStatusError):
+        appeler_avec_tentatives(appel, attendre=attentes.append)
+
+    assert appel.call_count == 1
+    assert attentes == []              # on n'attend pas une heure

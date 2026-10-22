@@ -74,6 +74,33 @@ def observer(
     return observations
 
 
+def journaliser_tour(
+    execution_id: str, agent: str, tour: int, appels: list[AppelOutil], observations: list[dict]
+) -> None:
+    logger.info(json.dumps({
+        "evenement": "tour_agent",
+        "execution_id": execution_id,
+        "agent": agent,
+        "tour": tour,
+        "appels": [
+            {"outil": a.nom, "arguments": a.arguments, "apercu_observation": o["content"][:150]}
+            for a, o in zip(appels, observations)
+        ],
+    }, ensure_ascii=False))
+
+
+def terminer(resultat: ResultatAgent, execution_id: str, agent: str) -> ResultatAgent:
+    logger.info(json.dumps({
+        "evenement": "fin_agent",
+        "execution_id": execution_id,
+        "agent": agent,
+        "arret": resultat.arret,
+        "tours": resultat.tours,
+        "tokens": resultat.tokens,
+    }))
+    return resultat
+
+
 def executer_agent(
     client: groq.Groq,
     modele: str,
@@ -95,12 +122,14 @@ def executer_agent(
         messages.append(message_assistant(reponse))
 
         if not reponse.appels_outils:
-            return ResultatAgent(reponse.texte, "reponse_finale", tour, tokens, messages)
+            return terminer(ResultatAgent(reponse.texte, "reponse_finale", tour, tokens, messages), execution_id, agent)
 
-        messages.extend(observer(reponse.appels_outils, outils, deja_faits, execution_id))
+        observations = observer(reponse.appels_outils, outils, deja_faits, execution_id)
+        journaliser_tour(execution_id, agent, tour, reponse.appels_outils, observations)
+        messages.extend(observations)
 
     messages.append({"role": "user", "content": MESSAGE_LIMITE})
     reponse = appeler_llm(client, modele, messages, agent, execution_id, outils=schemas, choix_outil="none")
     tokens += reponse.tokens_entree + reponse.tokens_sortie
     messages.append(message_assistant(reponse))
-    return ResultatAgent(reponse.texte, "limite_tours", max_tours, tokens, messages)
+    return terminer(ResultatAgent(reponse.texte, "limite_tours", max_tours, tokens, messages), execution_id, agent)

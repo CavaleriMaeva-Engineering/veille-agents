@@ -24,7 +24,7 @@ OUTIL_LIRE_PAGE_WEB = decrire_outil(
 )
 
 
-def lire_page_web(url: str, max_caracteres: int = 5000) -> dict:
+def lire_page_web(url: str, max_caracteres: int = 2000) -> dict:
     if not url.startswith("https://"):
         return {
             "erreur": "L'adresse doit commencer par https://. Corrige-la et réessaie."

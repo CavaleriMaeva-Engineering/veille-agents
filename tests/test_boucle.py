@@ -1,4 +1,5 @@
 import json
+import logging
 from types import SimpleNamespace
 from unittest.mock import Mock
 
@@ -121,3 +122,19 @@ def test_arguments_invalides_renvoyes_au_llm():
 
     assert "max_pubs" in resultat.messages[3]["content"]
     fonction.assert_called_once_with(marque="Typology", max_pubs=20)
+
+
+def test_chaque_tour_est_journalise(caplog):
+    caplog.set_level(logging.INFO)
+    client = faux_llm(
+        reponse_groq(appels=[("c1", "chercher_pubs_meta", META_TYPOLOGY)]),
+        reponse_groq("Fini."),
+    )
+
+    lancer(client, Mock(return_value={"nb_pubs": 5}))
+
+    logs = [json.loads(r.message) for r in caplog.records if r.message.startswith("{")]
+    tours = [log for log in logs if log["evenement"] == "tour_agent"]
+    fin = [log for log in logs if log["evenement"] == "fin_agent"]
+    assert tours[0]["appels"][0]["outil"] == "chercher_pubs_meta"
+    assert fin[0]["arret"] == "reponse_finale"

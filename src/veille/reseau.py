@@ -29,12 +29,27 @@ def erreur_est_passagere(erreur: Exception) -> bool:
     return False
 
 
-def appeler_avec_tentatives(appel, max_tentatives: int = 5, attendre=time.sleep):
+def delai_impose(erreur: Exception) -> float | None:
+    reponse = getattr(erreur, "response", None)
+    if reponse is None:
+        return None
+    valeur = reponse.headers.get("retry-after")
+    try:
+        return float(valeur) if valeur is not None else None
+    except ValueError:
+        return None
+
+
+def appeler_avec_tentatives(appel, max_tentatives: int = 5, attendre=time.sleep, attente_max: float = 60.0):
     for tentative in range(1, max_tentatives + 1):
         try:
             return appel()
         except Exception as erreur:
             if not erreur_est_passagere(erreur) or tentative == max_tentatives:
                 raise
-            else:
-                attendre(calculer_delai(tentative))
+            delai = delai_impose(erreur)
+            if delai is None:
+                delai = calculer_delai(tentative)
+            elif delai > attente_max:
+                raise
+            attendre(delai)
