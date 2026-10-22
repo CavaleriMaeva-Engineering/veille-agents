@@ -1,8 +1,12 @@
+from datetime import date
+
 import groq
 from apify_client import ApifyClient
+from pydantic import BaseModel
 
 from veille.agents.boucle import executer_agent
 from veille.agents.rapport import RapportVeille, extraire_observations, rediger_rapport
+from veille.agents.signaux import Signaux, calculer_signaux, extraire_resultats
 from veille.settings import Marque
 from veille.tools.registre import creer_outils
 
@@ -19,6 +23,14 @@ Si un outil renvoie une erreur, ne le relance pas : passe à l'étape suivante.
 Quand les étapes sont faites, réponds seulement « Collecte terminée »."""
 
 
+class AnalyseMarque(BaseModel):
+    marque: str
+    date: date
+    execution_id: str
+    signaux: Signaux
+    rapport: RapportVeille
+
+
 def analyser_marque(
     client_groq: groq.Groq,
     client_apify: ApifyClient,
@@ -26,7 +38,7 @@ def analyser_marque(
     marque: Marque,
     execution_id: str,
     max_tours: int = 5,
-) -> RapportVeille:
+) -> AnalyseMarque:
     collecte = executer_agent(
         client=client_groq,
         modele=modele,
@@ -37,6 +49,10 @@ def analyser_marque(
         execution_id=execution_id,
         max_tours=max_tours,
     )
-    return rediger_rapport(
-        client_groq, modele, marque.nom, extraire_observations(collecte.messages), execution_id
+    signaux = calculer_signaux(extraire_resultats(collecte.messages))
+    rapport = rediger_rapport(
+        client_groq, modele, marque.nom, extraire_observations(collecte.messages), signaux, execution_id
+    )
+    return AnalyseMarque(
+        marque=marque.nom, date=date.today(), execution_id=execution_id, signaux=signaux, rapport=rapport
     )

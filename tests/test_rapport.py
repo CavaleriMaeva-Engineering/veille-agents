@@ -6,6 +6,7 @@ import pytest
 from pydantic import ValidationError
 
 from veille.agents.rapport import RapportVeille, extraire_observations, rediger_rapport
+from veille.agents.signaux import Signaux
 
 RAPPORT_VALIDE = {
     "marque": "Typology",
@@ -14,7 +15,6 @@ RAPPORT_VALIDE = {
     "offres": [{"affirmation": "184,90 € pour 402,40 € de produits.", "source": "site"}],
     "formats_et_plateformes": [],
     "cible": [],
-    "pub_la_plus_durable": None,
     "donnees_manquantes": ["TikTok indisponible."],
 }
 
@@ -31,8 +31,11 @@ def faux_llm(*contenus: str) -> Mock:
     return client
 
 
+SIGNAUX = Signaux(nb_pubs={"meta": 5}, formats={"VIDEO": 3}, pub_la_plus_durable=None, sources_en_erreur=["tiktok"])
+
+
 def rediger(client: Mock) -> RapportVeille:
-    return rediger_rapport(client, "modele", "Typology", ['{"nb_pubs": 5}'], execution_id="t-1")
+    return rediger_rapport(client, "modele", "Typology", ['{"nb_pubs": 5}'], SIGNAUX, execution_id="t-1")
 
 
 def test_rapport_valide():
@@ -42,7 +45,6 @@ def test_rapport_valide():
 
     assert rapport.marque == "Typology"
     assert rapport.offres[0].source == "site"
-    assert rapport.pub_la_plus_durable is None
 
 
 def test_schema_strict_envoye():
@@ -54,9 +56,9 @@ def test_schema_strict_envoye():
     schema = format_envoye["json_schema"]["schema"]
     assert format_envoye["json_schema"]["strict"] is True
     assert schema["additionalProperties"] is False
-    assert "pub_la_plus_durable" in schema["required"]   # requis, même s'il peut valoir null
+    assert "pub_la_plus_durable" not in schema["properties"]   # calculé par le code, plus par le LLM
     assert "tools" not in client.chat.completions.create.call_args.kwargs
-
+    
 
 def test_json_invalide_puis_corrige():
     client = faux_llm('{"marque": "Typology"}', json.dumps(RAPPORT_VALIDE))
@@ -106,7 +108,11 @@ def test_budget_de_sortie_et_effort_envoyes():
     assert kwargs["reasoning_effort"] == "low"
 
 
-def test_null_en_texte_devient_none():
-    rapport = RapportVeille.model_validate(dict(RAPPORT_VALIDE, pub_la_plus_durable="null"))
+def test_signaux_transmis_au_redacteur():
+    client = faux_llm(json.dumps(RAPPORT_VALIDE))
 
-    assert rapport.pub_la_plus_durable is None
+    rediger(client)
+
+    message_user = client.chat.completions.create.call_args.kwargs["messages"][1]["content"]
+    assert "Signaux calculés" in message_user
+    assert '"sources_en_erreur":["tiktok"]' in message_user

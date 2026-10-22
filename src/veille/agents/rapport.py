@@ -2,8 +2,9 @@ import json
 from typing import Literal
 
 import groq
-from pydantic import BaseModel, ConfigDict, Field, ValidationError, field_validator
+from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
+from veille.agents.signaux import Signaux
 from veille.llm.client import appeler_llm
 from veille.tools.registre import resumer_erreurs
 
@@ -24,21 +25,10 @@ class RapportVeille(BaseModel):
     offres: list[Constat]
     formats_et_plateformes: list[Constat]
     cible: list[Constat]
-    pub_la_plus_durable: str | None = Field(
-        description="La pub qui tourne depuis le plus longtemps et sa durée en jours. "
-        "Valeur JSON null (pas le texte \"null\") si les données ne permettent pas de le dire."
-    )
     donnees_manquantes: list[str] = Field(
         description="Les sources ou informations qu'on n'a PAS pu obtenir (ex. : TikTok indisponible). Pas de critique de la stratégie."
     )
-
-    @field_validator("pub_la_plus_durable")
-    @classmethod
-    def texte_vide_vers_none(cls, valeur: str | None) -> str | None:
-        if valeur is not None and valeur.strip().lower() in {"", "null", "none", "inconnue"}:
-            return None
-        return valeur
-
+    
 
 def format_json_strict(modele: type[BaseModel]) -> dict:
     return {
@@ -53,8 +43,8 @@ Règles :
 - Chaque constat indique sa source : meta, tiktok ou site.
 - Pas d'identifiant technique (numéros de pub, paramètres d'URL).
 - Si une source a renvoyé une erreur, mentionne-la dans donnees_manquantes.
-- Une liste vide est acceptable si les données ne disent rien sur ce point."""
-
+- Une liste vide est acceptable si les données ne disent rien sur ce point.
+- Les signaux calculés sont exacts : utilise-les pour les chiffres (nombre de pubs, formats, pub la plus durable et sa durée), ne recalcule rien."""
 
 def extraire_observations(messages: list[dict]) -> list[str]:
     return [m["content"] for m in messages if m["role"] == "tool"]
@@ -65,12 +55,20 @@ def rediger_rapport(
     modele: str,
     marque: str,
     observations: list[str],
+    signaux: Signaux,
     execution_id: str,
     max_essais: int = 2,
 ) -> RapportVeille:
     messages = [
         {"role": "system", "content": PROMPT_REDACTION},
-        {"role": "user", "content": f"Marque : {marque}\n\nDonnées collectées :\n" + json.dumps(observations, ensure_ascii=False)},
+        {
+            "role": "user",
+            "content": (
+                f"Marque : {marque}\n\n"
+                f"Signaux calculés (exacts) :\n{signaux.model_dump_json()}\n\n"
+                f"Données collectées :\n{json.dumps(observations, ensure_ascii=False)}"
+            ),
+        },
     ]
     for essai in range(1, max_essais + 1):
         reponse = appeler_llm(
