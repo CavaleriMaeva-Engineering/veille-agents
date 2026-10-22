@@ -10,9 +10,9 @@ from veille.agents.signaux import Signaux
 
 RAPPORT_VALIDE = {
     "marque": "Typology",
-    "produits_pousses": [{"affirmation": "Calendrier de l'Avent 2026, édition limitée.", "source": "meta"}],
+    "produits_pousses": [{"affirmation": "Calendrier de l'Avent 2026, édition limitée.", "sources": ["meta"]}],
     "messages_et_promesses": [],
-    "offres": [{"affirmation": "184,90 € pour 402,40 € de produits.", "source": "site"}],
+    "offres": [{"affirmation": "184,90 € pour 402,40 € de produits.", "sources": ["site"]}],
     "formats_et_plateformes": [],
     "cible": [],
     "donnees_manquantes": ["TikTok indisponible."],
@@ -44,7 +44,7 @@ def test_rapport_valide():
     rapport = rediger(client)
 
     assert rapport.marque == "Typology"
-    assert rapport.offres[0].source == "site"
+    assert rapport.offres[0].sources == ["site"]
 
 
 def test_schema_strict_envoye():
@@ -58,7 +58,7 @@ def test_schema_strict_envoye():
     assert schema["additionalProperties"] is False
     assert "pub_la_plus_durable" not in schema["properties"]   # calculé par le code, plus par le LLM
     assert "tools" not in client.chat.completions.create.call_args.kwargs
-    
+
 
 def test_json_invalide_puis_corrige():
     client = faux_llm('{"marque": "Typology"}', json.dumps(RAPPORT_VALIDE))
@@ -81,7 +81,7 @@ def test_abandonne_apres_max_essais():
 
 
 def test_source_inconnue_refusee():
-    rapport = dict(RAPPORT_VALIDE, offres=[{"affirmation": "x", "source": "linkedin"}])
+    rapport = dict(RAPPORT_VALIDE, offres=[{"affirmation": "x", "sources": ["linkedin"]}])
 
     with pytest.raises(ValidationError):
         RapportVeille.model_validate(rapport)
