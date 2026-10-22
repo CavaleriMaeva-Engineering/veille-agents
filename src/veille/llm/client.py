@@ -40,6 +40,7 @@ def appeler_llm(
     execution_id: str,
     outils: list[dict] | None = None,
     choix_outil: str | None = None,
+    format_reponse: dict | None = None,
 ) -> ReponseLLM:
     tentative = 0
 
@@ -51,6 +52,8 @@ def appeler_llm(
         if outils:
             parametres["tools"] = outils
             parametres["tool_choice"] = choix_outil or "auto"
+        if format_reponse:
+            parametres["response_format"] = format_reponse
         try:
             reponse = client.chat.completions.create(**parametres)
         except Exception as erreur:
