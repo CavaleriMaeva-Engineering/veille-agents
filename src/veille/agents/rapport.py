@@ -2,7 +2,7 @@ import json
 from typing import Literal
 
 import groq
-from pydantic import BaseModel, ConfigDict, Field, ValidationError
+from pydantic import BaseModel, ConfigDict, Field, ValidationError, field_validator
 
 from veille.llm.client import appeler_llm
 from veille.tools.registre import resumer_erreurs
@@ -25,11 +25,19 @@ class RapportVeille(BaseModel):
     formats_et_plateformes: list[Constat]
     cible: list[Constat]
     pub_la_plus_durable: str | None = Field(
-        description="La pub qui tourne depuis le plus longtemps et sa durée, ou null si inconnue."
+        description="La pub qui tourne depuis le plus longtemps et sa durée en jours. "
+        "Valeur JSON null (pas le texte \"null\") si les données ne permettent pas de le dire."
     )
     donnees_manquantes: list[str] = Field(
         description="Les sources ou informations qu'on n'a PAS pu obtenir (ex. : TikTok indisponible). Pas de critique de la stratégie."
     )
+
+    @field_validator("pub_la_plus_durable")
+    @classmethod
+    def texte_vide_vers_none(cls, valeur: str | None) -> str | None:
+        if valeur is not None and valeur.strip().lower() in {"", "null", "none", "inconnue"}:
+            return None
+        return valeur
 
 
 def format_json_strict(modele: type[BaseModel]) -> dict:
@@ -68,6 +76,8 @@ def rediger_rapport(
         reponse = appeler_llm(
             client, modele, messages, agent="redacteur", execution_id=execution_id,
             format_reponse=format_json_strict(RapportVeille),
+            max_tokens_sortie=4096,
+            effort_raisonnement="low",
         )
         try:
             return RapportVeille.model_validate_json(reponse.texte or "")

@@ -41,6 +41,8 @@ def appeler_llm(
     outils: list[dict] | None = None,
     choix_outil: str | None = None,
     format_reponse: dict | None = None,
+    max_tokens_sortie: int | None = None,
+    effort_raisonnement: str | None = None,
 ) -> ReponseLLM:
     tentative = 0
 
@@ -54,6 +56,10 @@ def appeler_llm(
             parametres["tool_choice"] = choix_outil or "auto"
         if format_reponse:
             parametres["response_format"] = format_reponse
+        if max_tokens_sortie:
+            parametres["max_completion_tokens"] = max_tokens_sortie
+        if effort_raisonnement:
+            parametres["reasoning_effort"] = effort_raisonnement
         try:
             reponse = client.chat.completions.create(**parametres)
         except Exception as erreur:

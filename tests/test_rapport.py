@@ -94,3 +94,19 @@ def test_extraire_observations():
     ]
 
     assert extraire_observations(messages) == ['{"nb_pubs": 5}']
+
+
+def test_budget_de_sortie_et_effort_envoyes():
+    client = faux_llm(json.dumps(RAPPORT_VALIDE))
+
+    rediger(client)
+
+    kwargs = client.chat.completions.create.call_args.kwargs
+    assert kwargs["max_completion_tokens"] >= 2048
+    assert kwargs["reasoning_effort"] == "low"
+
+
+def test_null_en_texte_devient_none():
+    rapport = RapportVeille.model_validate(dict(RAPPORT_VALIDE, pub_la_plus_durable="null"))
+
+    assert rapport.pub_la_plus_durable is None
