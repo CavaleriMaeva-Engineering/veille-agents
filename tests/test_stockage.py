@@ -31,7 +31,7 @@ def test_aller_retour(tmp_path):
 
     assert chemin.name == "2026-10-22_merci-handy_t-1.json"
     assert charger_analyse(chemin) == analyse
-
+    assert charger_analyse(chemin).observations == ['{"nb_pubs": 0}']
 
 def test_lister_dans_l_ordre(tmp_path):
     enregistrer_analyse(fausse_analyse(jour=date(2026, 10, 29)), dossier=tmp_path)

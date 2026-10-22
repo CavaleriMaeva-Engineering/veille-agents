@@ -27,6 +27,7 @@ class AnalyseMarque(BaseModel):
     marque: str
     date: date
     execution_id: str
+    observations: list[str]  # données brutes de la collecte, pour pouvoir rejouer la rédaction
     signaux: Signaux
     rapport: RapportVeille
 
@@ -37,7 +38,6 @@ def analyser_marque(
     modele: str,
     marque: Marque,
     execution_id: str,
-    observations: list[str],   # données brutes de la collecte, pour pouvoir rejouer la rédaction
     max_tours: int = 5,
 ) -> AnalyseMarque:
     collecte = executer_agent(
