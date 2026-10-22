@@ -43,3 +43,15 @@ def test_outils_transmis_seulement_s_il_y_en_a():
     appeler_llm(client, "modele", [], agent="test", execution_id="t-1")
 
     assert "tools" not in client.chat.completions.create.call_args.kwargs
+
+
+def test_outils_et_tool_choice_envoyes():
+    client = Mock()
+    client.chat.completions.create.return_value = fausse_reponse_groq(contenu="ok")
+    outils = [{"type": "function"}]
+
+    appeler_llm(client, "modele", [], agent="test", execution_id="t-1", outils=outils)
+
+    kwargs = client.chat.completions.create.call_args.kwargs
+    assert kwargs["tools"] == outils
+    assert kwargs["tool_choice"] == "auto"
