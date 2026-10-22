@@ -1,6 +1,11 @@
+import json
 from typing import Literal
 
-from pydantic import BaseModel, ConfigDict, Field
+import groq
+from pydantic import BaseModel, ConfigDict, Field, ValidationError
+
+from veille.llm.client import appeler_llm
+from veille.tools.registre import resumer_erreurs
 
 
 class Constat(BaseModel):
@@ -32,3 +37,42 @@ def format_json_strict(modele: type[BaseModel]) -> dict:
         "type": "json_schema",
         "json_schema": {"name": modele.__name__, "strict": True, "schema": modele.model_json_schema()},
     }
+
+
+PROMPT_REDACTION = """Tu rédiges un rapport de veille publicitaire à partir de données collectées.
+Règles :
+- Utilise UNIQUEMENT les données fournies. N'invente rien, n'interprète pas la stratégie.
+- Chaque constat indique sa source : meta, tiktok ou site.
+- Pas d'identifiant technique (numéros de pub, paramètres d'URL).
+- Si une source a renvoyé une erreur, mentionne-la dans donnees_manquantes.
+- Une liste vide est acceptable si les données ne disent rien sur ce point."""
+
+
+def extraire_observations(messages: list[dict]) -> list[str]:
+    return [m["content"] for m in messages if m["role"] == "tool"]
+
+
+def rediger_rapport(
+    client: groq.Groq,
+    modele: str,
+    marque: str,
+    observations: list[str],
+    execution_id: str,
+    max_essais: int = 2,
+) -> RapportVeille:
+    messages = [
+        {"role": "system", "content": PROMPT_REDACTION},
+        {"role": "user", "content": f"Marque : {marque}\n\nDonnées collectées :\n" + json.dumps(observations, ensure_ascii=False)},
+    ]
+    for essai in range(1, max_essais + 1):
+        reponse = appeler_llm(
+            client, modele, messages, agent="redacteur", execution_id=execution_id,
+            format_reponse=format_json_strict(RapportVeille),
+        )
+        try:
+            return RapportVeille.model_validate_json(reponse.texte or "")
+        except ValidationError as erreur:
+            if essai == max_essais:
+                raise
+            messages.append({"role": "assistant", "content": reponse.texte or ""})
+            messages.append({"role": "user", "content": f"Ton JSON ne respecte pas le format : {resumer_erreurs(erreur)}. Corrige-le."})
