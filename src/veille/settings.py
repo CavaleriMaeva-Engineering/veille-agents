@@ -20,6 +20,9 @@ class Marque(BaseModel):
 class Config(BaseModel):
     marche: str
     modele: str
+    # Juge des évals : un AUTRE modèle que celui qui travaille (pas d'auto-préférence), plus gros, et avec son
+    # propre quota Groq (les limites sont par modèle).
+    modele_juge: str = "openai/gpt-oss-120b"
     max_tentatives: int = Field(default=5, ge=1, le=10)
     marques: list[Marque] = Field(min_length=1)
     outils_actifs: list[str] = Field(

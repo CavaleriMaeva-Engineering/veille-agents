@@ -7,6 +7,7 @@ Le juge voit exactement les mêmes candidats que toi lors de l'annotation (même
 """
 
 import argparse
+import hashlib
 import json
 import logging
 from datetime import datetime
@@ -35,6 +36,7 @@ logging.basicConfig(level=logging.WARNING, format="%(message)s")
 parser = argparse.ArgumentParser()
 parser.add_argument("--cas", type=int, help="ne juger que les N premières questions (essai)")
 parser.add_argument("--max-extraits", type=int, default=14, help="extraits jugés par question (débit Groq)")
+parser.add_argument("--modele", help="modèle juge (par défaut : modele_juge de la config)")
 args = parser.parse_args()
 
 cas, annotations = charger_cas(), charger_annotations()
@@ -42,7 +44,19 @@ cas = [c for c in cas if c.id in annotations][: args.cas]
 morceaux, _ = charger_corpus([DOSSIER_SORTIES, DOSSIER_SORTIES / "archives"])
 par_id = {m.id: m for m in morceaux}
 moteur = MoteurRecherche(morceaux, charger_encodeur(), charger_reranker())
-client, modele = creer_client_groq(Secrets()), charger_config().modele
+client = creer_client_groq(Secrets())
+modele = args.modele or charger_config().modele_juge
+
+# Reprise : chaque question jugée est enregistrée tout de suite. Si le quota Groq coupe le script
+# (limite de tokens par jour), on relance et seules les questions manquantes sont jugées.
+FICHIER_REPRISE = DOSSIER_EVALS / "juge_reprise.json"
+reprise = json.loads(FICHIER_REPRISE.read_text(encoding="utf-8")) if FICHIER_REPRISE.exists() else {}
+
+
+def cle_reprise(question: str, extraits: list[str]) -> str:
+    """Même modèle, même prompt, mêmes extraits dans le même ordre → même verdict : on peut le réutiliser."""
+    contenu = json.dumps([modele, PROMPT_JUGE, question, extraits], ensure_ascii=False)
+    return hashlib.sha256(contenu.encode("utf-8")).hexdigest()[:16]
 
 paires: list[Paire] = []
 for numero, c in enumerate(cas, start=1):
@@ -55,9 +69,14 @@ for numero, c in enumerate(cas, start=1):
     retenus = candidats[: args.max_extraits]
     retenus += [m for m in candidats[args.max_extraits:] if m.id in pertinents]   # ne jamais perdre un pertinent
 
-    verdicts = juger_deux_ordres(
-        client, modele, c.question, [f"[{m.marque} · {m.type} · {m.date}] {m.texte}" for m in retenus], f"juge-{c.id}"
-    )
+    extraits = [f"[{m.marque} · {m.type} · {m.date}] {m.texte}" for m in retenus]
+    cle = cle_reprise(c.question, extraits)
+    if cle in reprise:
+        verdicts = [tuple(v) for v in reprise[cle]]
+    else:
+        verdicts = juger_deux_ordres(client, modele, c.question, extraits, f"juge-{c.id}")
+        reprise[cle] = verdicts
+        FICHIER_REPRISE.write_text(json.dumps(reprise, ensure_ascii=False), encoding="utf-8")
     for m, (endroit, envers) in zip(retenus, verdicts, strict=True):
         paires.append(Paire(cas=c.id, morceau=m.id, longueur=len(m.texte), humain=m.id in pertinents,
                             endroit=endroit, envers=envers))
