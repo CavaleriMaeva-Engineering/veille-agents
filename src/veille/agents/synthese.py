@@ -1,6 +1,6 @@
 import json
 from collections import Counter
-from datetime import date
+from datetime import date, datetime
 
 import groq
 from pydantic import BaseModel, ConfigDict, Field
@@ -94,6 +94,7 @@ def rediger_synthese(
 
 class SyntheseVeille(BaseModel):
     date: date
+    horodatage: datetime
     execution_id: str
     marques_analysees: list[str]
     echecs: dict[str, str]

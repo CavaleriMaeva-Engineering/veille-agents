@@ -1,5 +1,7 @@
 from pathlib import Path
 
+from pydantic import ValidationError
+
 from veille.agents.analyste import AnalyseMarque
 from veille.agents.synthese import SyntheseVeille
 
@@ -29,6 +31,29 @@ def lister_analyses(marque: str, dossier: Path = DOSSIER_SORTIES) -> list[Path]:
 
 def enregistrer_synthese(synthese: SyntheseVeille, dossier: Path = DOSSIER_SORTIES) -> Path:
     dossier.mkdir(parents=True, exist_ok=True)
-    chemin = dossier / f"{synthese.date.isoformat()}_synthese-marche_{synthese.execution_id}.json"
+    chemin = dossier / f"{synthese.horodatage:%Y-%m-%dT%H-%M-%S}_synthese-marche_{synthese.execution_id}.json"
     chemin.write_text(synthese.model_dump_json(indent=2), encoding="utf-8")
     return chemin
+
+
+def charger_dernieres_analyses(
+    marques: list[str], dossier: Path = DOSSIER_SORTIES
+) -> tuple[list[AnalyseMarque], dict[str, str]]:
+    analyses, manquantes = [], {}
+    for marque in marques:
+        chemins = lister_analyses(marque, dossier)
+        if not chemins:
+            manquantes[marque] = "aucune analyse enregistrée"
+            continue
+        try:
+            analyses.append(charger_analyse(chemins[-1]))
+        except ValidationError:
+            manquantes[marque] = "analyse enregistrée dans un ancien format"
+    return analyses, manquantes
+
+
+def charger_derniere_synthese(dossier: Path = DOSSIER_SORTIES) -> SyntheseVeille | None:
+    chemins = sorted(dossier.glob("*_synthese-marche_*.json"))
+    if not chemins:
+        return None
+    return SyntheseVeille.model_validate_json(chemins[-1].read_text(encoding="utf-8"))

@@ -12,6 +12,7 @@ dependencies = [
     "pydantic>=2.14.1",
     "pydantic-settings>=2.16.0",
     "pyyaml>=6.0.3",
+    "reportlab>=5.1.0",
 ]
 
 [build-system]
