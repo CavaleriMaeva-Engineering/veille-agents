@@ -58,7 +58,7 @@ def test_un_outil_puis_reponse():
 
     assert resultat.reponse == "Typology pousse son calendrier de l'Avent."
     assert resultat.tours == 2
-    fonction.assert_called_once_with(marque="Typology", max_pubs=10)
+    fonction.assert_called_once_with(marque="Typology", max_pubs=10, domaine=None)
     roles = [m["role"] for m in resultat.messages]
     assert roles == ["system", "user", "assistant", "tool", "assistant"]
     observation = resultat.messages[3]
@@ -121,7 +121,7 @@ def test_arguments_invalides_renvoyes_au_llm():
     resultat = lancer(client, fonction)
 
     assert "max_pubs" in resultat.messages[3]["content"]
-    fonction.assert_called_once_with(marque="Typology", max_pubs=20)
+    fonction.assert_called_once_with(marque="Typology", max_pubs=20, domaine=None)
 
 
 def test_chaque_tour_est_journalise(caplog):

@@ -7,7 +7,7 @@ from apify_client import ApifyClient
 from apify_client.errors import ApifyApiError
 from pydantic import BaseModel, Field
 
-from veille.tools.base import decrire_outil
+from veille.tools.base import decrire_outil, est_du_domaine
 
 logger = logging.getLogger(__name__)
 
@@ -34,6 +34,9 @@ class ArgsChercherPubsMeta(BaseModel):
         ge=1,
         le=20,
         description="Nombre maximum de publicités à récupérer. Chaque pub a un coût : demande-en peu si quelques exemples suffisent.",
+    )
+    domaine: str | None = Field(
+        None, description="Site officiel de la marque, sans https ni www (ex. : typology.com). Améliore le filtrage."
     )
 
 
@@ -95,37 +98,37 @@ def normaliser_pub_meta(brute: dict, aujourd_hui: date | None = None) -> PubMeta
     )
 
 
-def chercher_pubs_meta(marque: str, client: ApifyClient, max_pubs: int = 10) -> dict:
+def chercher_pubs_meta(marque: str, client: ApifyClient, max_pubs: int = 10, domaine: str | None = None) -> dict:
     parametres = {"active_status": "active", "ad_type": "all", "country": "FR",
                   "search_type": "keyword_unordered", "q": marque}
     url = "https://www.facebook.com/ads/library/?" + urlencode(parametres)
+    a_chercher = min(max_pubs * 3, 15)   # on filtre ensuite : chercher plus large que ce qu'on garde
 
     try:
         execution = client.actor("apify/facebook-ads-scraper").call(
-            run_input={"startUrls": [{"url": url}], "resultsLimit": max_pubs},
-            max_items=max_pubs,
+            run_input={"startUrls": [{"url": url}], "resultsLimit": a_chercher},
+            max_items=a_chercher,
             wait_duration=timedelta(minutes=3),
         )
     except ApifyApiError as erreur:
         logger.warning(json.dumps({
             "evenement": "erreur_outil",
-            "outil": "chercher_pubs_tiktok",
+            "outil": "chercher_pubs_meta",
             "code": erreur.status_code,
             "type": erreur.type,
             "message": erreur.message,
         }, ensure_ascii=False))
         return {"erreur": "La bibliothèque publicitaire de Meta est indisponible pour le moment. Utilise une autre source."}
-    
+
     if execution is None or execution.status != "SUCCEEDED":
         return {"erreur": "La collecte des pubs Meta n'a pas abouti à temps. Réessaie plus tard ou utilise une autre source."}
 
     brutes = client.dataset(execution.default_dataset_id).list_items().items
 
-    pubs = [
-        normaliser_pub_meta(brute)
-        for brute in brutes
-        if (brute.get("pageName") or "").lower() == marque.lower()
-    ]
+    def est_de_la_marque(pub: PubMeta) -> bool:
+        return pub.marque.lower() == marque.lower() or (domaine is not None and est_du_domaine(pub.lien, domaine))
+
+    pubs = [pub for pub in (normaliser_pub_meta(brute) for brute in brutes) if est_de_la_marque(pub)][:max_pubs]
 
     resultat = {
         "marque": marque,
@@ -134,8 +137,8 @@ def chercher_pubs_meta(marque: str, client: ApifyClient, max_pubs: int = 10) -> 
     }
     if not pubs:
         resultat["remarque"] = (
-            f"Aucune pub active de la page '{marque}' trouvée en France "
-            f"({len(brutes)} pubs trouvées au total, d'autres pages). "
+            f"Aucune pub active de la marque '{marque}' trouvée en France "
+            f"({len(brutes)} pubs trouvées au total, d'autres annonceurs). "
             "Ce n'est pas une erreur : ne relance pas l'outil."
         )
     return resultat

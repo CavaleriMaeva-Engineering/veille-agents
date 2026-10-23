@@ -19,6 +19,7 @@ class SignauxMarche(BaseModel):
     nb_pubs_par_marque: dict[str, int]
     formats: dict[str, int]
     classement_pubs_durables: list[PubDurableMarque]   # de la plus durable à la moins durable
+    marques_sans_pub: list[str]
 
 
 def calculer_signaux_marche(analyses: list[AnalyseMarque]) -> SignauxMarche:
@@ -34,6 +35,7 @@ def calculer_signaux_marche(analyses: list[AnalyseMarque]) -> SignauxMarche:
         nb_pubs_par_marque={a.marque: sum(a.signaux.nb_pubs.values()) for a in analyses},
         formats=dict(formats),
         classement_pubs_durables=sorted(durables, key=lambda d: d.pub.duree_jours, reverse=True),
+        marques_sans_pub=[a.marque for a in analyses if sum(a.signaux.nb_pubs.values()) == 0],
     )
 
 
@@ -61,8 +63,8 @@ Règles :
 - Les signaux du marché sont exacts : utilise-les pour les chiffres, ne recalcule rien.
 - Une tendance commune doit concerner au moins deux marques, que tu nommes.
 - Un positionnement par marque analysée, en une phrase.
-- Mentionne dans limites chaque marque non analysée et chaque source manquante."""
-
+- Mentionne dans limites chaque marque non analysée et chaque source manquante.
+- Mentionne dans limites chaque marque sans pub trouvée (signal marques_sans_pub) : on ne peut rien conclure sur elle."""
 
 def rediger_synthese(
     client: groq.Groq,

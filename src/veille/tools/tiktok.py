@@ -2,13 +2,12 @@ import json
 import logging
 from datetime import date, timedelta
 from decimal import Decimal
-from urllib.parse import urlparse
 
 from apify_client import ApifyClient
 from apify_client.errors import ApifyApiError
 from pydantic import BaseModel, Field
 
-from veille.tools.base import decrire_outil
+from veille.tools.base import decrire_outil, est_du_domaine
 from veille.tools.meta import est_un_vrai_texte
 
 logger = logging.getLogger(__name__)
@@ -84,13 +83,6 @@ def normaliser_pub_tiktok(brute: dict, marque: str) -> PubTiktok:
         ciblage_age=brute.get("targetingByAge") or [],
         ciblage_genre=brute.get("targetingByGender") or [],
     )
-
-
-def est_du_domaine(url: str | None, domaine: str) -> bool:
-    if not url:
-        return False
-    hote = (urlparse(url).hostname or "").removeprefix("www.")
-    return hote == domaine or hote.endswith("." + domaine)
 
 
 def chercher_pubs_tiktok(marque: str, domaine: str, client: ApifyClient, max_pubs: int = 3) -> dict:

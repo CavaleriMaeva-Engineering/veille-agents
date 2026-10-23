@@ -24,17 +24,17 @@ def analyse(marque: str, nb_meta: int, duree: int | None) -> AnalyseMarque:
     )
 
 
-ANALYSES = [analyse("Typology", 5, 282), analyse("Horace", 3, 400), analyse("Respire", 2, None)]
+ANALYSES = [analyse("Typology", 5, 282), analyse("Horace", 3, 400), analyse("Respire", 0, None)]
 SYNTHESE_VALIDE = {"tendances_communes": [], "positionnements": [], "differences_notables": [], "limites": []}
 
 
 def test_signaux_marche():
     signaux = calculer_signaux_marche(ANALYSES)
 
-    assert signaux.nb_pubs_par_marque == {"Typology": 5, "Horace": 3, "Respire": 2}
-    assert signaux.formats == {"VIDEO": 10}
+    assert signaux.nb_pubs_par_marque == {"Typology": 5, "Horace": 3, "Respire": 0}
+    assert signaux.formats == {"VIDEO": 8}
     assert [d.marque for d in signaux.classement_pubs_durables] == ["Horace", "Typology"]   # Respire n'en a pas
-
+    assert signaux.marques_sans_pub == ["Respire"]
 
 def test_synthese_compacte_et_echecs_transmis():
     message = SimpleNamespace(content=json.dumps(SYNTHESE_VALIDE), tool_calls=None)

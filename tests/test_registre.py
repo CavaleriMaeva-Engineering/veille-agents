@@ -16,7 +16,7 @@ def test_appel_valide():
 
     observation = executer_appel_outil(appel, outils_de_test(fonction))
 
-    fonction.assert_called_once_with(marque="Typology", max_pubs=5)
+    fonction.assert_called_once_with(marque="Typology", max_pubs=5, domaine=None)
     assert json.loads(observation) == {"nb_pubs": 2}
 
 
@@ -26,7 +26,7 @@ def test_valeur_par_defaut_appliquee():
 
     executer_appel_outil(appel, outils_de_test(fonction))
 
-    fonction.assert_called_once_with(marque="Typology", max_pubs=10)
+    fonction.assert_called_once_with(marque="Typology", max_pubs=10, domaine=None)
 
 
 def test_outil_inconnu():

@@ -137,3 +137,22 @@ def test_duree_jours_meta_sans_date():
     pub = normaliser_pub_meta({"adArchiveID": "1", "pageName": "Typology"}, aujourd_hui=date(2026, 10, 22))
 
     assert pub.duree_jours is None
+
+
+def test_chercher_pubs_meta_garde_par_domaine():
+    pub_autre_page = {"adArchiveID": "9", "pageName": "Typology Paris Officiel", "isActive": True,
+                      "snapshot": {"linkUrl": "https://www.typology.com/produit"}}
+    client = faux_client_apify([pub_autre_page])
+
+    resultat = chercher_pubs_meta("Typology", client, domaine="typology.com")
+
+    assert resultat["nb_pubs"] == 1   # nom de page différent, mais le lien mène au site de la marque
+
+
+def test_chercher_pubs_meta_cherche_plus_large_que_ce_qu_il_garde():
+    client = faux_client_apify(charger_pubs_typology())
+
+    resultat = chercher_pubs_meta("Typology", client, max_pubs=2)
+
+    assert resultat["nb_pubs"] == 2
+    assert client.actor.return_value.call.call_args.kwargs["run_input"]["resultsLimit"] == 6
