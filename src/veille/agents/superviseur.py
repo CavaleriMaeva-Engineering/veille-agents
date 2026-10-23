@@ -34,7 +34,7 @@ def lancer_veille(
                 client_groq=client_groq, client_apify=client_apify, modele=config.modele,
                 marque=marque, execution_id=id_marque, outils_actifs=config.outils_actifs,
             )
-        except Exception as erreur:  # noqa: BLE001 
+        except Exception as erreur:  # noqa: BLE001 — cloison : une marque en échec ne doit pas arrêter les autres
             logger.error(json.dumps({
                 "evenement": "echec_marque", "execution_id": id_marque,
                 "marque": marque.nom, "erreur": repr(erreur),

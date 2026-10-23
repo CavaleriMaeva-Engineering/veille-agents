@@ -2,11 +2,10 @@ import json
 from typing import Literal
 
 import groq
-from pydantic import BaseModel, ConfigDict, Field, ValidationError
+from pydantic import BaseModel, ConfigDict, Field
 
 from veille.agents.signaux import Signaux
-from veille.llm.client import appeler_llm
-from veille.tools.registre import resumer_erreurs
+from veille.llm.structure import generer_structure
 
 
 class Constat(BaseModel):
@@ -30,13 +29,6 @@ class RapportVeille(BaseModel):
     donnees_manquantes: list[str] = Field(
         description="Les sources ou informations qu'on n'a PAS pu obtenir (ex. : TikTok indisponible). Pas de critique de la stratégie."
     )
-
-
-def format_json_strict(modele: type[BaseModel]) -> dict:
-    return {
-        "type": "json_schema",
-        "json_schema": {"name": modele.__name__, "strict": True, "schema": modele.model_json_schema()},
-    }
 
 
 PROMPT_REDACTION = """Tu rédiges un rapport de veille publicitaire à partir de données collectées.
@@ -82,17 +74,6 @@ def rediger_rapport(
             ),
         },
     ]
-    for essai in range(1, max_essais + 1):
-        reponse = appeler_llm(
-            client, modele, messages, agent="redacteur", execution_id=execution_id,
-            format_reponse=format_json_strict(RapportVeille),
-            max_tokens_sortie=4096,
-            effort_raisonnement="low",
-        )
-        try:
-            return RapportVeille.model_validate_json(reponse.texte or "")
-        except ValidationError as erreur:
-            if essai == max_essais:
-                raise
-            messages.append({"role": "assistant", "content": reponse.texte or ""})
-            messages.append({"role": "user", "content": f"Ton JSON ne respecte pas le format : {resumer_erreurs(erreur)}. Corrige-le."})
+    return generer_structure(
+        client, modele, messages, RapportVeille, agent="redacteur", execution_id=execution_id, max_essais=max_essais
+    )
