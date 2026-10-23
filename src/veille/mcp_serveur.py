@@ -15,7 +15,7 @@ import sys
 from functools import cache
 
 from apify_client import ApifyClient
-from mcp.server.fastmcp import FastMCP
+from mcp.server.mcpserver import MCPServer
 
 from veille.garde_fous import MAX_PUBS, domaine_de, neutraliser_donnees
 from veille.rag.documents import charger_corpus
@@ -26,7 +26,7 @@ from veille.tools.meta import chercher_pubs_meta as collecter_pubs_meta
 
 logging.basicConfig(level=logging.WARNING, stream=sys.stderr, format="%(message)s")
 
-mcp = FastMCP("veille-agents")
+mcp = MCPServer("veille-agents")
 MODE_RECHERCHE = "rerank"   # les tests passent en "hybride" pour se passer du reranker
 
 
