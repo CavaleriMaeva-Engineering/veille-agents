@@ -9,6 +9,7 @@ class Secrets(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env")
     groq_api_key: SecretStr
     apify_token: SecretStr
+    slack_webhook_url: SecretStr | None = None
 
 
 class Marque(BaseModel):
