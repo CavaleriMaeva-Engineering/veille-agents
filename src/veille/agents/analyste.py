@@ -34,10 +34,19 @@ N'appelle jamais un outil qui ne t'est pas fourni. Si un outil renvoie une erreu
 Quand les étapes sont faites, réponds seulement « Collecte terminée »."""
 
 
+class Trajectoire(BaseModel):
+    """Comment l'agent collecteur a travaillé : de quoi évaluer l'agent lui-même (PJ13)."""
+    tours: int
+    arret: str                    # "reponse_finale" ou "limite_tours"
+    tokens: int
+    appels: list[str]             # outils appelés, dans l'ordre
+
+
 class Collecte(BaseModel):
     observations: list[str]  # données brutes renvoyées par les outils
     signaux: Signaux         # calculés par le code à partir de ces données
     incidents: list[str] = Field(default_factory=list)   # garde-fous déclenchés pendant la collecte
+    trajectoire: Trajectoire | None = None
 
 
 class AnalyseMarque(BaseModel):
@@ -53,6 +62,7 @@ class AnalyseMarque(BaseModel):
     nb_collectes: int = 1                    # 2 si le superviseur a relancé la collecte
     souvenirs: list[str] = Field(default_factory=list)   # morceaux d'historique montrés au rédacteur (traçabilité)
     alertes: list[str] = Field(default_factory=list)     # garde-fous déclenchés (collecte et ancrage) : baissent la confiance
+    trajectoire: Trajectoire | None = None               # None pour les analyses d'avant PJ13
 
 
 def collecter_marque(
@@ -80,6 +90,10 @@ def collecter_marque(
         observations=extraire_observations(resultat.messages),
         signaux=calculer_signaux(extraire_resultats(resultat.messages)),
         incidents=garde.incidents,
+        trajectoire=Trajectoire(
+            tours=resultat.tours, arret=resultat.arret, tokens=resultat.tokens,
+            appels=[a["function"]["name"] for m in resultat.messages for a in m.get("tool_calls", [])],
+        ),
     )
 
 

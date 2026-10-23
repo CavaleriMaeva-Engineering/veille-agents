@@ -105,7 +105,7 @@ def traiter_marque(
         marque=marque.nom, date=date.today(), horodatage=datetime.now(), execution_id=id_marque,
         observations=collecte.observations, signaux=collecte.signaux, rapport=rapport,
         changements=changements, decision=decision, nb_collectes=nb_collectes,
-        souvenirs=[s.id for s in souvenirs], alertes=alertes,
+        souvenirs=[s.id for s in souvenirs], alertes=alertes, trajectoire=collecte.trajectoire,
     )
 
 
