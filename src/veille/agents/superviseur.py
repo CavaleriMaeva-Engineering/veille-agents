@@ -14,6 +14,7 @@ from veille.agents.analyste import (
     rediger_analyse,
 )
 from veille.agents.changements import comparer
+from veille.agents.memoire import Rappel, formater_memoire, requete_depuis_collecte
 from veille.agents.rapport import RapportVeille
 from veille.agents.signaux import SOURCE_PAR_OUTIL, Signaux
 from veille.settings import Config, Marque
@@ -55,6 +56,7 @@ def traiter_marque(
     collecter: Callable[..., Collecte],
     rediger: Callable[..., RapportVeille],
     charger_precedente: Callable[[str], AnalyseMarque | None],
+    rappeler: Rappel | None = None,
 ) -> AnalyseMarque:
     # Décision 1 : relancer une collecte insuffisante, au plus MAX_COLLECTES fois en tout.
     for nb_collectes in range(1, MAX_COLLECTES + 1):
@@ -74,24 +76,32 @@ def traiter_marque(
     # La précédente se charge avant l'enregistrement, sinon on se comparerait à soi-même.
     precedente = charger_precedente(marque.nom)
     changements = comparer(collecte.signaux, precedente.signaux if precedente else None)
+    souvenirs = []
     if precedente is not None and not changements.significatif:
         rapport, decision = precedente.rapport, "reutilise"
     else:
+        # Mémoire long terme : seulement quand on rédige (inutile de chercher dans le passé pour rien).
+        memoire = None
+        if rappeler is not None:
+            souvenirs = rappeler(marque.nom, requete_depuis_collecte(collecte.observations, marque.nom))
+            memoire = formater_memoire(souvenirs, changements)
         rapport = rediger(
             client_groq=client_groq, modele=config.modele, marque=marque.nom,
-            collecte=collecte, execution_id=id_marque,
+            collecte=collecte, execution_id=id_marque, memoire=memoire,
         )
         decision = "redige"
     logger.info(json.dumps({
         "evenement": "decision_rapport", "execution_id": id_marque, "marque": marque.nom,
         "decision": decision, "comparable": changements.comparable, "score": changements.score,
         "significatif": changements.significatif, "nb_collectes": nb_collectes,
+        "nb_souvenirs": len(souvenirs),
     }, ensure_ascii=False))
 
     return AnalyseMarque(
         marque=marque.nom, date=date.today(), horodatage=datetime.now(), execution_id=id_marque,
         observations=collecte.observations, signaux=collecte.signaux, rapport=rapport,
         changements=changements, decision=decision, nb_collectes=nb_collectes,
+        souvenirs=[s.id for s in souvenirs],
     )
 
 
@@ -104,6 +114,7 @@ def lancer_veille(
     rediger: Callable[..., RapportVeille] = rediger_analyse,
     enregistrer: Callable[[AnalyseMarque], object] = enregistrer_analyse,
     charger_precedente: Callable[[str], AnalyseMarque | None] = charger_derniere_analyse,
+    rappeler: Rappel | None = None,
 ) -> ResultatVeille:
     analyses, echecs = [], {}
     for marque in config.marques:
@@ -111,6 +122,7 @@ def lancer_veille(
         try:
             analyse = traiter_marque(
                 marque, config, client_groq, client_apify, id_marque, collecter, rediger, charger_precedente,
+                rappeler,
             )
         except Exception as erreur:  # noqa: BLE001 — cloison : une marque en échec ne doit pas arrêter les autres
             logger.error(json.dumps({

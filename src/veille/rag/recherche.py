@@ -2,6 +2,7 @@
 
 from collections import defaultdict
 from collections.abc import Callable
+from datetime import date
 
 from pydantic import BaseModel
 
@@ -47,9 +48,20 @@ class MoteurRecherche:
         self.reranker = reranker
         self.nb_candidats = nb_candidats
 
-    def _classer(self, question: str, marque: str | None) -> tuple[dict[str, list[int]], dict[str, dict[int, float]]]:
-        # Filtre par métadonnées AVANT le classement : on ne cherche que dans les morceaux de la marque demandée.
-        autorises = [i for i, m in enumerate(self.morceaux) if marque is None or m.marque.lower() == marque.lower()]
+    def _autorise(self, morceau: Morceau, marque: str | None, avant: date | None, types: set[str] | None) -> bool:
+        return (
+            (marque is None or morceau.marque.lower() == marque.lower())
+            # « avant » porte sur la PREMIÈRE fois où le morceau a été vu : une pub vue hier et revue aujourd'hui
+            # fait partie du passé, même si sa dernière date est aujourd'hui.
+            and (avant is None or (morceau.vu_le[0] if morceau.vu_le else morceau.date) < avant)
+            and (types is None or morceau.type in types)
+        )
+
+    def _classer(
+        self, question: str, marque: str | None, avant: date | None = None, types: set[str] | None = None
+    ) -> tuple[dict[str, list[int]], dict[str, dict[int, float]]]:
+        # Filtre par métadonnées AVANT le classement : marque, date, type de morceau.
+        autorises = [i for i, m in enumerate(self.morceaux) if self._autorise(m, marque, avant, types)]
         s_bm25 = self.bm25.scores(question)
         s_dense = self.dense.scores(question)
 
@@ -73,12 +85,20 @@ class MoteurRecherche:
             ordres["rerank"] = sorted(hybride, key=lambda i: -scores["rerank"][i])
         return ordres, scores
 
-    def rechercher(self, question: str, k: int = 5, marque: str | None = None, mode: str = "rerank") -> list[Resultat]:
+    def rechercher(
+        self,
+        question: str,
+        k: int = 5,
+        marque: str | None = None,
+        mode: str = "rerank",
+        avant: date | None = None,
+        types: set[str] | None = None,
+    ) -> list[Resultat]:
         if mode not in MODES:
             raise ValueError(f"mode inconnu : {mode} (attendu : {', '.join(MODES)})")
         if mode == "rerank" and self.reranker is None:
             raise ValueError("aucun reranker fourni")
-        ordres, scores = self._classer(question, marque)
+        ordres, scores = self._classer(question, marque, avant, types)
         rangs = {nom: {i: r for r, i in enumerate(ordre, start=1)} for nom, ordre in ordres.items()}
         return [
             Resultat(

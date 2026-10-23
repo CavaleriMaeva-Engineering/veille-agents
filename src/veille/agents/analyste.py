@@ -5,7 +5,7 @@ from typing import Literal
 
 import groq
 from apify_client import ApifyClient
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 from veille.agents.boucle import executer_agent
 from veille.agents.changements import Changements
@@ -49,6 +49,7 @@ class AnalyseMarque(BaseModel):
     changements: Changements | None = None   # calculé par le superviseur, None pour les anciennes analyses
     decision: Literal["redige", "reutilise"] = "redige"   # rapport rédigé, ou repris faute de nouveauté
     nb_collectes: int = 1                    # 2 si le superviseur a relancé la collecte
+    souvenirs: list[str] = Field(default_factory=list)   # morceaux d'historique montrés au rédacteur (traçabilité)
 
 
 def collecter_marque(
@@ -83,9 +84,12 @@ def rediger_analyse(
     marque: str,
     collecte: Collecte,
     execution_id: str,
+    memoire: str | None = None,
 ) -> RapportVeille:
-    """Agent rédacteur : aucun outil, il ne voit que les données collectées et les signaux."""
-    rapport = rediger_rapport(client_groq, modele, marque, collecte.observations, collecte.signaux, execution_id)
+    """Agent rédacteur : aucun outil, il ne voit que les données collectées, les signaux et sa mémoire."""
+    rapport = rediger_rapport(
+        client_groq, modele, marque, collecte.observations, collecte.signaux, execution_id, memoire=memoire
+    )
     rapport, nb_retirees = verifier_sources(rapport, collecte.signaux.sources_collectees)
     if nb_retirees:
         logger.warning(json.dumps({
