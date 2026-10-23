@@ -1,6 +1,7 @@
 from pathlib import Path
 
 from veille.agents.analyste import AnalyseMarque
+from veille.agents.synthese import SyntheseVeille
 
 DOSSIER_SORTIES = Path("sorties")
 
@@ -24,3 +25,10 @@ def charger_analyse(chemin: Path) -> AnalyseMarque:
 def lister_analyses(marque: str, dossier: Path = DOSSIER_SORTIES) -> list[Path]:
     motif = f"*_{marque.lower().replace(' ', '-')}_*.json"
     return sorted(dossier.glob(motif))
+
+
+def enregistrer_synthese(synthese: SyntheseVeille, dossier: Path = DOSSIER_SORTIES) -> Path:
+    dossier.mkdir(parents=True, exist_ok=True)
+    chemin = dossier / f"{synthese.date.isoformat()}_synthese-marche_{synthese.execution_id}.json"
+    chemin.write_text(synthese.model_dump_json(indent=2), encoding="utf-8")
+    return chemin
