@@ -1,0 +1,236 @@
+{
+  "r01": {
+    "pertinents": [
+      "constat:3755fd54ecc2",
+      "pub:meta:1596942645238140",
+      "pub:meta:1060150696818886",
+      "pub:meta:2573221096438196",
+      "constat:64133805c505",
+      "constat:d1917621f36b",
+      "constat:18d78e8df607",
+      "constat:0ca8d02eccca"
+    ],
+    "annote_par": "maeva",
+    "annote_le": "2026-10-23"
+  },
+  "r02": {
+    "pertinents": [
+      "constat:92be49aca479",
+      "constat:d55895bfea18"
+    ],
+    "annote_par": "maeva",
+    "annote_le": "2026-10-23"
+  },
+  "r03": {
+    "pertinents": [
+      "constat:032ab3b19048",
+      "constat:3a5c9f3f92f7",
+      "constat:33b7a9e98d6b"
+    ],
+    "annote_par": "maeva",
+    "annote_le": "2026-10-23"
+  },
+  "r04": {
+    "pertinents": [
+      "constat:021044fde7c3",
+      "constat:05c49d0d90c9",
+      "constat:b7902b34203d"
+    ],
+    "annote_par": "maeva",
+    "annote_le": "2026-10-23"
+  },
+  "r05": {
+    "pertinents": [
+      "constat:706e5d87b16d",
+      "constat:e49c3a356dee",
+      "constat:eaa1532929b2"
+    ],
+    "annote_par": "maeva",
+    "annote_le": "2026-10-23"
+  },
+  "r06": {
+    "pertinents": [
+      "constat:2f392e03ce90",
+      "constat:3755fd54ecc2",
+      "constat:d37a60b074d3"
+    ],
+    "annote_par": "maeva",
+    "annote_le": "2026-10-23"
+  },
+  "r07": {
+    "pertinents": [
+      "constat:56ea353dcd6b",
+      "constat:ecc224bdd54b"
+    ],
+    "annote_par": "maeva",
+    "annote_le": "2026-10-23"
+  },
+  "r08": {
+    "pertinents": [
+      "constat:a077a9e4f229"
+    ],
+    "annote_par": "maeva",
+    "annote_le": "2026-10-23"
+  },
+  "r09": {
+    "pertinents": [
+      "constat:377d746f2e69",
+      "constat:50c6c2a8dcc8",
+      "constat:616a13152af6",
+      "pub:meta:861279906531222",
+      "constat:fd5b9edb6318"
+    ],
+    "annote_par": "maeva",
+    "annote_le": "2026-10-23"
+  },
+  "r10": {
+    "pertinents": [
+      "constat:e66801d389d7",
+      "constat:8bf681f4f7fa",
+      "pub:meta:1195355416079253",
+      "constat:3e6097c3455a",
+      "constat:66dcbc0e78ea"
+    ],
+    "annote_par": "maeva",
+    "annote_le": "2026-10-23"
+  },
+  "r11": {
+    "pertinents": [
+      "constat:6aa0a9d7b5db",
+      "constat:72fc9f076523",
+      "constat:3f6bdb5ef5e4",
+      "constat:897141461c12"
+    ],
+    "annote_par": "maeva",
+    "annote_le": "2026-10-23"
+  },
+  "r12": {
+    "pertinents": [
+      "pub:meta:728829595979484",
+      "pub:meta:699041019032331",
+      "pub:meta:1127686258652875",
+      "constat:035e6c41c728",
+      "constat:ba6abf7cb14b",
+      "constat:cdcab864764c",
+      "constat:29f09b570b62",
+      "constat:2ffee72311bd",
+      "constat:d5b2a79e9442"
+    ],
+    "annote_par": "maeva",
+    "annote_le": "2026-10-23"
+  },
+  "r13": {
+    "pertinents": [
+      "constat:bced9adf9524",
+      "constat:6c5e9e330b87"
+    ],
+    "annote_par": "maeva",
+    "annote_le": "2026-10-23"
+  },
+  "r14": {
+    "pertinents": [
+      "constat:b6271517a2c4",
+      "constat:1d7308b4c13f",
+      "constat:eb9f27a3b202",
+      "pub:meta:1596942645238140",
+      "pub:meta:1060150696818886",
+      "pub:meta:2573221096438196",
+      "constat:ab8adf52ab72"
+    ],
+    "annote_par": "maeva",
+    "annote_le": "2026-10-23"
+  },
+  "r15": {
+    "pertinents": [
+      "constat:f993707c622f",
+      "constat:1d7308b4c13f",
+      "constat:c069dd2c125b",
+      "constat:fe6e0d5fa1fe",
+      "constat:04ad3b08e8f2",
+      "constat:ab84302d9d27",
+      "constat:006370e09d33",
+      "constat:eb9f27a3b202"
+    ],
+    "annote_par": "maeva",
+    "annote_le": "2026-10-23"
+  },
+  "r16": {
+    "pertinents": [
+      "constat:3c6060a2ce23"
+    ],
+    "annote_par": "maeva",
+    "annote_le": "2026-10-23"
+  },
+  "r17": {
+    "pertinents": [
+      "constat:3755fd54ecc2",
+      "constat:d1917621f36b",
+      "constat:0ca8d02eccca",
+      "constat:18d78e8df607",
+      "page:6763ec8d65b9",
+      "constat:64133805c505"
+    ],
+    "annote_par": "maeva",
+    "annote_le": "2026-10-23"
+  },
+  "r18": {
+    "pertinents": [
+      "constat:3a5c9f3f92f7",
+      "constat:032ab3b19048",
+      "constat:3755fd54ecc2",
+      "constat:33b7a9e98d6b"
+    ],
+    "annote_par": "maeva",
+    "annote_le": "2026-10-23"
+  },
+  "r19": {
+    "pertinents": [
+      "constat:8bf681f4f7fa",
+      "constat:006370e09d33",
+      "constat:e66801d389d7",
+      "constat:d209f7bd3076",
+      "constat:3e6097c3455a",
+      "pub:meta:1195355416079253"
+    ],
+    "annote_par": "maeva",
+    "annote_le": "2026-10-23"
+  },
+  "r20": {
+    "pertinents": [],
+    "annote_par": "maeva",
+    "annote_le": "2026-10-23"
+  },
+  "r21": {
+    "pertinents": [
+      "page:e1238a34906e",
+      "constat:a077a9e4f229"
+    ],
+    "annote_par": "maeva",
+    "annote_le": "2026-10-23"
+  },
+  "r22": {
+    "pertinents": [],
+    "annote_par": "maeva",
+    "annote_le": "2026-10-23"
+  },
+  "r23": {
+    "pertinents": [],
+    "annote_par": "maeva",
+    "annote_le": "2026-10-23"
+  },
+  "r24": {
+    "pertinents": [],
+    "annote_par": "maeva",
+    "annote_le": "2026-10-23"
+  },
+  "r25": {
+    "pertinents": [],
+    "annote_par": "maeva",
+    "annote_le": "2026-10-23"
+  },
+  "r26": {
+    "pertinents": [],
+    "annote_par": "maeva",
+    "annote_le": "2026-10-23"
+  }
+}
