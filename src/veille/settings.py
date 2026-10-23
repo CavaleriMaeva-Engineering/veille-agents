@@ -21,7 +21,9 @@ class Config(BaseModel):
     modele: str
     max_tentatives: int = Field(default=5, ge=1, le=10)
     marques: list[Marque] = Field(min_length=1)
-
+    outils_actifs: list[str] = Field(
+        default=["lire_page_web", "chercher_pubs_meta", "chercher_pubs_tiktok"], min_length=1
+    )
 
 def charger_config(chemin: Path = Path("config/marche.yaml")) -> Config:
     with open(chemin, encoding="utf-8") as f:

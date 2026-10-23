@@ -2,12 +2,16 @@ marche: cosmetique-dtc-france
 
 modele: openai/gpt-oss-20b
 max_tentatives: 5
+outils_actifs:
+  - lire_page_web
+  - chercher_pubs_meta
+  # - chercher_pubs_tiktok   # désactivé : 1 seul run gratuit restant ce mois-ci
 
 marques:
   - nom: Typology
     site: https://www.typology.com
   - nom: Respire
-    site: https://www.respire.co
+    site: https://www.respire.com
   - nom: Horace
     site: https://horace.co
   - nom: Merci Handy

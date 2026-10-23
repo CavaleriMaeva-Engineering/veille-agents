@@ -65,3 +65,9 @@ def test_creer_outils_injecte_le_client():
 
     assert set(outils) == {"lire_page_web", "chercher_pubs_meta", "chercher_pubs_tiktok"}
     assert outils["chercher_pubs_meta"].fonction.keywords["client"] is client
+
+
+def test_creer_outils_filtre_les_actifs():
+    outils = creer_outils(Mock(), actifs=["chercher_pubs_meta", "lire_page_web"])
+
+    assert set(outils) == {"chercher_pubs_meta", "lire_page_web"}

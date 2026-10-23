@@ -31,13 +31,13 @@ class Outil:
         return self.schema["function"]["name"]
 
 
-def creer_outils(client_apify: ApifyClient) -> dict[str, Outil]:
+def creer_outils(client_apify: ApifyClient, actifs: list[str] | None = None) -> dict[str, Outil]:
     outils = [
         Outil(OUTIL_LIRE_PAGE_WEB, ArgsLirePageWeb, lire_page_web),
         Outil(OUTIL_CHERCHER_PUBS_META, ArgsChercherPubsMeta, partial(chercher_pubs_meta, client=client_apify)),
         Outil(OUTIL_CHERCHER_PUBS_TIKTOK, ArgsChercherPubsTiktok, partial(chercher_pubs_tiktok, client=client_apify)),
     ]
-    return {outil.nom: outil for outil in outils}
+    return {o.nom: o for o in outils if actifs is None or o.nom in actifs}
 
 
 def resumer_erreurs(erreur: ValidationError) -> str:

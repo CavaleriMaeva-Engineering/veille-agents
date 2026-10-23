@@ -13,12 +13,11 @@ from veille.tools.registre import creer_outils
 PROMPT_COLLECTE = """Tu es chargé de COLLECTER des données de veille publicitaire sur une marque de cosmétiques en France.
 Tu ne rédiges pas de rapport : une autre étape s'en chargera à partir des résultats de tes outils.
 
-Méthode :
+Méthode, avec les seuls outils qui te sont fournis :
 1. Cherche ses publicités Meta (5 au plus : chaque pub a un coût).
-2. Cherche ses publicités TikTok, avec le domaine de son site.
+2. Si l'outil chercher_pubs_tiktok t'est fourni, cherche ses publicités TikTok avec le domaine de son site.
 3. Si une pub renvoie vers une offre précise (prix, coffret, promotion), lis cette page de son site. Une seule page suffit.
-Utilise uniquement les outils fournis : lire_page_web, chercher_pubs_meta, chercher_pubs_tiktok.
-Si un outil renvoie une erreur, ne le relance pas : passe à l'étape suivante.
+N'appelle jamais un outil qui ne t'est pas fourni. Si un outil renvoie une erreur, ne le relance pas.
 
 Quand les étapes sont faites, réponds seulement « Collecte terminée »."""
 
@@ -39,13 +38,14 @@ def analyser_marque(
     marque: Marque,
     execution_id: str,
     max_tours: int = 5,
+    outils_actifs: list[str] | None = None,
 ) -> AnalyseMarque:
     collecte = executer_agent(
         client=client_groq,
         modele=modele,
         prompt_systeme=PROMPT_COLLECTE,
         demande=f"Marque : {marque.nom}. Site : {marque.site}.",
-        outils=creer_outils(client_apify),
+        outils=creer_outils(client_apify, outils_actifs),
         agent="collecteur",
         execution_id=execution_id,
         max_tours=max_tours,
