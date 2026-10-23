@@ -98,7 +98,8 @@ def generer_pdf(synthese: SyntheseVeille, analyses: list[AnalyseMarque], chemin:
         paragraphe("Limites signalées par l'analyse", "Heading2"), *puces(s.limites),
     ]
     for analyse in analyses:
-        elements += [PageBreak(), *page_marque(analyse)]
+        if analyse.signaux.nb_pubs:   # les marques sans pub sont déjà dans la couverture
+            elements += [PageBreak(), *page_marque(analyse)]
 
     chemin.parent.mkdir(parents=True, exist_ok=True)
     SimpleDocTemplate(str(chemin), pagesize=A4, title="Veille publicitaire").build(elements)

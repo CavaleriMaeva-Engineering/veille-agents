@@ -58,3 +58,19 @@ def test_extraire_resultats_relie_outil_et_resultat():
 def test_sans_parametres():
     assert sans_parametres("https://www.typology.com/p?utm_source=tiktok&x=1") == "https://www.typology.com/p"
     assert sans_parametres(None) is None
+
+
+def test_sources_collectees():
+    resultats = [
+        ("chercher_pubs_meta", PUBS_META),
+        ("chercher_pubs_tiktok", {"erreur": "indisponible"}),
+        ("lire_page_web", {"url": "https://x.fr", "texte": "..."}),
+    ]
+
+    assert calculer_signaux(resultats).sources_collectees == ["meta", "site"]
+
+
+def test_source_sans_pub_non_collectee():
+    resultats = [("chercher_pubs_meta", {"marque": "X", "nb_pubs": 0, "pubs": []})]
+
+    assert calculer_signaux(resultats).sources_collectees == []

@@ -5,7 +5,12 @@ from unittest.mock import Mock
 import pytest
 from pydantic import ValidationError
 
-from veille.agents.rapport import RapportVeille, extraire_observations, rediger_rapport
+from veille.agents.rapport import (
+    RapportVeille,
+    extraire_observations,
+    rediger_rapport,
+    verifier_sources,
+)
 from veille.agents.signaux import Signaux
 
 RAPPORT_VALIDE = {
@@ -116,3 +121,19 @@ def test_signaux_transmis_au_redacteur():
     message_user = client.chat.completions.create.call_args.kwargs["messages"][1]["content"]
     assert "Signaux calculés" in message_user
     assert '"sources_en_erreur":["tiktok"]' in message_user
+
+
+def test_verifier_sources_retire_les_sources_inventees():
+    rapport = RapportVeille.model_validate(dict(
+        RAPPORT_VALIDE,
+        produits_pousses=[
+            {"affirmation": "Calendrier", "sources": ["meta", "tiktok"]},   # tiktok inventé
+            {"affirmation": "Vu sur TikTok seulement", "sources": ["tiktok"]},   # constat entièrement inventé
+        ],
+    ))
+
+    corrige, nb_retirees = verifier_sources(rapport, ["meta", "site"])
+
+    assert [c.sources for c in corrige.produits_pousses] == [["meta"]]
+    assert nb_retirees == 2
+    assert corrige.donnees_manquantes == ["tiktok : aucune donnée exploitable"]

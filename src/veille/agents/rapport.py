@@ -77,3 +77,24 @@ def rediger_rapport(
     return generer_structure(
         client, modele, messages, RapportVeille, agent="redacteur", execution_id=execution_id, max_essais=max_essais
     )
+
+
+SECTIONS_CONSTATS = ["produits_pousses", "messages_et_promesses", "offres", "formats_et_plateformes", "cible"]
+SOURCES_POSSIBLES = ["meta", "tiktok", "site"]
+
+
+def verifier_sources(rapport: RapportVeille, sources_collectees: list[str]) -> tuple[RapportVeille, int]:
+    corrections: dict = {}
+    nb_sources_retirees = 0
+    for champ in SECTIONS_CONSTATS:
+        gardes = []
+        for constat in getattr(rapport, champ):
+            sources = [s for s in constat.sources if s in sources_collectees]
+            nb_sources_retirees += len(constat.sources) - len(sources)
+            if sources:   # un constat sans aucune source réelle est supprimé
+                gardes.append(constat.model_copy(update={"sources": sources}))
+        corrections[champ] = gardes
+    corrections["donnees_manquantes"] = [
+        f"{source} : aucune donnée exploitable" for source in SOURCES_POSSIBLES if source not in sources_collectees
+    ]
+    return rapport.model_copy(update=corrections), nb_sources_retirees
