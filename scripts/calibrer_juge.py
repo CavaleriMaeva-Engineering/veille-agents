@@ -13,6 +13,7 @@ import logging
 from datetime import datetime
 
 from veille.evals.juge import (
+    PROMPT_JUGE,
     Paire,
     journaliser_desaccords,
     juger_deux_ordres,
