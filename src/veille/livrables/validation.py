@@ -49,6 +49,8 @@ def evaluer_confiance(synthese: SyntheseVeille, analyses: list[AnalyseMarque], a
             raisons.append(f"{analyse.marque} : collecte relancée ({analyse.nb_collectes} collectes)")
         if aujourd_hui - analyse.date > AGE_MAX_ANALYSE:
             raisons.append(f"{analyse.marque} : analyse périmée (du {analyse.date.isoformat()})")
+        if analyse.alertes:
+            raisons.append(f"{analyse.marque} : {len(analyse.alertes)} alerte(s) de garde-fou ({analyse.alertes[0]})")
         nb_pubs = sum(analyse.signaux.nb_pubs.values())
         nb_constats = sum(len(getattr(analyse.rapport, champ)) for champ in SECTIONS_CONSTATS)
         if nb_pubs and not nb_constats:

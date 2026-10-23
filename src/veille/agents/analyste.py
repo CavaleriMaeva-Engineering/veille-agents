@@ -16,6 +16,7 @@ from veille.agents.rapport import (
     verifier_sources,
 )
 from veille.agents.signaux import Signaux, calculer_signaux, extraire_resultats
+from veille.garde_fous import Garde
 from veille.settings import Marque
 from veille.tools.registre import creer_outils
 
@@ -36,6 +37,7 @@ Quand les étapes sont faites, réponds seulement « Collecte terminée »."""
 class Collecte(BaseModel):
     observations: list[str]  # données brutes renvoyées par les outils
     signaux: Signaux         # calculés par le code à partir de ces données
+    incidents: list[str] = Field(default_factory=list)   # garde-fous déclenchés pendant la collecte
 
 
 class AnalyseMarque(BaseModel):
@@ -50,6 +52,7 @@ class AnalyseMarque(BaseModel):
     decision: Literal["redige", "reutilise"] = "redige"   # rapport rédigé, ou repris faute de nouveauté
     nb_collectes: int = 1                    # 2 si le superviseur a relancé la collecte
     souvenirs: list[str] = Field(default_factory=list)   # morceaux d'historique montrés au rédacteur (traçabilité)
+    alertes: list[str] = Field(default_factory=list)     # garde-fous déclenchés (collecte et ancrage) : baissent la confiance
 
 
 def collecter_marque(
@@ -61,13 +64,14 @@ def collecter_marque(
     max_tours: int = 5,
     outils_actifs: list[str] | None = None,
 ) -> Collecte:
-    """Agent collecteur : il a les outils, mais aucune consigne de rédaction."""
+    """Agent collecteur : il a les outils, mais aucune consigne de rédaction. Ses outils sont encadrés par une Garde."""
+    garde = Garde(marque=marque, execution_id=execution_id)
     resultat = executer_agent(
         client=client_groq,
         modele=modele,
         prompt_systeme=PROMPT_COLLECTE,
         demande=f"Marque : {marque.nom}. Site : {marque.site}.",
-        outils=creer_outils(client_apify, outils_actifs),
+        outils=garde.proteger(creer_outils(client_apify, outils_actifs)),
         agent="collecteur",
         execution_id=execution_id,
         max_tours=max_tours,
@@ -75,6 +79,7 @@ def collecter_marque(
     return Collecte(
         observations=extraire_observations(resultat.messages),
         signaux=calculer_signaux(extraire_resultats(resultat.messages)),
+        incidents=garde.incidents,
     )
 
 

@@ -17,6 +17,7 @@ from veille.agents.changements import comparer
 from veille.agents.memoire import Rappel, formater_memoire, requete_depuis_collecte
 from veille.agents.rapport import RapportVeille
 from veille.agents.signaux import SOURCE_PAR_OUTIL, Signaux
+from veille.garde_fous import verifier_ancrage
 from veille.settings import Config, Marque
 from veille.storage.analyses import charger_derniere_analyse, enregistrer_analyse
 
@@ -76,7 +77,7 @@ def traiter_marque(
     # La précédente se charge avant l'enregistrement, sinon on se comparerait à soi-même.
     precedente = charger_precedente(marque.nom)
     changements = comparer(collecte.signaux, precedente.signaux if precedente else None)
-    souvenirs = []
+    souvenirs, alertes = [], list(collecte.incidents)
     if precedente is not None and not changements.significatif:
         rapport, decision = precedente.rapport, "reutilise"
     else:
@@ -90,18 +91,21 @@ def traiter_marque(
             collecte=collecte, execution_id=id_marque, memoire=memoire,
         )
         decision = "redige"
+        # Garde-fou de sortie : chaque chiffre d'un constat doit venir des données (ou de la mémoire).
+        rapport, retires = verifier_ancrage(rapport, collecte.observations, collecte.signaux, memoire)
+        alertes += retires
     logger.info(json.dumps({
         "evenement": "decision_rapport", "execution_id": id_marque, "marque": marque.nom,
         "decision": decision, "comparable": changements.comparable, "score": changements.score,
         "significatif": changements.significatif, "nb_collectes": nb_collectes,
-        "nb_souvenirs": len(souvenirs),
+        "nb_souvenirs": len(souvenirs), "nb_alertes": len(alertes),
     }, ensure_ascii=False))
 
     return AnalyseMarque(
         marque=marque.nom, date=date.today(), horodatage=datetime.now(), execution_id=id_marque,
         observations=collecte.observations, signaux=collecte.signaux, rapport=rapport,
         changements=changements, decision=decision, nb_collectes=nb_collectes,
-        souvenirs=[s.id for s in souvenirs],
+        souvenirs=[s.id for s in souvenirs], alertes=alertes,
     )
 
 
