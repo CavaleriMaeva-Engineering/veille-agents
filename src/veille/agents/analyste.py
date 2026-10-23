@@ -1,6 +1,7 @@
 import json
 import logging
 from datetime import date, datetime
+from typing import Literal
 
 import groq
 from apify_client import ApifyClient
@@ -32,6 +33,11 @@ N'appelle jamais un outil qui ne t'est pas fourni. Si un outil renvoie une erreu
 Quand les étapes sont faites, réponds seulement « Collecte terminée »."""
 
 
+class Collecte(BaseModel):
+    observations: list[str]  # données brutes renvoyées par les outils
+    signaux: Signaux         # calculés par le code à partir de ces données
+
+
 class AnalyseMarque(BaseModel):
     marque: str
     date: date
@@ -41,6 +47,52 @@ class AnalyseMarque(BaseModel):
     signaux: Signaux
     rapport: RapportVeille
     changements: Changements | None = None   # calculé par le superviseur, None pour les anciennes analyses
+    decision: Literal["redige", "reutilise"] = "redige"   # rapport rédigé, ou repris faute de nouveauté
+    nb_collectes: int = 1                    # 2 si le superviseur a relancé la collecte
+
+
+def collecter_marque(
+    client_groq: groq.Groq,
+    client_apify: ApifyClient,
+    modele: str,
+    marque: Marque,
+    execution_id: str,
+    max_tours: int = 5,
+    outils_actifs: list[str] | None = None,
+) -> Collecte:
+    """Agent collecteur : il a les outils, mais aucune consigne de rédaction."""
+    resultat = executer_agent(
+        client=client_groq,
+        modele=modele,
+        prompt_systeme=PROMPT_COLLECTE,
+        demande=f"Marque : {marque.nom}. Site : {marque.site}.",
+        outils=creer_outils(client_apify, outils_actifs),
+        agent="collecteur",
+        execution_id=execution_id,
+        max_tours=max_tours,
+    )
+    return Collecte(
+        observations=extraire_observations(resultat.messages),
+        signaux=calculer_signaux(extraire_resultats(resultat.messages)),
+    )
+
+
+def rediger_analyse(
+    client_groq: groq.Groq,
+    modele: str,
+    marque: str,
+    collecte: Collecte,
+    execution_id: str,
+) -> RapportVeille:
+    """Agent rédacteur : aucun outil, il ne voit que les données collectées et les signaux."""
+    rapport = rediger_rapport(client_groq, modele, marque, collecte.observations, collecte.signaux, execution_id)
+    rapport, nb_retirees = verifier_sources(rapport, collecte.signaux.sources_collectees)
+    if nb_retirees:
+        logger.warning(json.dumps({
+            "evenement": "sources_inventees_retirees", "execution_id": execution_id,
+            "marque": marque, "nb": nb_retirees,
+        }))
+    return rapport
 
 
 def analyser_marque(
@@ -52,26 +104,10 @@ def analyser_marque(
     max_tours: int = 5,
     outils_actifs: list[str] | None = None,
 ) -> AnalyseMarque:
-    collecte = executer_agent(
-        client=client_groq,
-        modele=modele,
-        prompt_systeme=PROMPT_COLLECTE,
-        demande=f"Marque : {marque.nom}. Site : {marque.site}.",
-        outils=creer_outils(client_apify, outils_actifs),
-        agent="collecteur",
-        execution_id=execution_id,
-        max_tours=max_tours,
-    )
-    observations = extraire_observations(collecte.messages)
-    signaux = calculer_signaux(extraire_resultats(collecte.messages))
-    rapport = rediger_rapport(client_groq, modele, marque.nom, observations, signaux, execution_id)
-    rapport, nb_retirees = verifier_sources(rapport, signaux.sources_collectees)
-    if nb_retirees:
-        logger.warning(json.dumps({
-            "evenement": "sources_inventees_retirees", "execution_id": execution_id,
-            "marque": marque.nom, "nb": nb_retirees,
-        }))
+    """Collecte puis rédaction, sans aucune décision : pour les essais (scripts/essai_agent.py)."""
+    collecte = collecter_marque(client_groq, client_apify, modele, marque, execution_id, max_tours, outils_actifs)
+    rapport = rediger_analyse(client_groq, modele, marque.nom, collecte, execution_id)
     return AnalyseMarque(
         marque=marque.nom, date=date.today(), horodatage=datetime.now(), execution_id=execution_id,
-        observations=observations, signaux=signaux, rapport=rapport,
+        observations=collecte.observations, signaux=collecte.signaux, rapport=rapport,
     )

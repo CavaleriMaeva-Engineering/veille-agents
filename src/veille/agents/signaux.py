@@ -19,7 +19,8 @@ class Signaux(BaseModel):
     formats: dict[str, int]                 # ex. {"VIDEO": 4, "IMAGE": 2, "DCO": 1}
     pub_la_plus_durable: PubDurable | None
     sources_en_erreur: list[str]
-    sources_collectees: list[str] = Field(default_factory=list)   # (existant)
+    sources_collectees: list[str] = Field(default_factory=list)   # sources qui ont réellement fourni des données
+    sources_interrogees: list[str] = Field(default_factory=list)  # sources appelées, avec ou sans résultat
     ids_pubs: list[str] | None = None            # "meta:123…" ; None = analyse enregistrée avant ce champ
     pages_destination: list[str] | None = None   # liens des pubs, sans paramètres de suivi
 
@@ -60,9 +61,12 @@ def calculer_signaux(resultats: list[tuple[str, dict]]) -> Signaux:
     meilleure: PubDurable | None = None
     ids_pubs: set[str] = set()
     pages: set[str] = set()
+    interrogees: list[str] = []
 
     for outil, donnees in resultats:
         source = SOURCE_PAR_OUTIL.get(outil, outil)
+        if source not in interrogees:
+            interrogees.append(source)
         if "erreur" in donnees:
             sources_en_erreur.append(source)
             continue
@@ -90,6 +94,7 @@ def calculer_signaux(resultats: list[tuple[str, dict]]) -> Signaux:
         pub_la_plus_durable=meilleure,
         sources_en_erreur=sources_en_erreur,
         sources_collectees=lister_sources_collectees(resultats),
+        sources_interrogees=interrogees,
         ids_pubs=sorted(ids_pubs),
         pages_destination=sorted(pages),
     )

@@ -23,6 +23,10 @@ print("\n=== BILAN DE LA VEILLE ===")
 for analyse in resultat.analyses:
     durable = analyse.signaux.pub_la_plus_durable
     gagnante = f"{durable.duree_jours} j ({durable.source})" if durable else "aucune"
-    print(f"{analyse.marque:15} pubs {analyse.signaux.nb_pubs}  pub la plus durable : {gagnante}")
+    score = analyse.changements.score if analyse.changements and analyse.changements.comparable else "-"
+    print(
+        f"{analyse.marque:15} pubs {analyse.signaux.nb_pubs}  pub la plus durable : {gagnante}  "
+        f"rapport {analyse.decision} (changement {score}, {analyse.nb_collectes} collecte(s))"
+    )
 for marque, erreur in resultat.echecs.items():
     print(f"{marque:15} ÉCHEC : {erreur}")
