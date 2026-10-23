@@ -1,0 +1,322 @@
+[
+  {
+    "cas": "r01",
+    "morceau": "constat:3755fd54ecc2",
+    "longueur": 233,
+    "humain": true,
+    "endroit": true,
+    "envers": true
+  },
+  {
+    "cas": "r01",
+    "morceau": "page:bc2a8bfb480d",
+    "longueur": 626,
+    "humain": false,
+    "endroit": false,
+    "envers": false
+  },
+  {
+    "cas": "r01",
+    "morceau": "pub:meta:1596942645238140",
+    "longueur": 458,
+    "humain": true,
+    "endroit": true,
+    "envers": true
+  },
+  {
+    "cas": "r01",
+    "morceau": "pub:meta:1060150696818886",
+    "longueur": 458,
+    "humain": true,
+    "endroit": true,
+    "envers": true
+  },
+  {
+    "cas": "r01",
+    "morceau": "pub:meta:2573221096438196",
+    "longueur": 458,
+    "humain": true,
+    "endroit": true,
+    "envers": true
+  },
+  {
+    "cas": "r01",
+    "morceau": "pub:meta:1637090997802148",
+    "longueur": 609,
+    "humain": false,
+    "endroit": true,
+    "envers": true
+  },
+  {
+    "cas": "r01",
+    "morceau": "constat:64133805c505",
+    "longueur": 101,
+    "humain": true,
+    "endroit": true,
+    "envers": true
+  },
+  {
+    "cas": "r01",
+    "morceau": "constat:d1917621f36b",
+    "longueur": 173,
+    "humain": true,
+    "endroit": true,
+    "envers": true
+  },
+  {
+    "cas": "r01",
+    "morceau": "constat:16bed88b068f",
+    "longueur": 56,
+    "humain": false,
+    "endroit": false,
+    "envers": false
+  },
+  {
+    "cas": "r01",
+    "morceau": "constat:716cb9c736ea",
+    "longueur": 83,
+    "humain": false,
+    "endroit": false,
+    "envers": false
+  },
+  {
+    "cas": "r01",
+    "morceau": "constat:4defda24bf3b",
+    "longueur": 113,
+    "humain": false,
+    "endroit": false,
+    "envers": false
+  },
+  {
+    "cas": "r01",
+    "morceau": "constat:18d78e8df607",
+    "longueur": 92,
+    "humain": true,
+    "endroit": true,
+    "envers": true
+  },
+  {
+    "cas": "r01",
+    "morceau": "constat:0ca8d02eccca",
+    "longueur": 154,
+    "humain": true,
+    "endroit": true,
+    "envers": true
+  },
+  {
+    "cas": "r01",
+    "morceau": "constat:032ab3b19048",
+    "longueur": 160,
+    "humain": false,
+    "endroit": false,
+    "envers": false
+  },
+  {
+    "cas": "r02",
+    "morceau": "page:98570a54db8e",
+    "longueur": 621,
+    "humain": false,
+    "endroit": true,
+    "envers": true
+  },
+  {
+    "cas": "r02",
+    "morceau": "constat:92be49aca479",
+    "longueur": 177,
+    "humain": true,
+    "endroit": true,
+    "envers": true
+  },
+  {
+    "cas": "r02",
+    "morceau": "constat:d55895bfea18",
+    "longueur": 229,
+    "humain": true,
+    "endroit": true,
+    "envers": true
+  },
+  {
+    "cas": "r02",
+    "morceau": "constat:5350f162f88a",
+    "longueur": 143,
+    "humain": false,
+    "endroit": false,
+    "envers": false
+  },
+  {
+    "cas": "r02",
+    "morceau": "constat:3a5c9f3f92f7",
+    "longueur": 179,
+    "humain": false,
+    "endroit": false,
+    "envers": false
+  },
+  {
+    "cas": "r02",
+    "morceau": "constat:301360ea3b57",
+    "longueur": 100,
+    "humain": false,
+    "endroit": false,
+    "envers": false
+  },
+  {
+    "cas": "r02",
+    "morceau": "page:a84d0249eeb5",
+    "longueur": 624,
+    "humain": false,
+    "endroit": true,
+    "envers": true
+  },
+  {
+    "cas": "r02",
+    "morceau": "constat:422dad798da4",
+    "longueur": 87,
+    "humain": false,
+    "endroit": null,
+    "envers": false
+  },
+  {
+    "cas": "r02",
+    "morceau": "constat:b95e9b7c9a49",
+    "longueur": 86,
+    "humain": false,
+    "endroit": null,
+    "envers": false
+  },
+  {
+    "cas": "r02",
+    "morceau": "constat:6fc1e5e51a31",
+    "longueur": 102,
+    "humain": false,
+    "endroit": null,
+    "envers": false
+  },
+  {
+    "cas": "r02",
+    "morceau": "constat:eaa1532929b2",
+    "longueur": 111,
+    "humain": false,
+    "endroit": null,
+    "envers": false
+  },
+  {
+    "cas": "r02",
+    "morceau": "constat:e49c3a356dee",
+    "longueur": 110,
+    "humain": false,
+    "endroit": null,
+    "envers": false
+  },
+  {
+    "cas": "r02",
+    "morceau": "constat:05c49d0d90c9",
+    "longueur": 116,
+    "humain": false,
+    "endroit": null,
+    "envers": false
+  },
+  {
+    "cas": "r02",
+    "morceau": "constat:ab84302d9d27",
+    "longueur": 150,
+    "humain": false,
+    "endroit": null,
+    "envers": false
+  },
+  {
+    "cas": "r03",
+    "morceau": "constat:032ab3b19048",
+    "longueur": 160,
+    "humain": true,
+    "endroit": true,
+    "envers": true
+  },
+  {
+    "cas": "r03",
+    "morceau": "constat:3a5c9f3f92f7",
+    "longueur": 179,
+    "humain": true,
+    "endroit": true,
+    "envers": true
+  },
+  {
+    "cas": "r03",
+    "morceau": "constat:6fc1e5e51a31",
+    "longueur": 102,
+    "humain": false,
+    "endroit": false,
+    "envers": false
+  },
+  {
+    "cas": "r03",
+    "morceau": "constat:33b7a9e98d6b",
+    "longueur": 93,
+    "humain": true,
+    "endroit": true,
+    "envers": true
+  },
+  {
+    "cas": "r03",
+    "morceau": "constat:05c49d0d90c9",
+    "longueur": 116,
+    "humain": false,
+    "endroit": false,
+    "envers": false
+  },
+  {
+    "cas": "r03",
+    "morceau": "constat:e49c3a356dee",
+    "longueur": 110,
+    "humain": false,
+    "endroit": false,
+    "envers": false
+  },
+  {
+    "cas": "r03",
+    "morceau": "constat:eaa1532929b2",
+    "longueur": 111,
+    "humain": false,
+    "endroit": false,
+    "envers": false
+  },
+  {
+    "cas": "r03",
+    "morceau": "constat:d55895bfea18",
+    "longueur": 229,
+    "humain": false,
+    "endroit": false,
+    "envers": false
+  },
+  {
+    "cas": "r03",
+    "morceau": "constat:b95e9b7c9a49",
+    "longueur": 86,
+    "humain": false,
+    "endroit": false,
+    "envers": false
+  },
+  {
+    "cas": "r03",
+    "morceau": "constat:422dad798da4",
+    "longueur": 87,
+    "humain": false,
+    "endroit": false,
+    "envers": false
+  },
+  {
+    "cas": "r03",
+    "morceau": "constat:301360ea3b57",
+    "longueur": 100,
+    "humain": false,
+    "endroit": false,
+    "envers": false
+  },
+  {
+    "cas": "r03",
+    "morceau": "constat:64133805c505",
+    "longueur": 101,
+    "humain": false,
+    "endroit": false,
+    "envers": false
+  }
+]

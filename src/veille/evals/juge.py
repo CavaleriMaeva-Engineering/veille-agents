@@ -99,6 +99,7 @@ class Paire(BaseModel):
 
 class Accord(BaseModel):
     nb_paires: int
+    nb_non_jugees: int                # le juge a oublié l'extrait dans au moins un des deux ordres
     nb_coherentes: int
     taux_changement_position: float   # verdicts qui changent quand on inverse l'ordre
     accord: float                     # sur les paires cohérentes
@@ -127,6 +128,7 @@ def mesurer_accord(paires: list[Paire]) -> Accord:
 
     return Accord(
         nb_paires=len(paires),
+        nb_non_jugees=len(paires) - len(jugees),
         nb_coherentes=len(coherentes),
         taux_changement_position=round(1 - len(coherentes) / len(jugees), 3) if jugees else 0.0,
         accord=round(moyenne([1.0 if h == j else 0.0 for h, j in zip(humain, juge, strict=True)]), 3),

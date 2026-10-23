@@ -25,12 +25,12 @@ from veille.rag.recherche import MoteurRecherche
 from veille.storage.analyses import DOSSIER_SORTIES
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--refaire", metavar="ID", help="réannoter un cas déjà annoté")
+parser.add_argument("--refaire", metavar="ID", nargs="+", help="réannoter un ou plusieurs cas déjà annotés")
 args = parser.parse_args()
 
 cas = charger_cas()
 annotations = charger_annotations()
-a_faire = [c for c in cas if c.id == args.refaire] if args.refaire else [c for c in cas if c.id not in annotations]
+a_faire = [c for c in cas if c.id in args.refaire] if args.refaire else [c for c in cas if c.id not in annotations]
 if not a_faire:
     raise SystemExit("Tous les cas sont annotés. --refaire ID pour en reprendre un.")
 
@@ -43,7 +43,9 @@ for c in a_faire:
     if c.note:
         print(f"    note : {c.note}")
     for numero, m in enumerate(candidats, start=1):
-        print(f"{numero:3}. [{m.marque} · {m.type} · {m.date}] {m.texte[:220]}")
+        # Texte ENTIER : c'est ce que le LLM reçoit. Le calibrage du juge a montré qu'un texte coupé à 220 caractères
+        # faisait rater des réponses situées plus loin dans l'extrait.
+        print(f"{numero:3}. [{m.marque} · {m.type} · {m.date}] {m.texte}")
     saisie = input("Numéros PERTINENTS séparés par des espaces (Entrée = aucun, q = quitter) : ").strip()
     if saisie.lower() == "q":
         break

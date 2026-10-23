@@ -67,10 +67,10 @@ journaliser_desaccords(paires)
 accord = mesurer_accord(paires)
 textes = {m.id: m.texte for m in morceaux}
 desaccords = [p for p in paires if p.coherent and p.endroit != p.humain]
-instables = [p for p in paires if not p.coherent]
+instables = [p for p in paires if p.endroit is not None and p.envers is not None and not p.coherent]
 
 lignes_desaccords = "\n".join(
-    f"| {p.cas} | {'oui' if p.humain else 'non'} | {'oui' if p.endroit else 'non'} | {textes.get(p.morceau, '')[:140]} |"
+    f"| {p.cas} | {'oui' if p.humain else 'non'} | {'oui' if p.endroit else 'non'} | {textes.get(p.morceau, '')} |"
     for p in desaccords
 )
 rapport = "\n\n".join([
@@ -80,7 +80,7 @@ rapport = "\n\n".join([
     "Repères pour le kappa : < 0,4 faible · 0,4 à 0,6 modéré · 0,6 à 0,8 substantiel · > 0,8 excellent.",
     f"## Désaccords ({len(desaccords)}) : humain · juge · extrait",
     "| cas | humain | juge | extrait |\n| --- | --- | --- | --- |\n" + lignes_desaccords if desaccords else "Aucun.",
-    f"## Verdicts instables selon l'ordre : {len(instables)}",
+    f"## Verdicts instables selon l'ordre : {len(instables)} · extraits oubliés par le juge : {accord.nb_non_jugees}",
 ])
 sortie = DOSSIER_EVALS / "resultats"
 sortie.mkdir(parents=True, exist_ok=True)
