@@ -5,18 +5,59 @@
       "pub:meta:1596942645238140",
       "pub:meta:1060150696818886",
       "pub:meta:2573221096438196",
+      "pub:meta:1637090997802148",
       "constat:64133805c505",
       "constat:d1917621f36b",
       "constat:18d78e8df607",
       "constat:0ca8d02eccca"
+    ],
+    "candidats": [
+      "constat:3755fd54ecc2",
+      "page:bc2a8bfb480d",
+      "pub:meta:1596942645238140",
+      "pub:meta:1060150696818886",
+      "pub:meta:2573221096438196",
+      "pub:meta:1637090997802148",
+      "constat:64133805c505",
+      "constat:d1917621f36b",
+      "constat:16bed88b068f",
+      "constat:716cb9c736ea",
+      "constat:4defda24bf3b",
+      "constat:18d78e8df607",
+      "constat:0ca8d02eccca",
+      "constat:032ab3b19048",
+      "constat:e49c3a356dee",
+      "constat:33b7a9e98d6b",
+      "constat:05c49d0d90c9",
+      "constat:d37a60b074d3"
     ],
     "annote_par": "maeva",
     "annote_le": "2026-10-23"
   },
   "r02": {
     "pertinents": [
+      "page:98570a54db8e",
       "constat:92be49aca479",
-      "constat:d55895bfea18"
+      "constat:d55895bfea18",
+      "page:a84d0249eeb5"
+    ],
+    "candidats": [
+      "page:98570a54db8e",
+      "constat:92be49aca479",
+      "constat:d55895bfea18",
+      "constat:5350f162f88a",
+      "constat:3a5c9f3f92f7",
+      "constat:301360ea3b57",
+      "page:a84d0249eeb5",
+      "constat:422dad798da4",
+      "constat:b95e9b7c9a49",
+      "constat:6fc1e5e51a31",
+      "constat:eaa1532929b2",
+      "constat:e49c3a356dee",
+      "constat:05c49d0d90c9",
+      "constat:ab84302d9d27",
+      "constat:4defda24bf3b",
+      "constat:16bed88b068f"
     ],
     "annote_par": "maeva",
     "annote_le": "2026-10-23"
@@ -27,6 +68,7 @@
       "constat:3a5c9f3f92f7",
       "constat:33b7a9e98d6b"
     ],
+    "candidats": null,
     "annote_par": "maeva",
     "annote_le": "2026-10-23"
   },
@@ -34,7 +76,24 @@
     "pertinents": [
       "constat:021044fde7c3",
       "constat:05c49d0d90c9",
+      "page:29f16f18610a",
       "constat:b7902b34203d"
+    ],
+    "candidats": [
+      "constat:021044fde7c3",
+      "constat:05c49d0d90c9",
+      "constat:706e5d87b16d",
+      "constat:e49c3a356dee",
+      "constat:eaa1532929b2",
+      "constat:18d78e8df607",
+      "constat:6fc1e5e51a31",
+      "constat:d1917621f36b",
+      "page:29f16f18610a",
+      "constat:b7902b34203d",
+      "constat:0ca8d02eccca",
+      "constat:a4fe5b55308a",
+      "constat:716cb9c736ea",
+      "constat:64133805c505"
     ],
     "annote_par": "maeva",
     "annote_le": "2026-10-23"
@@ -43,7 +102,20 @@
     "pertinents": [
       "constat:706e5d87b16d",
       "constat:e49c3a356dee",
-      "constat:eaa1532929b2"
+      "constat:eaa1532929b2",
+      "page:29f16f18610a"
+    ],
+    "candidats": [
+      "constat:706e5d87b16d",
+      "constat:e49c3a356dee",
+      "constat:eaa1532929b2",
+      "constat:05c49d0d90c9",
+      "page:29f16f18610a",
+      "constat:33b7a9e98d6b",
+      "constat:6fc1e5e51a31",
+      "constat:021044fde7c3",
+      "constat:d67b2153bc1f",
+      "constat:18d78e8df607"
     ],
     "annote_par": "maeva",
     "annote_le": "2026-10-23"
@@ -51,8 +123,23 @@
   "r06": {
     "pertinents": [
       "constat:2f392e03ce90",
+      "page:6763ec8d65b9",
       "constat:3755fd54ecc2",
-      "constat:d37a60b074d3"
+      "pub:meta:1637090997802148",
+      "constat:d37a60b074d3",
+      "pub:meta:1596942645238140"
+    ],
+    "candidats": [
+      "constat:2f392e03ce90",
+      "constat:3427e540cf91",
+      "page:6763ec8d65b9",
+      "constat:3755fd54ecc2",
+      "pub:meta:1637090997802148",
+      "constat:d37a60b074d3",
+      "constat:0ca8d02eccca",
+      "constat:d1917621f36b",
+      "pub:meta:1596942645238140",
+      "constat:18d78e8df607"
     ],
     "annote_par": "maeva",
     "annote_le": "2026-10-23"
@@ -60,14 +147,50 @@
   "r07": {
     "pertinents": [
       "constat:56ea353dcd6b",
+      "pub:meta:2106032466968634",
+      "page:e1238a34906e",
+      "page:8d47ec5d6b55",
       "constat:ecc224bdd54b"
+    ],
+    "candidats": [
+      "constat:56ea353dcd6b",
+      "constat:aed0c9963137",
+      "pub:meta:2106032466968634",
+      "constat:1c54b7306cc4",
+      "constat:1559374d489a",
+      "page:e1238a34906e",
+      "page:8d47ec5d6b55",
+      "constat:ecc224bdd54b",
+      "constat:377d746f2e69",
+      "constat:3e6097c3455a",
+      "constat:b139b50427e6",
+      "page:5b0bd8c9baa9"
     ],
     "annote_par": "maeva",
     "annote_le": "2026-10-23"
   },
   "r08": {
     "pertinents": [
-      "constat:a077a9e4f229"
+      "constat:a077a9e4f229",
+      "page:8d47ec5d6b55",
+      "page:e1238a34906e"
+    ],
+    "candidats": [
+      "constat:a077a9e4f229",
+      "page:8d47ec5d6b55",
+      "page:e1238a34906e",
+      "constat:3f5c130f91cb",
+      "constat:ecc224bdd54b",
+      "constat:83d5eb071d75",
+      "constat:021044fde7c3",
+      "constat:706e5d87b16d",
+      "constat:56ea353dcd6b",
+      "pub:meta:2106032466968634",
+      "constat:3755fd54ecc2",
+      "constat:d1917621f36b",
+      "constat:18d78e8df607",
+      "constat:c3efa9433778",
+      "page:29f16f18610a"
     ],
     "annote_par": "maeva",
     "annote_le": "2026-10-23"
@@ -80,6 +203,7 @@
       "pub:meta:861279906531222",
       "constat:fd5b9edb6318"
     ],
+    "candidats": null,
     "annote_par": "maeva",
     "annote_le": "2026-10-23"
   },
@@ -91,6 +215,7 @@
       "constat:3e6097c3455a",
       "constat:66dcbc0e78ea"
     ],
+    "candidats": null,
     "annote_par": "maeva",
     "annote_le": "2026-10-23"
   },
@@ -101,6 +226,7 @@
       "constat:3f6bdb5ef5e4",
       "constat:897141461c12"
     ],
+    "candidats": null,
     "annote_par": "maeva",
     "annote_le": "2026-10-23"
   },
@@ -116,6 +242,7 @@
       "constat:2ffee72311bd",
       "constat:d5b2a79e9442"
     ],
+    "candidats": null,
     "annote_par": "maeva",
     "annote_le": "2026-10-23"
   },
@@ -124,6 +251,7 @@
       "constat:bced9adf9524",
       "constat:6c5e9e330b87"
     ],
+    "candidats": null,
     "annote_par": "maeva",
     "annote_le": "2026-10-23"
   },
@@ -137,6 +265,7 @@
       "pub:meta:2573221096438196",
       "constat:ab8adf52ab72"
     ],
+    "candidats": null,
     "annote_par": "maeva",
     "annote_le": "2026-10-23"
   },
@@ -151,12 +280,29 @@
       "constat:006370e09d33",
       "constat:eb9f27a3b202"
     ],
+    "candidats": null,
     "annote_par": "maeva",
     "annote_le": "2026-10-23"
   },
   "r16": {
     "pertinents": [
-      "constat:3c6060a2ce23"
+      "constat:3c6060a2ce23",
+      "pub:meta:1137003644128373",
+      "pub:meta:699041019032331"
+    ],
+    "candidats": [
+      "constat:3c6060a2ce23",
+      "pub:meta:1137003644128373",
+      "pub:meta:699041019032331",
+      "constat:c9b82df49bc7",
+      "constat:8260ccaa8269",
+      "constat:d5b2a79e9442",
+      "pub:meta:728829595979484",
+      "page:29f16f18610a",
+      "pub:meta:1127686258652875",
+      "constat:d1917621f36b",
+      "constat:0ca8d02eccca",
+      "constat:18d78e8df607"
     ],
     "annote_par": "maeva",
     "annote_le": "2026-10-23"
@@ -164,10 +310,28 @@
   "r17": {
     "pertinents": [
       "constat:3755fd54ecc2",
+      "pub:meta:1637090997802148",
       "constat:d1917621f36b",
       "constat:0ca8d02eccca",
       "constat:18d78e8df607",
       "page:6763ec8d65b9",
+      "constat:64133805c505"
+    ],
+    "candidats": [
+      "constat:3755fd54ecc2",
+      "page:bc2a8bfb480d",
+      "pub:meta:1637090997802148",
+      "constat:d1917621f36b",
+      "constat:3a5c9f3f92f7",
+      "constat:0ca8d02eccca",
+      "constat:18d78e8df607",
+      "page:6763ec8d65b9",
+      "constat:032ab3b19048",
+      "constat:16bed88b068f",
+      "constat:716cb9c736ea",
+      "constat:021044fde7c3",
+      "constat:6bd9b65a8e63",
+      "constat:33b7a9e98d6b",
       "constat:64133805c505"
     ],
     "annote_par": "maeva",
@@ -180,6 +344,7 @@
       "constat:3755fd54ecc2",
       "constat:33b7a9e98d6b"
     ],
+    "candidats": null,
     "annote_par": "maeva",
     "annote_le": "2026-10-23"
   },
@@ -192,11 +357,13 @@
       "constat:3e6097c3455a",
       "pub:meta:1195355416079253"
     ],
+    "candidats": null,
     "annote_par": "maeva",
     "annote_le": "2026-10-23"
   },
   "r20": {
     "pertinents": [],
+    "candidats": null,
     "annote_par": "maeva",
     "annote_le": "2026-10-23"
   },
@@ -205,31 +372,37 @@
       "page:e1238a34906e",
       "constat:a077a9e4f229"
     ],
+    "candidats": null,
     "annote_par": "maeva",
     "annote_le": "2026-10-23"
   },
   "r22": {
     "pertinents": [],
+    "candidats": null,
     "annote_par": "maeva",
     "annote_le": "2026-10-23"
   },
   "r23": {
     "pertinents": [],
+    "candidats": null,
     "annote_par": "maeva",
     "annote_le": "2026-10-23"
   },
   "r24": {
     "pertinents": [],
+    "candidats": null,
     "annote_par": "maeva",
     "annote_le": "2026-10-23"
   },
   "r25": {
     "pertinents": [],
+    "candidats": null,
     "annote_par": "maeva",
     "annote_le": "2026-10-23"
   },
   "r26": {
     "pertinents": [],
+    "candidats": null,
     "annote_par": "maeva",
     "annote_le": "2026-10-23"
   }
