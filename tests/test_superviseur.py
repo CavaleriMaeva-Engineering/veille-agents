@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date, datetime
 from unittest.mock import Mock
 
 from veille.agents.analyste import AnalyseMarque
@@ -18,7 +18,7 @@ def config_de_test() -> Config:
 
 def fausse_analyse(marque: str) -> AnalyseMarque:
     return AnalyseMarque(
-        marque=marque, date=date(2026, 10, 23), execution_id="t", observations=[],
+        marque=marque, date=date(2026, 10, 23), horodatage=datetime(2026, 10, 23, 9, 0, 0), execution_id="t", observations=[],
         signaux=Signaux(nb_pubs={}, formats={}, pub_la_plus_durable=None, sources_en_erreur=[]),
         rapport=RapportVeille(marque=marque, produits_pousses=[], messages_et_promesses=[], offres=[],
                               formats_et_plateformes=[], cible=[], donnees_manquantes=[]),

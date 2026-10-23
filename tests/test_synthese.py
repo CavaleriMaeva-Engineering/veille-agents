@@ -1,5 +1,5 @@
 import json
-from datetime import date
+from datetime import date, datetime
 from types import SimpleNamespace
 from unittest.mock import Mock
 
@@ -16,7 +16,7 @@ from veille.agents.synthese import (
 def analyse(marque: str, nb_meta: int, duree: int | None) -> AnalyseMarque:
     durable = PubDurable(source="meta", texte="x", duree_jours=duree, lien=None) if duree else None
     return AnalyseMarque(
-        marque=marque, date=date(2026, 10, 23), execution_id="t", observations=["données brutes"],
+        marque=marque, date=date(2026, 10, 23), horodatage=datetime(2026, 10, 23, 9, 0, 0), execution_id="t", observations=["données brutes"],
         signaux=Signaux(nb_pubs={"meta": nb_meta}, formats={"VIDEO": nb_meta}, pub_la_plus_durable=durable,
                         sources_en_erreur=[]),
         rapport=RapportVeille(marque=marque, produits_pousses=[], messages_et_promesses=[], offres=[],

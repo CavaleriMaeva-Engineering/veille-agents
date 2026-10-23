@@ -8,7 +8,7 @@ DOSSIER_SORTIES = Path("sorties")
 
 def nom_de_fichier(analyse: AnalyseMarque) -> str:
     marque = analyse.marque.lower().replace(" ", "-")
-    return f"{analyse.date.isoformat()}_{marque}_{analyse.execution_id}.json"
+    return f"{analyse.horodatage:%Y-%m-%dT%H-%M-%S}_{marque}_{analyse.execution_id}.json"
 
 
 def enregistrer_analyse(analyse: AnalyseMarque, dossier: Path = DOSSIER_SORTIES) -> Path:

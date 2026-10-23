@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date, datetime
 
 import groq
 from apify_client import ApifyClient
@@ -25,6 +25,7 @@ Quand les étapes sont faites, réponds seulement « Collecte terminée »."""
 class AnalyseMarque(BaseModel):
     marque: str
     date: date
+    horodatage: datetime   # instant précis : départage plusieurs analyses du même jour
     execution_id: str
     observations: list[str]  # données brutes de la collecte, pour pouvoir rejouer la rédaction
     signaux: Signaux
@@ -54,6 +55,6 @@ def analyser_marque(
     signaux = calculer_signaux(extraire_resultats(collecte.messages))
     rapport = rediger_rapport(client_groq, modele, marque.nom, observations, signaux, execution_id)
     return AnalyseMarque(
-        marque=marque.nom, date=date.today(), execution_id=execution_id,
+        marque=marque.nom, date=date.today(), horodatage=datetime.now(), execution_id=execution_id,
         observations=observations, signaux=signaux, rapport=rapport,
     )
