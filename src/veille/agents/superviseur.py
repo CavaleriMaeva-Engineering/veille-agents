@@ -7,8 +7,9 @@ from apify_client import ApifyClient
 from pydantic import BaseModel
 
 from veille.agents.analyste import AnalyseMarque, analyser_marque
+from veille.agents.changements import comparer
 from veille.settings import Config
-from veille.storage.analyses import enregistrer_analyse
+from veille.storage.analyses import charger_derniere_analyse, enregistrer_analyse
 
 logger = logging.getLogger(__name__)
 
@@ -25,6 +26,7 @@ def lancer_veille(
     execution_id: str,
     analyser: Callable[..., AnalyseMarque] = analyser_marque,
     enregistrer: Callable[[AnalyseMarque], object] = enregistrer_analyse,
+    charger_precedente: Callable[[str], AnalyseMarque | None] = charger_derniere_analyse,
 ) -> ResultatVeille:
     analyses, echecs = [], {}
     for marque in config.marques:
@@ -41,6 +43,13 @@ def lancer_veille(
             }, ensure_ascii=False))
             echecs[marque.nom] = repr(erreur)
             continue
+        precedente = charger_precedente(marque.nom)
+        analyse.changements = comparer(analyse.signaux, precedente.signaux if precedente else None)
+        logger.info(json.dumps({
+            "evenement": "changements", "execution_id": id_marque, "marque": marque.nom,
+            "comparable": analyse.changements.comparable, "score": analyse.changements.score,
+            "significatif": analyse.changements.significatif,
+        }, ensure_ascii=False))
         enregistrer(analyse)
         analyses.append(analyse)
     return ResultatVeille(analyses=analyses, echecs=echecs)

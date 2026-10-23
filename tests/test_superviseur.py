@@ -34,7 +34,10 @@ def faux_analyste(**kwargs) -> AnalyseMarque:
 def test_une_marque_en_echec_n_arrete_pas_les_autres():
     enregistrer = Mock()
 
-    resultat = lancer_veille(config_de_test(), Mock(), Mock(), "essai", analyser=faux_analyste, enregistrer=enregistrer)
+    resultat = lancer_veille(
+        config_de_test(), Mock(), Mock(), "essai",
+        analyser=faux_analyste, enregistrer=enregistrer, charger_precedente=lambda nom: None,
+    )
 
     assert [a.marque for a in resultat.analyses] == ["Typology"]
     assert "Horace" in resultat.echecs
@@ -44,7 +47,10 @@ def test_une_marque_en_echec_n_arrete_pas_les_autres():
 def test_outils_actifs_et_identifiants_transmis():
     analyser = Mock(side_effect=lambda **kwargs: fausse_analyse(kwargs["marque"].nom))
 
-    lancer_veille(config_de_test(), Mock(), Mock(), "essai", analyser=analyser, enregistrer=Mock())
+    lancer_veille(
+        config_de_test(), Mock(), Mock(), "essai",
+        analyser=analyser, enregistrer=Mock(), charger_precedente=lambda nom: None,
+    )
 
     premier_appel = analyser.call_args_list[0].kwargs
     assert premier_appel["outils_actifs"] == ["chercher_pubs_meta"]

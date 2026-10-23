@@ -57,3 +57,12 @@ def charger_derniere_synthese(dossier: Path = DOSSIER_SORTIES) -> SyntheseVeille
     if not chemins:
         return None
     return SyntheseVeille.model_validate_json(chemins[-1].read_text(encoding="utf-8"))
+
+
+def charger_derniere_analyse(marque: str, dossier: Path = DOSSIER_SORTIES) -> AnalyseMarque | None:
+    for chemin in reversed(lister_analyses(marque, dossier)):
+        try:
+            return charger_analyse(chemin)
+        except ValidationError:
+            continue
+    return None

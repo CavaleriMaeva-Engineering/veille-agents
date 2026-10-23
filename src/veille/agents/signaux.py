@@ -19,7 +19,9 @@ class Signaux(BaseModel):
     formats: dict[str, int]                 # ex. {"VIDEO": 4, "IMAGE": 2, "DCO": 1}
     pub_la_plus_durable: PubDurable | None
     sources_en_erreur: list[str]
-    sources_collectees: list[str] = Field(default_factory=list)   # sources qui ont réellement fourni des données
+    sources_collectees: list[str] = Field(default_factory=list)   # (existant)
+    ids_pubs: list[str] | None = None            # "meta:123…" ; None = analyse enregistrée avant ce champ
+    pages_destination: list[str] | None = None   # liens des pubs, sans paramètres de suivi
 
 
 def sans_parametres(url: str | None) -> str | None:
@@ -56,6 +58,8 @@ def calculer_signaux(resultats: list[tuple[str, dict]]) -> Signaux:
     formats: Counter = Counter()
     sources_en_erreur = []
     meilleure: PubDurable | None = None
+    ids_pubs: set[str] = set()
+    pages: set[str] = set()
 
     for outil, donnees in resultats:
         source = SOURCE_PAR_OUTIL.get(outil, outil)
@@ -64,6 +68,11 @@ def calculer_signaux(resultats: list[tuple[str, dict]]) -> Signaux:
             continue
         for pub in donnees.get("pubs", []):
             nb_pubs[source] += 1
+            if pub.get("id"):
+                ids_pubs.add(f"{source}:{pub['id']}")
+            lien = sans_parametres(pub.get("lien"))
+            if lien:
+                pages.add(lien)
             if pub.get("format"):
                 formats[pub["format"]] += 1
             duree = pub.get("duree_jours")
@@ -81,4 +90,6 @@ def calculer_signaux(resultats: list[tuple[str, dict]]) -> Signaux:
         pub_la_plus_durable=meilleure,
         sources_en_erreur=sources_en_erreur,
         sources_collectees=lister_sources_collectees(resultats),
+        ids_pubs=sorted(ids_pubs),
+        pages_destination=sorted(pages),
     )

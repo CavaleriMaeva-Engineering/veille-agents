@@ -7,6 +7,7 @@ from apify_client import ApifyClient
 from pydantic import BaseModel
 
 from veille.agents.boucle import executer_agent
+from veille.agents.changements import Changements
 from veille.agents.rapport import (
     RapportVeille,
     extraire_observations,
@@ -39,6 +40,7 @@ class AnalyseMarque(BaseModel):
     observations: list[str]  # données brutes de la collecte, pour pouvoir rejouer la rédaction
     signaux: Signaux
     rapport: RapportVeille
+    changements: Changements | None = None   # calculé par le superviseur, None pour les anciennes analyses
 
 
 def analyser_marque(
