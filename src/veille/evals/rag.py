@@ -12,6 +12,7 @@ import yaml
 from pydantic import BaseModel
 
 from veille.evals.metriques import moyenne, precision_a_k, rang_reciproque, rappel_a_k
+from veille.rag.documents import Morceau
 from veille.rag.recherche import MoteurRecherche
 
 DOSSIER_EVALS = Path("evals")
@@ -30,8 +31,24 @@ class CasRAG(BaseModel):
 
 class Annotation(BaseModel):
     pertinents: list[str]          # identifiants des morceaux jugés pertinents
+    candidats: list[str] | None = None   # tous les morceaux montrés (les autres = jugés non pertinents)
     annote_par: str
     annote_le: str
+
+
+POOL_PAR_MODE = 8
+MODES_POOL = ("rerank", "bm25", "dense")
+
+
+def pool_candidats(moteur: MoteurRecherche, cas: CasRAG, k: int = POOL_PAR_MODE) -> list[Morceau]:
+    """Union des k premiers résultats de chaque méthode (pooling, comme les campagnes TREC), sans doublon.
+    Même fonction pour l'annotation humaine et pour le juge : ils jugent exactement les mêmes candidats."""
+    candidats: list[Morceau] = []
+    for mode in MODES_POOL:
+        for resultat in moteur.rechercher(cas.question, k=k, marque=cas.marque, mode=mode):
+            if resultat.morceau.id not in {m.id for m in candidats}:
+                candidats.append(resultat.morceau)
+    return candidats
 
 
 def charger_cas(chemin: Path = FICHIER_CAS) -> list[CasRAG]:

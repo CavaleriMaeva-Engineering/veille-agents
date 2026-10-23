@@ -17,6 +17,7 @@ from veille.evals.rag import (
     charger_annotations,
     charger_cas,
     enregistrer_annotations,
+    pool_candidats,
 )
 from veille.rag.documents import charger_corpus
 from veille.rag.modeles import charger_encodeur, charger_reranker
@@ -37,11 +38,7 @@ morceaux, _ = charger_corpus([DOSSIER_SORTIES, DOSSIER_SORTIES / "archives"])
 moteur = MoteurRecherche(morceaux, charger_encodeur(), charger_reranker())
 
 for c in a_faire:
-    candidats = []
-    for mode in ("rerank", "bm25", "dense"):
-        for r in moteur.rechercher(c.question, k=8, marque=c.marque, mode=mode):
-            if r.morceau.id not in [m.id for m in candidats]:
-                candidats.append(r.morceau)
+    candidats = pool_candidats(moteur, c)
     print(f"\n=== {c.id} ({c.type}) : {c.question}" + (f"  [marque : {c.marque}]" if c.marque else ""))
     if c.note:
         print(f"    note : {c.note}")
@@ -51,7 +48,10 @@ for c in a_faire:
     if saisie.lower() == "q":
         break
     choisis = [candidats[int(n) - 1].id for n in saisie.split() if n.isdigit() and 1 <= int(n) <= len(candidats)]
-    annotations[c.id] = Annotation(pertinents=choisis, annote_par=getpass.getuser(), annote_le=date.today().isoformat())
+    annotations[c.id] = Annotation(
+        pertinents=choisis, candidats=[m.id for m in candidats],
+        annote_par=getpass.getuser(), annote_le=date.today().isoformat(),
+    )
     enregistrer_annotations(annotations)
     print(f"    → {len(choisis)} pertinent(s) enregistré(s)")
 
