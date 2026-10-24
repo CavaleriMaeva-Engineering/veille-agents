@@ -18,6 +18,7 @@ from veille.tools.tiktok import (
     chercher_pubs_tiktok,
 )
 from veille.tools.web import OUTIL_LIRE_PAGE_WEB, ArgsLirePageWeb, lire_page_web
+from veille.traces import span
 
 
 @dataclass
@@ -48,16 +49,23 @@ def resumer_erreurs(erreur: ValidationError) -> str:
 
 
 def executer_appel_outil(appel: AppelOutil, outils: dict[str, Outil]) -> str:
-    outil = outils.get(appel.nom)
-    if outil is None:
-        resultat = {"erreur": f"L'outil « {appel.nom} » n'existe pas. Outils disponibles : {', '.join(outils)}."}
-        return json.dumps(resultat, ensure_ascii=False)
+    # Un span par appel d'outil : durée, issue, taille du résultat (ce qu'il ajoutera au contexte du LLM).
+    with span("outil", appel.nom, arguments=appel.arguments[:300]) as attributs:
+        outil = outils.get(appel.nom)
+        if outil is None:
+            attributs["resultat"] = "outil_inconnu"
+            resultat = {"erreur": f"L'outil « {appel.nom} » n'existe pas. Outils disponibles : {', '.join(outils)}."}
+            return json.dumps(resultat, ensure_ascii=False)
 
-    try:
-        args = outil.args.model_validate_json(appel.arguments)
-    except ValidationError as erreur:
-        resultat = {"erreur": f"Arguments invalides pour {appel.nom} : {resumer_erreurs(erreur)}. Corrige-les et réessaie."}
-        return json.dumps(resultat, ensure_ascii=False)
+        try:
+            args = outil.args.model_validate_json(appel.arguments)
+        except ValidationError as erreur:
+            attributs["resultat"] = "arguments_invalides"
+            resultat = {"erreur": f"Arguments invalides pour {appel.nom} : {resumer_erreurs(erreur)}. Corrige-les et réessaie."}
+            return json.dumps(resultat, ensure_ascii=False)
 
-    resultat = outil.fonction(**args.model_dump())
-    return json.dumps(resultat, ensure_ascii=False)
+        resultat = outil.fonction(**args.model_dump())   # une exception est notée par le span, puis remonte
+        texte = json.dumps(resultat, ensure_ascii=False)
+        attributs["resultat"] = "erreur" if "erreur" in resultat else "ok"
+        attributs["caracteres"] = len(texte)
+        return texte

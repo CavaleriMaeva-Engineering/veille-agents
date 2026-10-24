@@ -1,6 +1,11 @@
 marche: cosmetique-dtc-france
 
 modele: openai/gpt-oss-20b
+# PJ15 : routage par étape. Le collecteur ne fait que choisir des outils : effort de raisonnement bas.
+# Les étapes absentes prennent `modele` (les sorties structurées gardent l'effort bas fixé dans le code).
+etapes:
+  collecteur:
+    effort: low
 max_tentatives: 5
 outils_actifs:
   - lire_page_web

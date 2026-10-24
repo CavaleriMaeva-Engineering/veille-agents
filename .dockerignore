@@ -1,0 +1,16 @@
+# Rien de tout ça n'entre dans l'image : secrets, données, caches, tout ce qui ne sert pas à faire tourner l'API.
+.git
+.gitignore
+.env
+.env.*
+.venv
+__pycache__
+*.pyc
+.pytest_cache
+.ruff_cache
+sorties
+traces
+tests
+evals
+scripts
+docs

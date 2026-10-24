@@ -5,7 +5,7 @@ from veille.agents.analyste import AnalyseMarque, Collecte
 from veille.agents.rapport import RapportVeille
 from veille.agents.signaux import Signaux
 from veille.agents.superviseur import MAX_COLLECTES, lancer_veille, raisons_de_relancer
-from veille.settings import Config, Marque
+from veille.settings import Config, Marque, ReglageLLM
 
 
 def config_de_test(*noms: str) -> Config:
@@ -134,3 +134,16 @@ def test_outils_actifs_et_identifiants_transmis():
     appel = collecter.call_args.kwargs
     assert appel["outils_actifs"] == ["chercher_pubs_meta"]
     assert appel["execution_id"] == "essai-typology"
+
+
+def test_routage_par_etape_transmis_aux_agents():
+    collecter = Mock(return_value=collecte())
+    config = config_de_test().model_copy(update={"etapes": {
+        "collecteur": ReglageLLM(effort="low"), "redacteur": ReglageLLM(modele="gros-modele"),
+    }})
+
+    _, rediger, _ = lancer(collecter, config=config)
+
+    assert collecter.call_args.kwargs["modele"] == "modele"
+    assert collecter.call_args.kwargs["effort_raisonnement"] == "low"
+    assert rediger.call_args.kwargs["modele"] == "gros-modele"

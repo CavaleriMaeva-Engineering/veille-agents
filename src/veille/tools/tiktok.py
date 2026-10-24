@@ -7,7 +7,7 @@ from apify_client import ApifyClient
 from apify_client.errors import ApifyApiError
 from pydantic import BaseModel, Field
 
-from veille.tools.base import decrire_outil, est_du_domaine
+from veille.tools.base import decrire_outil, est_du_domaine, noter_cout_apify
 from veille.tools.meta import est_un_vrai_texte
 
 logger = logging.getLogger(__name__)
@@ -108,6 +108,7 @@ def chercher_pubs_tiktok(marque: str, domaine: str, client: ApifyClient, max_pub
         }, ensure_ascii=False))
         return {"erreur": "La bibliothèque publicitaire TikTok est indisponible pour le moment. Utilise une autre source."}
     
+    noter_cout_apify(execution)   # PJ15 : le coût du run Apify rejoint le span de l'outil
     if execution is None or execution.status != "SUCCEEDED":
         return {"erreur": "La collecte des pubs TikTok n'a pas abouti à temps. Réessaie plus tard ou utilise une autre source."}
 

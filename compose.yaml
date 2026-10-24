@@ -1,0 +1,21 @@
+# Lancer :  docker compose up --build        Arrêter :  docker compose down
+# Prérequis : un fichier .env (GROQ_API_KEY, APIFY_TOKEN, VEILLE_API_KEY, SLACK_WEBHOOK_URL facultatif).
+services:
+  api:
+    build:
+      context: .
+      args:
+        AVEC_RAG: "false"           # "true" : mémoire long terme (RAG), image beaucoup plus lourde
+    image: veille-agents:dev
+    env_file: .env                  # les secrets entrent par l'environnement, jamais dans l'image
+    ports:
+      - "127.0.0.1:8000:8000"       # joignable depuis cette machine seulement ; ouvrir au réseau = choix explicite
+    volumes:
+      - ./sorties:/app/sorties      # analyses et PDF : survivent à un redémarrage du conteneur
+      - ./traces:/app/traces        # traces JSONL : le coût d'une veille reste consultable
+      - ./config:/app/config:ro     # la config se modifie sans reconstruire l'image
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true      # un processus du conteneur ne peut pas gagner de privilèges
+    cap_drop:
+      - ALL                         # aucune capacité Linux spéciale : l'API n'en a pas besoin

@@ -7,6 +7,7 @@ requires-python = ">=3.13"
 dependencies = [
     "apify-client>=3.3.0",
     "beautifulsoup4>=4.15.0",
+    "fastapi>=0.115",
     "groq>=1.7.0",
     "httpx>=0.28.1",
     "mcp>=2.3.0",
@@ -15,7 +16,7 @@ dependencies = [
     "pydantic-settings>=2.16.0",
     "pyyaml>=6.0.3",
     "reportlab>=5.1.0",
-    "sentence-transformers>=6.2.0",
+    "uvicorn>=0.30",
 ]
 
 [build-system]
@@ -30,3 +31,10 @@ dev = [
     "pytest>=9.1.1",
     "ruff>=0.17.1",
 ]
+# Modèles locaux du RAG (PyTorch : très lourd). Installés par défaut en local, exclus de l'image Docker par défaut.
+rag = [
+    "sentence-transformers>=6.2.0",
+]
+
+[tool.uv]
+default-groups = ["dev", "rag"]

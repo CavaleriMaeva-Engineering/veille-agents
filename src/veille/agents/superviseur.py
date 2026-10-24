@@ -20,6 +20,7 @@ from veille.agents.signaux import SOURCE_PAR_OUTIL, Signaux
 from veille.garde_fous import verifier_ancrage
 from veille.settings import Config, Marque
 from veille.storage.analyses import charger_derniere_analyse, enregistrer_analyse
+from veille.traces import noter, span
 
 logger = logging.getLogger(__name__)
 
@@ -59,12 +60,17 @@ def traiter_marque(
     charger_precedente: Callable[[str], AnalyseMarque | None],
     rappeler: Rappel | None = None,
 ) -> AnalyseMarque:
+    modele_collecte, effort_collecte = config.reglage("collecteur")   # PJ15 : routage par étape
+    modele_redaction, _ = config.reglage("redacteur")
+
     # Décision 1 : relancer une collecte insuffisante, au plus MAX_COLLECTES fois en tout.
     for nb_collectes in range(1, MAX_COLLECTES + 1):
-        collecte = collecter(
-            client_groq=client_groq, client_apify=client_apify, modele=config.modele,
-            marque=marque, execution_id=id_marque, outils_actifs=config.outils_actifs,
-        )
+        with span("etape", "collecte", marque=marque.nom, numero=nb_collectes):
+            collecte = collecter(
+                client_groq=client_groq, client_apify=client_apify, modele=modele_collecte,
+                marque=marque, execution_id=id_marque, outils_actifs=config.outils_actifs,
+                effort_raisonnement=effort_collecte,
+            )
         raisons = raisons_de_relancer(collecte.signaux, config.outils_actifs)
         if not raisons:
             break
@@ -86,14 +92,16 @@ def traiter_marque(
         if rappeler is not None:
             souvenirs = rappeler(marque.nom, requete_depuis_collecte(collecte.observations, marque.nom))
             memoire = formater_memoire(souvenirs, changements)
-        rapport = rediger(
-            client_groq=client_groq, modele=config.modele, marque=marque.nom,
-            collecte=collecte, execution_id=id_marque, memoire=memoire,
-        )
+        with span("etape", "redaction", marque=marque.nom):
+            rapport = rediger(
+                client_groq=client_groq, modele=modele_redaction, marque=marque.nom,
+                collecte=collecte, execution_id=id_marque, memoire=memoire,
+            )
         decision = "redige"
         # Garde-fou de sortie : chaque chiffre d'un constat doit venir des données (ou de la mémoire).
         rapport, retires = verifier_ancrage(rapport, collecte.observations, collecte.signaux, memoire)
         alertes += retires
+    noter(decision=decision, nb_collectes=nb_collectes)   # sur le span de la marque : visible dans la trace
     logger.info(json.dumps({
         "evenement": "decision_rapport", "execution_id": id_marque, "marque": marque.nom,
         "decision": decision, "comparable": changements.comparable, "score": changements.score,
@@ -124,10 +132,11 @@ def lancer_veille(
     for marque in config.marques:
         id_marque = f"{execution_id}-{marque.nom.lower().replace(' ', '-')}"
         try:
-            analyse = traiter_marque(
-                marque, config, client_groq, client_apify, id_marque, collecter, rediger, charger_precedente,
-                rappeler,
-            )
+            with span("etape", "marque", marque=marque.nom, execution_id=id_marque):
+                analyse = traiter_marque(
+                    marque, config, client_groq, client_apify, id_marque, collecter, rediger, charger_precedente,
+                    rappeler,
+                )
         except Exception as erreur:  # noqa: BLE001 — cloison : une marque en échec ne doit pas arrêter les autres
             logger.error(json.dumps({
                 "evenement": "echec_marque", "execution_id": id_marque,

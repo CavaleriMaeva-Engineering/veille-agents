@@ -18,7 +18,7 @@ from veille.agents.rapport import (
 from veille.agents.signaux import Signaux, calculer_signaux, extraire_resultats
 from veille.garde_fous import Garde
 from veille.settings import Marque
-from veille.tools.registre import creer_outils
+from veille.tools.registre import Outil, creer_outils
 
 logger = logging.getLogger(__name__)
 
@@ -73,18 +73,24 @@ def collecter_marque(
     execution_id: str,
     max_tours: int = 5,
     outils_actifs: list[str] | None = None,
+    effort_raisonnement: str | None = None,
+    outils: dict[str, Outil] | None = None,
 ) -> Collecte:
-    """Agent collecteur : il a les outils, mais aucune consigne de rédaction. Ses outils sont encadrés par une Garde."""
+    """Agent collecteur : il a les outils, mais aucune consigne de rédaction. Ses outils sont encadrés par une Garde.
+
+    `outils` remplace les vrais outils (ex. outils rejoués depuis une veille passée pour mesurer les coûts sans Apify).
+    """
     garde = Garde(marque=marque, execution_id=execution_id)
     resultat = executer_agent(
         client=client_groq,
         modele=modele,
         prompt_systeme=PROMPT_COLLECTE,
         demande=f"Marque : {marque.nom}. Site : {marque.site}.",
-        outils=garde.proteger(creer_outils(client_apify, outils_actifs)),
+        outils=garde.proteger(outils if outils is not None else creer_outils(client_apify, outils_actifs)),
         agent="collecteur",
         execution_id=execution_id,
         max_tours=max_tours,
+        effort_raisonnement=effort_raisonnement,
     )
     return Collecte(
         observations=extraire_observations(resultat.messages),

@@ -110,6 +110,7 @@ def executer_agent(
     agent: str,
     execution_id: str,
     max_tours: int = 6,
+    effort_raisonnement: str | None = None,
 ) -> ResultatAgent:
     messages = [{"role": "system", "content": prompt_systeme}, {"role": "user", "content": demande}]
     schemas = [outil.schema for outil in outils.values()]
@@ -117,7 +118,9 @@ def executer_agent(
     tokens = 0
 
     for tour in range(1, max_tours + 1):
-        reponse = appeler_llm(client, modele, messages, agent, execution_id, outils=schemas)
+        reponse = appeler_llm(
+            client, modele, messages, agent, execution_id, outils=schemas, effort_raisonnement=effort_raisonnement
+        )
         tokens += reponse.tokens_entree + reponse.tokens_sortie
         messages.append(message_assistant(reponse))
 
@@ -129,7 +132,11 @@ def executer_agent(
         messages.extend(observations)
 
     messages.append({"role": "user", "content": MESSAGE_LIMITE})
-    reponse = appeler_llm(client, modele, messages, agent, execution_id, outils=schemas, choix_outil="none")
+    # tool_choice change : Groq ne peut pas réutiliser son cache pour ce dernier appel (coût accepté, il est rare).
+    reponse = appeler_llm(
+        client, modele, messages, agent, execution_id, outils=schemas, choix_outil="none",
+        effort_raisonnement=effort_raisonnement,
+    )
     tokens += reponse.tokens_entree + reponse.tokens_sortie
     messages.append(message_assistant(reponse))
     return terminer(ResultatAgent(reponse.texte, "limite_tours", max_tours, tokens, messages), execution_id, agent)

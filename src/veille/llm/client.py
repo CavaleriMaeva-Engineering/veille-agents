@@ -5,8 +5,10 @@ import time
 import groq
 from pydantic import BaseModel, Field
 
+from veille.couts import cout_groq
 from veille.reseau import appeler_avec_tentatives
 from veille.settings import Secrets
+from veille.traces import span
 
 logger = logging.getLogger(__name__)
 
@@ -22,6 +24,14 @@ class ReponseLLM(BaseModel):
     appels_outils: list[AppelOutil] = Field(default_factory=list)
     tokens_entree: int
     tokens_sortie: int
+    tokens_caches: int = 0          # part de tokens_entree lue dans le cache de Groq (facturée moitié prix)
+    tokens_raisonnement: int = 0    # part de tokens_sortie passée à raisonner (facturée comme de la sortie)
+
+
+def detail_usage(usage, groupe: str, champ: str) -> int:
+    """Lit usage.<groupe>.<champ> s'il existe : tous les modèles ne renvoient pas ces détails."""
+    valeur = getattr(getattr(usage, groupe, None), champ, None)
+    return valeur if isinstance(valeur, int) else 0
 
 
 def creer_client_groq(secrets: Secrets) -> groq.Groq:
@@ -61,7 +71,19 @@ def appeler_llm(
         if effort_raisonnement:
             parametres["reasoning_effort"] = effort_raisonnement
         try:
-            reponse = client.chat.completions.create(**parametres)
+            # Un span par tentative : une tentative en échec (429, 5xx) coûte du temps, et on veut la voir.
+            with span("llm", modele, agent=agent, modele=modele, tentative=tentative,
+                      execution_id=execution_id, effort=effort_raisonnement, nb_outils=len(outils or [])) as attributs:
+                reponse = client.chat.completions.create(**parametres)
+                usage = reponse.usage
+                caches = detail_usage(usage, "prompt_tokens_details", "cached_tokens")
+                attributs.update(
+                    tokens_entree=usage.prompt_tokens,
+                    tokens_caches=caches,
+                    tokens_sortie=usage.completion_tokens,
+                    tokens_raisonnement=detail_usage(usage, "completion_tokens_details", "reasoning_tokens"),
+                    cout_usd=cout_groq(modele, usage.prompt_tokens, caches, usage.completion_tokens),
+                )
         except Exception as erreur:
             logger.warning(
                 json.dumps(
@@ -94,6 +116,7 @@ def appeler_llm(
                     "latence_ms": round((time.perf_counter() - debut) * 1000),
                     "tokens_entree": reponse.usage.prompt_tokens,
                     "tokens_sortie": reponse.usage.completion_tokens,
+                    "tokens_caches": detail_usage(reponse.usage, "prompt_tokens_details", "cached_tokens"),
                     "erreur": None,
                 }
             )
@@ -110,4 +133,6 @@ def appeler_llm(
         ],
         tokens_entree=reponse.usage.prompt_tokens,
         tokens_sortie=reponse.usage.completion_tokens,
+        tokens_caches=detail_usage(reponse.usage, "prompt_tokens_details", "cached_tokens"),
+        tokens_raisonnement=detail_usage(reponse.usage, "completion_tokens_details", "reasoning_tokens"),
     )
