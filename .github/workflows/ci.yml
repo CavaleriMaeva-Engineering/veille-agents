@@ -1,0 +1,48 @@
+# Intégration continue : à chaque push sur master et à chaque pull request, on vérifie que le code est propre,
+# que les tests passent et que les évals commitées respectent leurs seuils.
+# Aucun secret ici : pas de clé Groq ni Apify. Tout appel réseau réel échouerait, donc tout est simulé dans les tests.
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+# Droits minimaux du jeton GitHub : lire le dépôt, rien d'autre.
+permissions:
+  contents: read
+
+# Un nouveau push sur la même branche annule l'exécution précédente, encore en cours : inutile de la finir.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verifier:
+    name: Lint, tests et évals sans LLM
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false   # le jeton ne reste pas sur le disque après le checkout
+
+      - uses: astral-sh/setup-uv@v10.3.0
+        with:
+          version: "0.13.4"            # même version que le Dockerfile : mêmes résultats partout
+          enable-cache: true           # cache des paquets, clé calculée sur uv.lock
+
+      # --locked : échoue si uv.lock n'est plus à jour avec pyproject.toml (un oubli de `git add uv.lock`).
+      # --no-group rag : pas de PyTorch (plusieurs Go). Les tests simulent l'encodeur, ils n'en ont pas besoin.
+      - name: Installer les dépendances
+        run: uv sync --locked --no-group rag
+
+      # --no-sync : `uv run` ne réinstalle pas, sinon il ajouterait le groupe rag (groupes par défaut du projet).
+      - name: Ruff
+        run: uv run --no-sync ruff check .
+
+      - name: Tests
+        run: uv run --no-sync pytest -q
+
+      - name: Évals sans LLM
+        run: uv run --no-sync python scripts/verifier_evals.py
