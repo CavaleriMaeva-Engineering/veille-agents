@@ -27,7 +27,7 @@ jobs:
         with:
           persist-credentials: false   # le jeton ne reste pas sur le disque après le checkout
 
-      - uses: astral-sh/setup-uv@v10.3.0
+      - uses: astral-sh/setup-uv@v10.3.1
         with:
           version: "0.13.4"            # même version que le Dockerfile : mêmes résultats partout
           enable-cache: true           # cache des paquets, clé calculée sur uv.lock
